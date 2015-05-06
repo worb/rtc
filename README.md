@@ -12,12 +12,14 @@ Currently:
 ### Install
 1. `pip install -U nltk`
 2. Open python console.
+
 `import nltk
+
 nltk.download()`
 3. install gutenberg package.
 4. `pip install -U rtmidi`
 5. Download [http://notahat.com/simplesynth/](SimpleSynth).
 
-### Run 
+### Run
 1. Open SimpleSynch.
 6. `python rtc.py`
