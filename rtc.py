@@ -9,6 +9,7 @@ def score(text):
     sents = gutenberg.sents(text)
 
     for sent in sents[100:200]:
+        #note is [length of sentence, number of nouns, number of verbs, number of adjectives].
         note = [len(sent), 0, 0, 0]
         notes.append(note)
 
