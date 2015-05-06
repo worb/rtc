@@ -14,6 +14,7 @@ Currently:
 2. In python console:
         ```
         import nltk
+        
         nltk.download()
         ```
 3. install gutenberg package.
