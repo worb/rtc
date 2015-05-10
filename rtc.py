@@ -4,6 +4,19 @@ from nltk.corpus import gutenberg
 import time
 import rtmidi
 
+def play(note, ch, vel, length):
+
+    channel_on = 143 + ch
+    channel_off = 127 + ch
+
+    note_on = [channel_on, note, velocity]
+    note_off = [channel_off, note, velocity]
+
+    midiout.send_message(note_on)
+    time.sleep(length)
+    midiout.send_message(note_off)
+
+
 def score(text):
     notes = []
     sents = gutenberg.sents(text)
@@ -39,19 +52,9 @@ else:
 for note in sheet:
 
     midi_note = (5 * note[1]) + (2 * note[2]) + (note[3]) + 21
-    #midi_note = 1
     velocity = note[0] + 100
     sleep = note[0] * .02
 
-    note_on = [0x90, midi_note, velocity] # channel, midi note (0 - 108), velocity
-
-    print note_on
-    note_off = [0x80, midi_note + 20, 0]
-
-    midiout.send_message(note_on)
-
-    time.sleep(sleep)
-
-    midiout.send_message(note_off)
+    play(midi_note, 2, velocity, sleep)
 
 del midiout
