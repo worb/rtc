@@ -6,7 +6,11 @@ import rtmidi
 import time
 
 def play(out, note, ch, vel, sleep):
-    # TODO: Explain these hardcoded values
+
+    # 143 and 127 are ((MIDI channel 1 hex value) - 1)
+    # for turning a note on, and off respectively
+    # Thus, 143 + channel N = MIDI channel N
+
     channel_on = 143 + ch
     channel_off = 127 + ch
     note_on = [channel_on, note, vel]
@@ -25,7 +29,12 @@ def score(text):
         pos = nltk.pos_tag(sent)
         for word in pos:
             part = word[1][0]
-            # TODO: Explain these hardcoded values
+
+            # Interperets return from POS tagger
+            # N = noun
+            # V = verb
+            # J = adjective
+
             if part == 'N':
                 note[1] += 1
             elif part == 'V':
