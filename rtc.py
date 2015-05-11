@@ -47,7 +47,7 @@ def main():
         midi_note = (5 * note[1]) + (2 * note[2]) + (note[3]) + 21
         velocity = note[0] + 100
         sleep = note[0] * .02
-        play(output, midi_note, 2, velocity, sleep)
+        play(out, midi_note, 2, velocity, sleep)
     del out
 
 if __name__ == "__main__":
