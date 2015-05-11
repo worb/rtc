@@ -1,6 +1,4 @@
 import nltk
-from nltk.corpus import gutenberg
-
 import time
 import rtmidi
 
@@ -19,7 +17,7 @@ def play(note, ch, vel, length):
 
 def score(text):
     notes = []
-    sents = gutenberg.sents(text)
+    sents = nltk.corpus.gutenberg.sents(text)
 
     for sent in sents[100:200]:
         #note is [length of sentence, number of nouns, number of verbs, number of adjectives].
