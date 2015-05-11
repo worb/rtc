@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import nltk
-import time
 import rtmidi
+import time
 
 def play(note, ch, vel, length):
     # TODO: Explain these hardcoded values
