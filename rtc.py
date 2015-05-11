@@ -5,15 +5,17 @@ import nltk
 import rtmidi
 import time
 
+MIDIOUT = rtmidi.MidiOut()
+
 def play(note, ch, vel, length):
     # TODO: Explain these hardcoded values
     channel_on = 143 + ch
     channel_off = 127 + ch
     note_on = [channel_on, note, velocity]
     note_off = [channel_off, note, velocity]
-    midiout.send_message(note_on)
+    MIDIOUT.send_message(note_on)
     time.sleep(length)
-    midiout.send_message(note_off)
+    MIDIOUT.send_message(note_off)
 
 def score(text):
     notes = []
@@ -36,18 +38,17 @@ def score(text):
 
 def main():
     sheet = score('melville-moby_dick.txt')
-    midiout = rtmidi.MidiOut()
-    available_ports = midiout.get_ports()
+    available_ports = MIDIOUT.get_ports()
     if available_ports:
-        midiout.open_port(0)
+        MIDIOUT.open_port(0)
     else:
-        midiout.open_virtual_port("My virtual output")
+        MIDIOUT.open_virtual_port("My virtual output")
     for note in sheet:
         midi_note = (5 * note[1]) + (2 * note[2]) + (note[3]) + 21
         velocity = note[0] + 100
         sleep = note[0] * .02
         play(midi_note, 2, velocity, sleep)
-    del midiout
+    del MIDIOUT
 
 if __name__ == "__main__":
     main()
