@@ -5,14 +5,14 @@ import nltk
 import rtmidi
 import time
 
-def play(out, note, ch, vel, len):
+def play(out, note, ch, vel, sleep):
     # TODO: Explain these hardcoded values
     channel_on = 143 + ch
     channel_off = 127 + ch
-    note_on = [channel_on, note, velocity]
-    note_off = [channel_off, note, velocity]
+    note_on = [channel_on, note, vel]
+    note_off = [channel_off, note, vel]
     out.send_message(note_on)
-    time.sleep(len)
+    time.sleep(sleep)
     out.send_message(note_off)
 
 def score(text):
