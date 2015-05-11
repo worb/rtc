@@ -3,22 +3,18 @@ import time
 import rtmidi
 
 def play(note, ch, vel, length):
-
+    # TODO: Explain these hardcoded values
     channel_on = 143 + ch
     channel_off = 127 + ch
-
     note_on = [channel_on, note, velocity]
     note_off = [channel_off, note, velocity]
-
     midiout.send_message(note_on)
     time.sleep(length)
     midiout.send_message(note_off)
 
-
 def score(text):
     notes = []
     sents = nltk.corpus.gutenberg.sents(text)
-
     for sent in sents[100:200]:
         # Note = [sentence length, noun count, verb count, adjective count]
         note = [len(sent), 0, 0, 0]
