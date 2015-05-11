@@ -10,8 +10,9 @@
         import nltk
         nltk.download()
 
-    1. Install gutenberg package from the Corpora tab.
-    2. Install punkt package from the Models tab.
+    1. Install `gutenberg` package.
+    2. Install `punkt` package.
+    3. Install `maxent_treebank_pos_tagger` package.
 3. Download [SimpleSynth](http://notahat.com/simplesynth/).
 
 ### Run
