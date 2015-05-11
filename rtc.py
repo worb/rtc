@@ -20,7 +20,7 @@ def score(text):
     sents = nltk.corpus.gutenberg.sents(text)
 
     for sent in sents[100:200]:
-        #note is [length of sentence, number of nouns, number of verbs, number of adjectives].
+        # Note = [sentence length, noun count, verb count, adjective count]
         note = [len(sent), 0, 0, 0]
         notes.append(note)
 
