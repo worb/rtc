@@ -19,18 +19,16 @@ def score(text):
         # Note = [sentence length, noun count, verb count, adjective count]
         note = [len(sent), 0, 0, 0]
         notes.append(note)
-
         pos = nltk.pos_tag(sent)
-
         for word in pos:
             part = word[1][0]
+            # TODO: Explain these hardcoded values
             if part == 'N':
                 note[1] += 1
             elif part == 'V':
                 note[2] += 1
             elif part == 'J':
                 note[3] += 1
-
     return notes
 
 sheet = score('melville-moby_dick.txt')
