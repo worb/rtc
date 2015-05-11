@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import nltk
 import time
 import rtmidi
@@ -31,22 +34,20 @@ def score(text):
                 note[3] += 1
     return notes
 
-sheet = score('melville-moby_dick.txt')
+def main():
+    sheet = score('melville-moby_dick.txt')
+    midiout = rtmidi.MidiOut()
+    available_ports = midiout.get_ports()
+    if available_ports:
+        midiout.open_port(0)
+    else:
+        midiout.open_virtual_port("My virtual output")
+    for note in sheet:
+        midi_note = (5 * note[1]) + (2 * note[2]) + (note[3]) + 21
+        velocity = note[0] + 100
+        sleep = note[0] * .02
+        play(midi_note, 2, velocity, sleep)
+    del midiout
 
-midiout = rtmidi.MidiOut()
-available_ports = midiout.get_ports()
-
-if available_ports:
-    midiout.open_port(0)
-else:
-    midiout.open_virtual_port("My virtual output")
-
-for note in sheet:
-
-    midi_note = (5 * note[1]) + (2 * note[2]) + (note[3]) + 21
-    velocity = note[0] + 100
-    sleep = note[0] * .02
-
-    play(midi_note, 2, velocity, sleep)
-
-del midiout
+if __name__ == "__main__":
+    main()
