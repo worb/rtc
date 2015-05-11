@@ -1,0 +1,2 @@
+nltk
+python-rtmidi==0.5b1
