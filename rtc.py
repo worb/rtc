@@ -29,40 +29,39 @@ def find_paras(all_bigrams, text):
                 if one_bigram in bigram_list:
                     paras_found.append(para)
                     break
-                    
-    print paras_found
+
+    return paras_found
 
 
-def score(text):
-    notes = []
-    sents = nltk.corpus.gutenberg.sents(text)
-    for sent in sents[100:118]:
-        # Note = [sentence length, noun count, verb count, adjective count]
-        note = [len(sent), 0, 0, 0]
-        notes.append(note)
-        pos = nltk.pos_tag(sent)
-        for word in pos:
-            part = word[1][0]
+def score(paras):
+    sheets = []
+    for para in paras:
+        sheet = []
+        for sent in para:
+            # Note = [sentence length, noun count, verb count, adjective count]
+            note = [len(sent), 0, 0, 0]
+            sheet.append(note)
+            pos = nltk.pos_tag(sent)
+            for word in pos:
+                part = word[1][0]
 
-            # Interperets return from POS tagger
-            # N = noun
-            # V = verb
-            # J = adjective
+                # Interperets return from POS tagger
+                # N = noun
+                # V = verb
+                # J = adjective
 
-            if part == 'N':
-                note[1] += 1
-            elif part == 'V':
-                note[2] += 1
-            elif part == 'J':
-                note[3] += 1
-    return notes
+                if part == 'N':
+                    note[1] += 1
+                elif part == 'V':
+                    note[2] += 1
+                elif part == 'J':
+                    note[3] += 1
+        sheets.append(sheet)
+    return sheets
 
-def main():
-    in_ = 'carroll-alice.txt'
+def gradient_gen(sheet):
     html_out = 'background: linear-gradient(180deg, '
-    bigrams = find_bigrams(in_)
-    find_paras(bigrams, in_)
-    ''' wave_range = range(378,781)
+    wave_range = range(378,781)
     for note in sheet:
         # very naively transposes the note to an index between 1 and 400,
         # the number of rbg wavelengths in the wave2rbg function.
@@ -71,6 +70,15 @@ def main():
         rgb = wavelen2rgb(wavelen)
         html_out += "rgba(" + str(rgb[0]) + ", " + str(rgb[1]) + ", " + str(rgb[2]) + ", 1), "
     html_out += ');'
-    print html_out'''
+    print html_out
+
+def main():
+    in_ = 'carroll-alice.txt'
+    bigrams = find_bigrams(in_)
+    paras = find_paras(bigrams, in_)
+    sheets = score(paras)
+    for sheet in sheets:
+        gradient_gen(sheet)
+
 if __name__ == "__main__":
     main()
