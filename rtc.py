@@ -60,16 +60,21 @@ def score(paras):
     return sheets
 
 def gradient_gen(sheet):
-    html_out = 'background: linear-gradient(180deg, '
+    html_out = '<li style="background: linear-gradient(180deg, '
     wave_range = range(378,781)
+    i = 0;
+    length = len(sheet)
     for note in sheet:
+        i += 1
         # very naively transposes the note to an index between 1 and 400,
         # the number of rbg wavelengths in the wave2rbg function.
         wave_index = int(round(400 * ((note[1] + note[2] + note[3]) / 100.0)))
         wavelen = wave_range[wave_index]
         rgb = wavelen2rgb(wavelen)
-        html_out += "rgba(" + str(rgb[0]) + ", " + str(rgb[1]) + ", " + str(rgb[2]) + ", 1), "
-    html_out += ');'
+        html_out += "rgba(" + str(rgb[0]) + ", " + str(rgb[1]) + ", " + str(rgb[2]) + ", 1)"
+        if i != length:
+            html_out += ', '
+    html_out += ');">&nbsp;</li>'
     print html_out
 
 def main():
@@ -78,7 +83,8 @@ def main():
     paras = find_paras(bigrams, in_)
     sheets = score(paras)
     for sheet in sheets:
-        gradient_gen(sheet)
+        if len(sheet) > 1:
+            gradient_gen(sheet)
 
 if __name__ == "__main__":
     main()
