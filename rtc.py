@@ -75,12 +75,13 @@ def gradient_gen(sheet):
         if i != length:
             html_out += ', '
     html_out += ');">&nbsp;</li>'
-    print html_out
+    #print html_out
 
 def main():
     in_ = 'carroll-alice.txt'
     bigrams = find_bigrams(in_)
     paras = find_paras(bigrams, in_)
+    print paras
     sheets = score(paras)
     for sheet in sheets:
         if len(sheet) > 1:
