@@ -17,8 +17,7 @@
   },
   "homepage": "https://github.com/worb/reactor",
   "dependencies": {
-    "react": "^0.13.3",
-    "react-draggable": "^0.8.0"
+    "react": "^0.13.3"
   },
   "devDependencies": {
     "browserify": "^10.2.1",
