@@ -14,8 +14,8 @@ var Cover = React.createClass({
     }
 
     return (
-      <li>
-        <img src={file} onClick={this.handleClick} />
+      <li onClick={this.handleClick}>
+        <img src={file} />
       </li>
     )
   }

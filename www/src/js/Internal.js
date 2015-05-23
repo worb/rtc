@@ -1,4 +1,5 @@
 var Cover = require('./Cover');
+var Draggable = require('react-draggable');
 
 var COVER_PATH = 'rtc_books_resized/';
 
@@ -16,12 +17,17 @@ var Internal = React.createClass({
       )
     }, this);
     return (
+      <Draggable
+      zIndex={1000}
+      axis="x"
+      onDrag={this.handleDrag}
+      >
       <div className="book">
-        <a className="exit" onClick={this.handleExit}>x</a>
         <ul>
         {covers}
         </ul>
       </div>
+      </Draggable>
     )
   }
 });
