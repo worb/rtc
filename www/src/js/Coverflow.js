@@ -11,8 +11,8 @@ var Coverflow = React.createClass({
     }
   },
   componentWillMount: function() {
-    _COVER_WIDTH = 400;
-    this.NUM_COVERS = parseInt(window.innerWidth / (_COVER_WIDTH + 20));
+    this.COVER_WIDTH = 400 + 32;
+    this.NUM_COVERS = parseInt(window.innerWidth / this.COVER_WIDTH) + 1;
     this.DRAG_EVENT = false;
   },
   handleCoverClick: function(key) {
@@ -34,15 +34,19 @@ var Coverflow = React.createClass({
       this.setState({index: this.state.coverIndex++});
     }
   },
-  handleDrag: function(e) {
+  handleDrag: function(e, ui) {
     this.DRAG_EVENT = true;
+    var left = Math.abs(ui.position.left);
+    if(Math.abs(ui.position.left) > (this.COVER_WIDTH * (this.state.coverIndex + 1))) {
+      this.setState({coverIndex: this.state.coverIndex+1});
+    }
   },
   handleStop: function(e, ui) {
     this.setState({coverLeft: ui.position.left});
   },
   render: function(){
     if(this.state.selected === null) {
-      covers = this.props.books.map(function(book, i){
+      covers = this.props.books.slice(0, this.NUM_COVERS + this.state.coverIndex + 1).map(function(book, i){
         return (
           <Cover book={book} key={i} rKey={i} handleClick={this.handleCoverClick} />
           )
