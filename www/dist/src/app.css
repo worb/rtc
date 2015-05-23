@@ -146,6 +146,7 @@ a:hover {
 }
 .books ul li {
   display: inline;
+  margin: 0 1.0rem;
 }
 .books ul li img {
   width: 400px;
