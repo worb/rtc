@@ -1,4 +1,4 @@
-var COVER_PATH = 'rtc_books/';
+var COVER_PATH = 'rtc_books_resized/';
 
 var Cover = React.createClass({
   handleClick: function(e) {

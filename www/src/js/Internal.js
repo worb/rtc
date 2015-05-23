@@ -1,6 +1,6 @@
 var Cover = require('./Cover');
 
-var COVER_PATH = 'rtc_books/';
+var COVER_PATH = 'rtc_books_resized/';
 
 var Internal = React.createClass({
   handleClick: function(event) {

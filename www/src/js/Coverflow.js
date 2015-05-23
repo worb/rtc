@@ -20,9 +20,11 @@ var Coverflow = React.createClass({
       }, this);
         return (
           <div className="books">
+            <a onClick={this.handlePrev}>&laquo;</a>
             <ul>
             {covers}
             </ul>
+            <a onClick={this.handleNext}>&raquo;</a>
           </div>
         );
     } else {
