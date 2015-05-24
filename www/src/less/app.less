@@ -1,9 +1,14 @@
 @import '_reset.less';
 
+@image-width: 400px;
+@base-margin: 1.0rem;
+
 .books {
   position: relative;
   overflow: hidden;
   text-align: center;
+  .swipeable {
+  }
   ul {
     width: 100%;
     margin: 0;
@@ -14,10 +19,10 @@
       display: inline;
     }
     li img {
-      width: 400px;
+      width: @image-width;
       height: auto;
       -webkit-user-drag: none;
-      margin: 0 1.0rem;
+      margin: 0 @base-margin;
     }
   }
 }

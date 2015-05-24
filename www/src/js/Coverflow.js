@@ -6,15 +6,19 @@ var Coverflow = React.createClass({
   getInitialState: function() {
     return {
       selected: null,
-      coverIndex: 0,
+      coverIndex: 3,
       coverLeft: 0,
     }
   },
   componentWillMount: function() {
     this.COVER_WIDTH = 400 + 32;
     this.NUM_COVERS = parseInt(window.innerWidth / this.COVER_WIDTH) + 2;
+    this.TRANSLATE = parseInt(- (this.COVER_WIDTH * 2) + (this.COVER_WIDTH / this.NUM_COVERS));
     this.DRAG_EVENT = false;
     this.SWIPES = 1;
+  },
+  componentDidMount: function() {
+    this.refs.swipeable.getDOMNode().style.webkitTransform = "translate(" + this.TRANSLATE + "px)";
   },
   handleCoverClick: function(key) {
     if(this.DRAG_EVENT === false) {
@@ -28,8 +32,10 @@ var Coverflow = React.createClass({
   },
   handlePrev: function(e) {
     e.preventDefault(e);
-    if(this.state.coverIndex > 0) {
+    if(this.state.coverIndex > 2) {
       this.setState({coverIndex: this.state.coverIndex-1});
+    } else {
+      this.setState({coverIndex: 2});
     }
   },
   handleNext: function(e) {
@@ -39,7 +45,7 @@ var Coverflow = React.createClass({
     }
   },
   handleLeft: function(e, x) {
-    this.refs.swipeable.getDOMNode().style.webkitTransform = "translate(" + -x + "px)";
+    this.refs.swipeable.getDOMNode().style.webkitTransform = "translate(" + (-x + this.TRANSLATE) + "px)";
     /*if(x > this.COVER_WIDTH * this.SWIPES) {
       console.log(x - (this.COVER_WIDTH * this.SWIPES));
       this.handleNext(e);
@@ -47,7 +53,7 @@ var Coverflow = React.createClass({
     }*/
   },
   handleRight: function(e, x) {
-    this.refs.swipeable.getDOMNode().style.webkitTransform = "translate(" + x + "px)";
+    this.refs.swipeable.getDOMNode().style.webkitTransform = "translate(" + (x + this.TRANSLATE) + "px)";
     /*if(x > this.COVER_WIDTH * this.SWIPES) {
       console.log(x - (this.COVER_WIDTH * this.SWIPES));
       this.handlePrev(e);
@@ -55,27 +61,22 @@ var Coverflow = React.createClass({
     }*/
   },
   handleSwiped: function(e, x, y, isFlick) {
-    if(Math.abs(x) < this.COVER_WIDTH * this.SWIPES - 1) {
-      if(isFlick) {
-        if(x >= 0) {
-          this.handleNext(e);
-        }
-        if (x < 0) {
-          this.handlePrev(e);
-        }
+    if(isFlick) {
+      if(x >= 0) {
+        console.log('next');
+        this.handleNext(e);
+      }
+      if (x < 0) {
+        console.log('prev');
+        this.handlePrev(e);
       }
     }
-    if(x >= 0) {
-      var translate = x - (this.COVER_WIDTH * this.SWIPES);
-    } else {
-      var translate = x + (this.COVER_WIDTH * this.SWIPES);
-    }
-    this.refs.swipeable.getDOMNode().style.webkitTransform = "translate(" + 0 + "px)"
+    this.refs.swipeable.getDOMNode().style.webkitTransform = "translate(" + this.TRANSLATE + "px)"
     this.SWIPES = 1;
   },
   render: function(){
     if(this.state.selected === null) {
-      covers = this.props.books.slice(this.state.coverIndex, this.NUM_COVERS + this.state.coverIndex).map(function(book, i){
+      covers = this.props.books.slice(this.state.coverIndex - 2, this.NUM_COVERS + this.state.coverIndex + 2).map(function(book, i){
         return (
           <Cover book={book} key={i} rKey={i + this.state.coverIndex} handleClick={this.handleCoverClick} />
           )
@@ -83,10 +84,11 @@ var Coverflow = React.createClass({
         return (
           <div className="books">
             <Swipeable
+            className="swipeable"
             onSwipingLeft={this.handleLeft}
             onSwipingRight={this.handleRight}
             onSwiped={this.handleSwiped}
-            flickThreshold={2}
+            flickThreshold={0}
             ref="swipeable">
             <ul>
               {covers}
