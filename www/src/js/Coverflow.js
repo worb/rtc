@@ -7,7 +7,7 @@ var Coverflow = React.createClass({
     return {
       selected: null,
       coverIndex: 0,
-      coverLeft: 0
+      coverLeft: 0,
     }
   },
   componentWillMount: function() {
@@ -39,28 +39,38 @@ var Coverflow = React.createClass({
     }
   },
   handleLeft: function(e, x) {
-    console.log(x);
-    if(x > this.COVER_WIDTH * this.SWIPES) {
+    this.refs.swipeable.getDOMNode().style.webkitTransform = "translate(" + -x + "px)";
+    /*if(x > this.COVER_WIDTH * this.SWIPES) {
+      console.log(x - (this.COVER_WIDTH * this.SWIPES));
       this.handleNext(e);
       this.SWIPES++;
-    }
+    }*/
   },
   handleRight: function(e, x) {
-    console.log(x);
-    if(x > this.COVER_WIDTH * this.SWIPES) {
+    this.refs.swipeable.getDOMNode().style.webkitTransform = "translate(" + x + "px)";
+    /*if(x > this.COVER_WIDTH * this.SWIPES) {
+      console.log(x - (this.COVER_WIDTH * this.SWIPES));
       this.handlePrev(e);
       this.SWIPES++
-    }
+    }*/
   },
   handleSwiped: function(e, x, y, isFlick) {
-    if(isFlick) {
-      if(x > 0) {
-        this.handleNext(e);
-      }
-      if (x < 0) {
-        this.handlePrev(e);
+    if(Math.abs(x) < this.COVER_WIDTH * this.SWIPES - 1) {
+      if(isFlick) {
+        if(x >= 0) {
+          this.handleNext(e);
+        }
+        if (x < 0) {
+          this.handlePrev(e);
+        }
       }
     }
+    if(x >= 0) {
+      var translate = x - (this.COVER_WIDTH * this.SWIPES);
+    } else {
+      var translate = x + (this.COVER_WIDTH * this.SWIPES);
+    }
+    this.refs.swipeable.getDOMNode().style.webkitTransform = "translate(" + 0 + "px)"
     this.SWIPES = 1;
   },
   render: function(){
@@ -76,7 +86,8 @@ var Coverflow = React.createClass({
             onSwipingLeft={this.handleLeft}
             onSwipingRight={this.handleRight}
             onSwiped={this.handleSwiped}
-            flickThreshold={2}>
+            flickThreshold={2}
+            ref="swipeable">
             <ul>
               {covers}
             </ul>
