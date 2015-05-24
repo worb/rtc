@@ -11,7 +11,7 @@ var Coverflow = React.createClass({
   },
   componentWillMount: function() {
     this.COVER_WIDTH = 400 + 32;
-    this.NUM_COVERS = parseInt(window.innerWidth / this.COVER_WIDTH) + 1;
+    this.NUM_COVERS = parseInt(window.innerWidth / this.COVER_WIDTH) + 2;
     this.DRAG_EVENT = false;
   },
   handleCoverClick: function(key) {
@@ -25,17 +25,17 @@ var Coverflow = React.createClass({
   },
   handlePrev: function() {
     if(this.state.coverIndex > 0) {
-      this.setState({coverIndex: this.state.index--});
+      this.setState({coverIndex: this.state.coverIndex-1});
     }
   },
   handleNext: function() {
     if(this.state.coverIndex < (this.props.books.length - 1)) {
-      this.setState({index: this.state.coverIndex++});
+      this.setState({coverIndex: this.state.coverIndex+1});
     }
   },
   render: function(){
     if(this.state.selected === null) {
-      covers = this.props.books.map(function(book, i){
+      covers = this.props.books.slice(this.state.coverIndex, this.NUM_COVERS + this.state.coverIndex).map(function(book, i){
         return (
           <Cover book={book} key={i} rKey={i} handleClick={this.handleCoverClick} />
           )
@@ -45,6 +45,7 @@ var Coverflow = React.createClass({
             <ul>
               {covers}
             </ul>
+            <a onClick={this.handlePrev}>Prev</a> | <a onClick={this.handleNext}>Next</a>
           </div>
         );
     } else {

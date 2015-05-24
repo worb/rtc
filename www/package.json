@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/worb/reactor",
   "dependencies": {
-    "react": "^0.13.3"
+    "react": "^0.13.3",
+    "react-swipe": "^2.1.0",
+    "swipe-js-iso": "^2.0.1"
   },
   "devDependencies": {
     "browserify": "^10.2.1",

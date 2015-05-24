@@ -134,6 +134,9 @@ a:focus,
 a:hover {
   text-decoration: none;
 }
+body {
+  overflow: hidden;
+}
 .books {
   text-align: center;
 }
