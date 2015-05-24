@@ -1,5 +1,6 @@
 var Cover = require('./Cover');
 var Internal = require('./Internal');
+var Swipeable = require('react-swipeable');
 
 var Coverflow = React.createClass({
   getInitialState: function() {
@@ -36,6 +37,22 @@ var Coverflow = React.createClass({
       this.setState({coverIndex: this.state.coverIndex+1});
     }
   },
+  handleLeft: function(e, x) {
+    console.log(x);
+    if(x > this.COVER_WIDTH) {
+      console.log(x)
+    }
+  },
+  handleSwipe: function(e, x, y, isFlick) {
+    if(isFlick) {
+      if(x > 0) {
+        this.handleNext(e);
+      }
+      if (x < 0) {
+        this.handlePrev(e);
+      }
+    }
+  },
   render: function(){
     if(this.state.selected === null) {
       covers = this.props.books.slice(this.state.coverIndex, this.NUM_COVERS + this.state.coverIndex).map(function(book, i){
@@ -45,9 +62,14 @@ var Coverflow = React.createClass({
       }, this);
         return (
           <div className="books">
+            <Swipeable
+            onSwipingLeft={this.handleLeft}
+            onSwiped={this.handleSwipe}
+            flickThreshold={2}>
             <ul>
               {covers}
             </ul>
+            </Swipeable>
             <br /><br />
             <a href="#" onClick={this.handlePrev}>Prev</a> | <a href="#" onClick={this.handleNext}>Next</a>
           </div>

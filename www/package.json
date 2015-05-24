@@ -19,6 +19,7 @@
   "dependencies": {
     "react": "^0.13.3",
     "react-swipe": "^2.1.0",
+    "react-swipeable": "^3.0.2",
     "swipe-js-iso": "^2.0.1"
   },
   "devDependencies": {
