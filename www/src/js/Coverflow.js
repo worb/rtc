@@ -20,15 +20,18 @@ var Coverflow = React.createClass({
     }
     this.DRAG_EVENT = false;
   },
-  handleCoverExit: function() {
+  handleCoverExit: function(e) {
+    e.preventDefault();
     this.setState({selected: null});
   },
-  handlePrev: function() {
+  handlePrev: function(e) {
+    e.preventDefault();
     if(this.state.coverIndex > 0) {
       this.setState({coverIndex: this.state.coverIndex-1});
     }
   },
-  handleNext: function() {
+  handleNext: function(e) {
+    e.preventDefault();
     if(this.state.coverIndex < (this.props.books.length - 1)) {
       this.setState({coverIndex: this.state.coverIndex+1});
     }
@@ -37,7 +40,7 @@ var Coverflow = React.createClass({
     if(this.state.selected === null) {
       covers = this.props.books.slice(this.state.coverIndex, this.NUM_COVERS + this.state.coverIndex).map(function(book, i){
         return (
-          <Cover book={book} key={i} rKey={i} handleClick={this.handleCoverClick} />
+          <Cover book={book} key={i} rKey={i + this.state.coverIndex} handleClick={this.handleCoverClick} />
           )
       }, this);
         return (
@@ -45,13 +48,16 @@ var Coverflow = React.createClass({
             <ul>
               {covers}
             </ul>
-            <a onClick={this.handlePrev}>Prev</a> | <a onClick={this.handleNext}>Next</a>
+            <br /><br />
+            <a href="#" onClick={this.handlePrev}>Prev</a> | <a href="#" onClick={this.handleNext}>Next</a>
           </div>
         );
     } else {
       return (
         <div className="books">
-          <a onClick={this.handleCoverExit}>X</a>
+        <br /><br />
+          <a href="#" onClick={this.handleCoverExit}>X</a>
+          <br /><br />
           <Internal book={this.props.books[this.state.selected]} handleExit={this.handleCoverExit} handleClick={this.handleCoverClick} />
         </div>
       )

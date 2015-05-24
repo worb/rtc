@@ -134,10 +134,9 @@ a:focus,
 a:hover {
   text-decoration: none;
 }
-body {
-  overflow: hidden;
-}
 .books {
+  position: relative;
+  overflow: hidden;
   text-align: center;
 }
 .books ul {
