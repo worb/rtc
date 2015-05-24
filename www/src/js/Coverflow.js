@@ -14,6 +14,7 @@ var Coverflow = React.createClass({
     this.COVER_WIDTH = 400 + 32;
     this.NUM_COVERS = parseInt(window.innerWidth / this.COVER_WIDTH) + 2;
     this.DRAG_EVENT = false;
+    this.SWIPES = 1;
   },
   handleCoverClick: function(key) {
     if(this.DRAG_EVENT === false) {
@@ -26,7 +27,7 @@ var Coverflow = React.createClass({
     this.setState({selected: null});
   },
   handlePrev: function(e) {
-    e.preventDefault();
+    e.preventDefault(e);
     if(this.state.coverIndex > 0) {
       this.setState({coverIndex: this.state.coverIndex-1});
     }
@@ -39,11 +40,19 @@ var Coverflow = React.createClass({
   },
   handleLeft: function(e, x) {
     console.log(x);
-    if(x > this.COVER_WIDTH) {
-      console.log(x)
+    if(x > this.COVER_WIDTH * this.SWIPES) {
+      this.handleNext(e);
+      this.SWIPES++;
     }
   },
-  handleSwipe: function(e, x, y, isFlick) {
+  handleRight: function(e, x) {
+    console.log(x);
+    if(x > this.COVER_WIDTH * this.SWIPES) {
+      this.handlePrev(e);
+      this.SWIPES++
+    }
+  },
+  handleSwiped: function(e, x, y, isFlick) {
     if(isFlick) {
       if(x > 0) {
         this.handleNext(e);
@@ -52,6 +61,7 @@ var Coverflow = React.createClass({
         this.handlePrev(e);
       }
     }
+    this.SWIPES = 1;
   },
   render: function(){
     if(this.state.selected === null) {
@@ -64,7 +74,8 @@ var Coverflow = React.createClass({
           <div className="books">
             <Swipeable
             onSwipingLeft={this.handleLeft}
-            onSwiped={this.handleSwipe}
+            onSwipingRight={this.handleRight}
+            onSwiped={this.handleSwiped}
             flickThreshold={2}>
             <ul>
               {covers}
