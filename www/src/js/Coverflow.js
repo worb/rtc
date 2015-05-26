@@ -14,7 +14,10 @@ var Coverflow = React.createClass({
   },
   componentWillMount: function() {
     this.COVER_WIDTH = 400 + 32;
-    this.NUM_COVERS = Math.round(window.innerWidth / this.COVER_WIDTH) + 1;
+    this.WIDTH = window.innerWidth;
+    this.NUM_COVERS = Math.round(this.WIDTH / this.COVER_WIDTH) + 1;
+    this.OFFSET = ((this.WIDTH % this.COVER_WIDTH)) / 2;
+    console.log(this.OFFSET);
     this.TRANSLATE = Math.round(- (this.COVER_WIDTH * 2) + (this.COVER_WIDTH / this.NUM_COVERS));
     this.DRAG_EVENT = false;
     this.SWIPES = 1;
@@ -69,7 +72,8 @@ var Coverflow = React.createClass({
 
   },
   snapTo: function(translation) {
-    var snap = Math.round(translation / this.COVER_WIDTH) * this.COVER_WIDTH;
+
+    var snap = (Math.round(translation / this.COVER_WIDTH) * this.COVER_WIDTH) + this.OFFSET;
     this.refs.swipeable.getDOMNode().style.webkitTransform = "translate(" + snap + "px)";
     this.setState({translate: snap});
   },
