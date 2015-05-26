@@ -39,35 +39,39 @@ var Coverflow = React.createClass({
   },
   handlePrev: function(e) {
     e.preventDefault(e);
-    if(this.state.coverIndex > this.state.coverIndex-1) {
-      this.setState({coverIndex: this.state.coverIndex-1});
-    } else {
-      this.setState({coverIndex: this.state.coverIndex-1});
-    }
-  },
-  handleNext: function(e, cover_moves) {
-    if(!cover_moves) { cover_moves = 1; }
 
+  },
+  handleNext: function(e) {
+    e.preventDefault(e);
+
+  },
+  handleLoad: function(e, translation) {
     e.preventDefault();
-    this.setState({coverIndex: this.state.coverIndex+cover_moves});
+
+    if(!translation) {
+      cover_moves = 1;
+    } else {
+      cover_moves = Math.round(Math.abs(translation) / (this.COVER_WIDTH / this.NUM_COVERS));
+    }
+
+    if(cover_moves > 0) {
+      this.setState({coverIndex: this.state.coverIndex+cover_moves});
+    }
   },
   handleLeft: function(e, x) {
     var translate = this.state.translate - x;
     this.refs.swipeable.getDOMNode().style.webkitTransform = "translate(" + translate + "px)";
-    /*if(x > this.COVER_WIDTH * this.SWIPES) {
-      console.log(x - (this.COVER_WIDTH * this.SWIPES));
-      this.handleNext(e);
-      this.SWIPES++;
-    }*/
+
   },
   handleRight: function(e, x) {
     var translate = this.state.translate + (x);
     this.refs.swipeable.getDOMNode().style.webkitTransform = "translate(" + translate + "px)";
-    /*if(x > this.COVER_WIDTH * this.SWIPES) {
-      console.log(x - (this.COVER_WIDTH * this.SWIPES));
-      this.handlePrev(e);
-      this.SWIPES++
-    }*/
+
+  },
+  snapTo: function(translation) {
+    var snap = Math.round(translation / this.COVER_WIDTH) * this.COVER_WIDTH;
+    this.refs.swipeable.getDOMNode().style.webkitTransform = "translate(" + snap + "px)";
+    this.setState({translate: snap});
   },
   handleSwiped: function(e, x, y, isFlick) {
     if(isFlick) {
@@ -78,15 +82,13 @@ var Coverflow = React.createClass({
         //this.handlePrev(e);
       }
     }
-    this.setState({translate: -x + this.state.translate});
+    var translation = -x + this.state.translate;
 
-    cover_moves = Math.round(Math.abs(x) / (this.COVER_WIDTH / this.NUM_COVERS));
+    //this.setState({translate: -x + this.state.translate});
+    this.snapTo(translation);
 
-    if(cover_moves > 0) {
-      this.handleNext(e, cover_moves);
-    }
-    //this.refs.swipeable.getDOMNode().style.webkitTransform = "translate(" + this.TRANSLATE + "px)"
-    this.SWIPES = 1;
+    this.handleLoad(e, x);
+
   },
   render: function(){
     if(this.state.selected === null) {
@@ -104,7 +106,7 @@ var Coverflow = React.createClass({
             onSwiped={this.handleSwiped}
             flickThreshold={0}
             ref="swipeable"
-            style={this.state.transition}>
+            style={{WebkitTransition: '-webkit-transform 100ms ease-out'}}>
             <ul>
               {covers}
             </ul>
