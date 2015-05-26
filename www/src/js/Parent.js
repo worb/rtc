@@ -6,50 +6,75 @@ var Parent = React.createClass({
       largeTranslate: 0,
       smallTranslate: 0,
       smallPos: 0,
-      largePos: 0
+      largePos: 0,
+      largeIndex: 0,
+      smallIndex: 0
     }
   },
   componentWillMount: function() {
-    this.SMALL_WIDTH = 120;
-    this.LARGE_WIDTH = 300;
+    this.WIDTH = window.innerWidth;
+
+    this.SMALL_WIDTH = 120 + 32; // second is padding + margin
+    this.LARGE_WIDTH = 300 + 32; //second padding + margin
+
+    this.SMALL_COVERS = Math.round(this.WIDTH / this.SMALL_WIDTH) + 1;
+    this.LARGE_COVERS = Math.round(this.WIDTH / this.LARGE_WIDTH) + 1;
   },
   handleMove: function(amount, key, pos) {
+
     if(key == 'small') {
+      var small = amount;
       var large = (this.LARGE_WIDTH / this.SMALL_WIDTH) * amount;
-      this.setState({smallTranslate: amount, largeTranslate: large})
-      if(pos) {
-        this.setState({smallPos: amount, largePos: large})
-      }
     }
     if(key == 'large') {
       var small = (this.SMALL_WIDTH / this.LARGE_WIDTH) * amount;
-      this.setState({smallTranslate: small, largeTranslate: amount})
-      if(pos) {
-        this.setState({smallPos: small, largePos: amount})
-      }
+      var large = amount;
     }
-    this.setState({translate: amount});
+
+    this.setState({smallTranslate: small, largeTranslate: large});
+
+    if(pos) {
+      this.setState({smallPos: small, largePos: large})
+    }
+
+  },
+  handleIndex: function(amount, key) {
+    if(key == 'small') {
+      var cover_moves = Math.round(Math.abs(amount) / (this.SMALL_WIDTH / this.SMALL_COVERS));
+    }
+    if(key == 'large') {
+      var cover_moves = Math.round(Math.abs(amount) / (this.LARGE_WIDTH / this.LARGE_COVERS));
+    }
+    this.setState({largeIndex: this.state.largeIndex + cover_moves, smallIndex: this.state.smallIndex + cover_moves});
   },
   render: function(){
     return (
       <div>
         <div className="large">
           <Coverflow
-          books={this.props.books}
-          width={this.LARGE_WIDTH}
-          handleMove={this.handleMove}
           rKey={"large"}
+          books={this.props.books}
+          WIDTH={this.WIDTH}
+          COVER_WIDTH={this.LARGE_WIDTH}
+          NUM_COVERS={this.LARGE_COVERS}
+          handleMove={this.handleMove}
+          handleIndex={this.handleIndex}
           translate={this.state.largeTranslate}
-          lastPos={this.state.largePos} />
+          lastPos={this.state.largePos}
+          coverIndex={this.state.largeIndex} />
         </div>
         <div className="small">
           <Coverflow
-          books={this.props.books}
-          width={this.SMALL_WIDTH}
-          handleMove={this.handleMove}
           rKey={"small"}
+          books={this.props.books}
+          WIDTH={this.WIDTH}
+          COVER_WIDTH={this.SMALL_WIDTH}
+          NUM_COVERS={this.SMALL_COVERS}
+          handleMove={this.handleMove}
+          handleIndex={this.handleIndex}
           translate={this.state.smallTranslate}
-          lastPos={this.state.smallPos} />
+          lastPos={this.state.smallPos}
+          coverIndex={this.state.smallIndex} />
         </div>
       </div>
     );

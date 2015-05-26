@@ -6,18 +6,10 @@ var Coverflow = React.createClass({
   getInitialState: function() {
     return {
       selected: null,
-      coverIndex: 0,
-      transition: {}
     }
   },
   componentWillMount: function() {
-    this.COVER_WIDTH = this.props.width + 32;
-    this.WIDTH = window.innerWidth;
-    this.NUM_COVERS = Math.round(this.WIDTH / this.COVER_WIDTH) + 1;
-    this.OFFSET = ((this.WIDTH % this.COVER_WIDTH)) / 2;
-    this.TRANSLATE = Math.round(- (this.COVER_WIDTH * 2) + (this.COVER_WIDTH / this.NUM_COVERS));
-    this.DRAG_EVENT = false;
-    this.SWIPES = 1;
+    this.OFFSET = ((this.props.WIDTH % this.props.COVER_WIDTH)) / 2;
   },
   componentDidMount: function() {
     this.refs.swipeable.getDOMNode().style.webkitTransform = "translate(" + this.props.translate + "px)";
@@ -28,46 +20,19 @@ var Coverflow = React.createClass({
     }
   },
   handleCoverClick: function(key) {
-    if(this.DRAG_EVENT === false) {
-      this.setState({selected: key});
-    }
-    this.DRAG_EVENT = false;
+    this.setState({selected: key});
   },
   handleCoverExit: function(e) {
     e.preventDefault();
     this.setState({selected: null});
   },
-  handlePrev: function(e) {
-    e.preventDefault(e);
-
-  },
-  handleNext: function(e) {
-    e.preventDefault(e);
-
-  },
-  handleLoad: function(e, translation) {
-    e.preventDefault();
-
-    if(!translation) {
-      cover_moves = 1;
-    } else {
-      cover_moves = Math.round(Math.abs(translation) / (this.COVER_WIDTH / this.NUM_COVERS));
-    }
-
-    if(cover_moves > 0) {
-      this.setState({coverIndex: this.state.coverIndex+cover_moves});
-    }
-  },
   handleLeft: function(e, x) {
     var translation = -(x) + this.props.lastPos;
     this.props.handleMove(translation, this.props.rKey, false);
-    console.log(this.props.translate, this.props.lastPos);
-    //this.refs.swipeable.getDOMNode().style.webkitTransform = "translate(" + translate + "px)";
   },
   handleRight: function(e, x) {
     var translation = (x) + this.props.lastPos;
     this.props.handleMove(translation, this.props.rKey, false);
-    //this.refs.swipeable.getDOMNode().style.webkitTransform = "translate(" + translate + "px)";
   },
   handleSwiped: function(e, x, y, isFlick) {
     if(isFlick) {
@@ -80,18 +45,16 @@ var Coverflow = React.createClass({
     }
     var translation = -(x) + this.props.lastPos;
     this.snapTo(translation);
-    this.handleLoad(e, x);
+    this.props.handleIndex(x, this.props.rKey);
   },
   snapTo: function(translation) {
-    var snap = (Math.round(translation / this.COVER_WIDTH) * this.COVER_WIDTH) + this.OFFSET;
-
-    //this.refs.swipeable.getDOMNode().style.webkitTransform = "translate(" + snap + "px)";
-    this.props.handleMove(translation, this.props.rKey, true);
-    console.log(this.props.translate, this.props.lastPos);
+    var snap = (Math.round(translation / this.props.COVER_WIDTH) * this.props.COVER_WIDTH) + this.OFFSET;
+    console.log(snap);
+    this.props.handleMove(snap, this.props.rKey, true);
   },
   render: function(){
     if(this.state.selected === null) {
-      covers = this.props.books.slice(0, this.state.coverIndex + this.NUM_COVERS + 2).map(function(book, i){
+      covers = this.props.books.slice(0, this.props.coverIndex + this.props.NUM_COVERS + 2).map(function(book, i){
         return (
           <Cover book={book} key={i} rKey={i} handleClick={this.handleCoverClick} />
           )
