@@ -6,15 +6,16 @@ var Coverflow = React.createClass({
   getInitialState: function() {
     return {
       selected: null,
-      coverIndex: 5,
+      coverIndex: 0,
       coverLeft: 0,
-      translate: 0
+      translate: 0,
+      transition: {}
     }
   },
   componentWillMount: function() {
     this.COVER_WIDTH = 400 + 32;
-    this.NUM_COVERS = parseInt(window.innerWidth / this.COVER_WIDTH) + 2;
-    this.TRANSLATE = parseInt(- (this.COVER_WIDTH * 2) + (this.COVER_WIDTH / this.NUM_COVERS));
+    this.NUM_COVERS = Math.round(window.innerWidth / this.COVER_WIDTH) + 1;
+    this.TRANSLATE = Math.round(- (this.COVER_WIDTH * 2) + (this.COVER_WIDTH / this.NUM_COVERS));
     this.DRAG_EVENT = false;
     this.SWIPES = 1;
   },
@@ -38,17 +39,17 @@ var Coverflow = React.createClass({
   },
   handlePrev: function(e) {
     e.preventDefault(e);
-    if(this.state.coverIndex > 2) {
+    if(this.state.coverIndex > this.state.coverIndex-1) {
       this.setState({coverIndex: this.state.coverIndex-1});
     } else {
-      this.setState({coverIndex: 2});
+      this.setState({coverIndex: this.state.coverIndex-1});
     }
   },
-  handleNext: function(e) {
+  handleNext: function(e, cover_moves) {
+    if(!cover_moves) { cover_moves = 1; }
+
     e.preventDefault();
-    if(this.state.coverIndex < (this.props.books.length - 1)) {
-      this.setState({coverIndex: this.state.coverIndex+1});
-    }
+    this.setState({coverIndex: this.state.coverIndex+cover_moves});
   },
   handleLeft: function(e, x) {
     var translate = this.state.translate - x;
@@ -78,12 +79,18 @@ var Coverflow = React.createClass({
       }
     }
     this.setState({translate: -x + this.state.translate});
+
+    cover_moves = Math.round(Math.abs(x) / (this.COVER_WIDTH / this.NUM_COVERS));
+
+    if(cover_moves > 0) {
+      this.handleNext(e, cover_moves);
+    }
     //this.refs.swipeable.getDOMNode().style.webkitTransform = "translate(" + this.TRANSLATE + "px)"
     this.SWIPES = 1;
   },
   render: function(){
     if(this.state.selected === null) {
-      covers = this.props.books.map(function(book, i){
+      covers = this.props.books.slice(0, this.state.coverIndex + this.NUM_COVERS + 2).map(function(book, i){
         return (
           <Cover book={book} key={i} rKey={i} handleClick={this.handleCoverClick} />
           )
@@ -97,7 +104,7 @@ var Coverflow = React.createClass({
             onSwiped={this.handleSwiped}
             flickThreshold={0}
             ref="swipeable"
-            style={{WebKitTransition: "-webkit-transform .5s ease 0"}}>
+            style={this.state.transition}>
             <ul>
               {covers}
             </ul>
