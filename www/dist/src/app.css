@@ -134,27 +134,31 @@ a:focus,
 a:hover {
   text-decoration: none;
 }
-.books {
+.large,
+.small {
   position: relative;
   overflow: hidden;
   text-align: center;
 }
-.books ul {
+.large ul,
+.small ul {
   width: 100%;
   margin: 0;
   list-style: none;
   white-space: nowrap;
   overflow-x: visible;
 }
-.books ul li {
+.large ul li,
+.small ul li {
   display: inline;
 }
-.books ul li img {
+.large ul li img,
+.small ul li img {
   width: 300px;
   height: auto;
   -webkit-user-drag: none;
   margin: 0 1rem;
 }
-.books ul.little li img {
+.small ul li img {
   width: 120px;
 }

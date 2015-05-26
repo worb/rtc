@@ -1,5 +1,5 @@
 window.React = require('react');
-var Coverflow = require('./Coverflow');
+var Parent = require('./Parent');
 var books = require('./books');
 var _ = require('lodash');
 
@@ -30,4 +30,4 @@ function compareTitles(a, b) {
   }
 }
 
-React.render(<Coverflow books={books} />, document.getElementById('app'));
+React.render(<Parent books={books} />, document.getElementById('app'));

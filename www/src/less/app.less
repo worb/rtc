@@ -3,7 +3,7 @@
 @image-width: 300px;
 @base-margin: 1.0rem;
 
-.books {
+.large, .small {
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -24,10 +24,13 @@
       -webkit-user-drag: none;
       margin: 0 @base-margin;
     }
-    &.little {
-      li img {
-        width: 120px;
-      }
+  }
+}
+
+.small {
+  ul {
+    li img {
+      width: 120px;
     }
   }
 }
