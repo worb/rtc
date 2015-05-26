@@ -1,13 +1,13 @@
 @import '_reset.less';
 
-@image-width: 400px;
+@image-width: 300px;
 @base-margin: 1.0rem;
 
 .books {
   position: relative;
   overflow: hidden;
   text-align: center;
-  .swipeable {
+  .large {
   }
   ul {
     width: 100%;
@@ -23,6 +23,11 @@
       height: auto;
       -webkit-user-drag: none;
       margin: 0 @base-margin;
+    }
+    &.little {
+      li img {
+        width: 120px;
+      }
     }
   }
 }
