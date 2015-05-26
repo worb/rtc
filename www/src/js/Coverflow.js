@@ -106,7 +106,7 @@ var Coverflow = React.createClass({
             onSwiped={this.handleSwiped}
             flickThreshold={0}
             ref="swipeable"
-            style={{WebkitTransition: '-webkit-transform 100ms ease-out'}}>
+            style={{WebkitTransition: '-webkit-transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275)'}}>
             <ul>
               {covers}
             </ul>
