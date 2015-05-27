@@ -20,7 +20,7 @@ var Coverflow = React.createClass({
     }
   },
   handleCoverClick: function(key) {
-    this.setState({selected: key});
+    this.props.handleClick({selected: key});
   },
   handleCoverExit: function(e) {
     e.preventDefault();
@@ -52,40 +52,29 @@ var Coverflow = React.createClass({
     this.props.handleMove(snap, this.props.rKey, true);
   },
   render: function(){
-    if(this.state.selected === null) {
-      covers = this.props.books.slice(0, this.props.coverIndex + this.props.NUM_COVERS + 2).map(function(book, i){
-        return (
-          <Cover book={book} key={i} rKey={i} handleClick={this.handleCoverClick} />
-          )
-      }, this);
-        return (
-          <Swipeable
-          className="swipeable"
-          onSwipingLeft={this.handleLeft}
-          onSwipingRight={this.handleRight}
-          onSwiped={this.handleSwiped}
-          flickThreshold={0}
-          delta={0}
-          ref="swipeable"
-          style={{
-            WebkitTransform: "translate(" + this.props.translate + "px)",
-            //WebkitTransition: '-webkit-transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275)'
-            }}>
-          <ul>
-            {covers}
-          </ul>
-          </Swipeable>
-        );
-    } else {
+    covers = this.props.books.slice(0, this.props.coverIndex + this.props.NUM_COVERS + 2).map(function(book, i){
       return (
-        <div className="books">
-        <br /><br />
-          <a href="#" onClick={this.handleCoverExit}>X</a>
-          <br /><br />
-          <Internal book={this.props.books[this.state.selected]} handleExit={this.handleCoverExit} handleClick={this.handleCoverClick} />
-        </div>
-      )
-    }
+        <Cover book={book} key={i} rKey={i} handleClick={this.handleCoverClick} />
+        )
+    }, this);
+      return (
+        <Swipeable
+        className="swipeable"
+        onSwipingLeft={this.handleLeft}
+        onSwipingRight={this.handleRight}
+        onSwiped={this.handleSwiped}
+        flickThreshold={0}
+        delta={0}
+        ref="swipeable"
+        style={{
+          WebkitTransform: "translate(" + this.props.translate + "px)",
+          //WebkitTransition: '-webkit-transform 100ms linear'
+          }}>
+        <ul>
+          {covers}
+        </ul>
+        </Swipeable>
+      );
   }
 });
 

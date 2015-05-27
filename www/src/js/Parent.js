@@ -8,7 +8,8 @@ var Parent = React.createClass({
       smallPos: 0,
       largePos: 0,
       largeIndex: 0,
-      smallIndex: 0
+      smallIndex: 0,
+      selected: null
     }
   },
   componentWillMount: function() {
@@ -46,6 +47,9 @@ var Parent = React.createClass({
       var cover_moves = Math.round(Math.abs(amount) / (this.LARGE_WIDTH / this.LARGE_COVERS));
     }
     this.setState({largeIndex: this.state.largeIndex + cover_moves, smallIndex: this.state.smallIndex + cover_moves});
+  },
+  handleClick: function(index) {
+    this.setState({selected: index});
   },
   render: function(){
     return (
