@@ -9,6 +9,12 @@ var Internal = React.createClass({
       selectedCover: 0
     }
   },
+  componentWillMount: function() {
+    document.body.style.backgroundColor="#ccc"
+  },
+  componentWillUnmount: function() {
+    document.body.style.backgroundColor="#fff"
+  },
   handleCoverClick: function(key) {
     this.setState({selectedCover: key});
   },
