@@ -1,5 +1,5 @@
 var books = [
-  /*{
+  {
     "name" : "",
     "covers" : [
       {"filename": "", "artist": ""}
@@ -12,7 +12,21 @@ var books = [
       {"filename": "", "artist": ""}
     ],
     "author" : ""
-  },*/
+  },
+  {
+    "name" : "",
+    "covers" : [
+      {"filename": "", "artist": ""}
+    ],
+    "author" : ""
+  },
+  {
+    "name" : "",
+    "covers" : [
+      {"filename": "", "artist": ""}
+    ],
+    "author" : ""
+  },
   {
     "name":"Call of the Wild",
     "covers":[

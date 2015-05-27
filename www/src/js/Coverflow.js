@@ -6,6 +6,8 @@ var Coverflow = React.createClass({
   getInitialState: function() {
     return {
       selected: null,
+      left: 0,
+      right: this.props.NUM_COVERS + this.props.BUFFER
     }
   },
   componentWillMount: function() {
@@ -45,14 +47,23 @@ var Coverflow = React.createClass({
     }
     var translation = -(x) + this.props.lastPos;
     this.snapTo(translation);
-    this.props.handleIndex(x, this.props.rKey);
+    //this.props.handleIndex(x, this.props.rKey);
   },
   snapTo: function(translation) {
     var snap = (Math.round(translation / this.props.COVER_WIDTH) * this.props.COVER_WIDTH) + this.OFFSET;
-    this.props.handleMove(snap, this.props.rKey, true);
+    this.props.handleMove(this.OFFSET - this.props.COVER_WIDTH * this.props.BUFFER, this.props.rKey, true);
+    var move = (translation - this.props.lastPos) / this.props.COVER_WIDTH;
+    move = Math.round(-move);
+      this.setState(function(prev, props){
+        if(prev.left + move <= 0) {
+          return {left: 0, right: this.props.NUM_COVERS + this.props.BUFFER};
+        } else {
+          return { left: prev.left + move, right: prev.right + move }
+        }
+      });
   },
   render: function(){
-    covers = this.props.books.slice(0, this.props.coverIndex + this.props.NUM_COVERS + 2).map(function(book, i){
+    covers = this.props.books.slice(this.state.left, this.state.right + this.props.BUFFER).map(function(book, i){
       return (
         <Cover book={book} key={i} rKey={i} handleClick={this.handleCoverClick} />
         )
@@ -68,7 +79,7 @@ var Coverflow = React.createClass({
         ref="swipeable"
         style={{
           WebkitTransform: "translate(" + this.props.translate + "px)",
-          WebkitTransition: '-webkit-transform 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+          //WebkitTransition: '-webkit-transform 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275)'
           }}>
         <ul>
           {covers}
