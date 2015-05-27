@@ -8,8 +8,6 @@ var Parent = React.createClass({
       largePos: -(300 + 32) * 4,
       smallPos: -(120 + 32) * 4,
       left: 0,
-      largeRight: 0,
-      smallRight: 0,
       selected: null
     }
   },
@@ -51,6 +49,10 @@ var Parent = React.createClass({
   },
   handleClick: function(index) {
     this.setState({selected: index});
+    console.log(books[index].name);
+  },
+  handleExit: function() {
+    this.setState({selected: null});
   },
   render: function(){
     return (
@@ -65,6 +67,7 @@ var Parent = React.createClass({
           BUFFER={4}
           handleMove={this.handleMove}
           handleIndex={this.handleIndex}
+          handleClick={this.handleClick}
           translate={this.state.largeTranslate}
           lastPos={this.state.largePos}
           coverIndex={this.state.largeIndex}
@@ -80,6 +83,7 @@ var Parent = React.createClass({
           BUFFER={4}
           handleMove={this.handleMove}
           handleIndex={this.handleIndex}
+          handleClick={this.handleClick}
           translate={this.state.smallTranslate}
           lastPos={this.state.smallPos}
           coverIndex={this.state.smallIndex}
