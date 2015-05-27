@@ -7,7 +7,7 @@ var Coverflow = React.createClass({
     return {
       selected: null,
       left: 0,
-      right: this.props.NUM_COVERS + this.props.BUFFER + 2
+      right: this.props.NUM_COVERS + this.props.BUFFER + 4
     }
   },
   componentWillMount: function() {
@@ -58,7 +58,7 @@ var Coverflow = React.createClass({
     this.props.handleIndex(move);
   },
   render: function(){
-    covers = this.props.books.slice(this.props.left, this.props.left + this.DISTANCE + 2).map(function(book, i){
+    covers = this.props.books.slice(this.props.left, this.props.left + this.DISTANCE + 4).map(function(book, i){
       return (
         <Cover book={book} key={i} rKey={i} handleClick={this.handleCoverClick} />
         )

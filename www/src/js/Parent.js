@@ -3,10 +3,10 @@ var Coverflow = require('./Coverflow');
 var Parent = React.createClass({
   getInitialState: function() {
     return {
-      largeTranslate: -(300 + 32) * 4,
-      smallTranslate: -(120 + 32) * 4,
-      largePos: -(300 + 32) * 4,
-      smallPos: -(120 + 32) * 4,
+      largeTranslate: -(300 + 32) * 6,
+      smallTranslate: -(120 + 32) * 6,
+      largePos: -(300 + 32) * 6,
+      smallPos: -(120 + 32) * 6,
       left: 0,
       selected: null
     }
@@ -64,7 +64,7 @@ var Parent = React.createClass({
           WIDTH={this.WIDTH}
           COVER_WIDTH={this.LARGE_WIDTH}
           NUM_COVERS={this.LARGE_COVERS}
-          BUFFER={4}
+          BUFFER={6}
           handleMove={this.handleMove}
           handleIndex={this.handleIndex}
           handleClick={this.handleClick}
@@ -80,7 +80,7 @@ var Parent = React.createClass({
           WIDTH={this.WIDTH}
           COVER_WIDTH={this.SMALL_WIDTH}
           NUM_COVERS={this.SMALL_COVERS}
-          BUFFER={4}
+          BUFFER={6}
           handleMove={this.handleMove}
           handleIndex={this.handleIndex}
           handleClick={this.handleClick}
