@@ -60,7 +60,7 @@ var Coverflow = React.createClass({
   render: function(){
     covers = this.props.books.slice(this.props.left, this.props.left + this.DISTANCE + 4).map(function(book, i){
       return (
-        <Cover book={book} key={i} rKey={i} handleClick={this.handleCoverClick} />
+        <Cover book={book} key={i} rKey={i + this.props.left} handleClick={this.handleCoverClick} />
         )
     }, this);
       return (
