@@ -18,7 +18,6 @@ var Internal = React.createClass({
     var covers = this.props.book.covers.map(function(cover, i){
       var isSelected = false;
       if(i == this.state.selected) {
-        console.log(cover);
         isSelected = true;
       }
       return (<Cover cover={cover} key={i} rKey={i} handleClick={this.handleCoverClick} isSelected={isSelected} />)
