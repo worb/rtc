@@ -49,7 +49,6 @@ var Coverflow = React.createClass({
   },
   snapTo: function(translation) {
     var snap = (Math.round(translation / this.props.COVER_WIDTH) * this.props.COVER_WIDTH) + this.OFFSET;
-    console.log(snap);
     this.props.handleMove(snap, this.props.rKey, true);
   },
   render: function(){
@@ -66,8 +65,12 @@ var Coverflow = React.createClass({
           onSwipingRight={this.handleRight}
           onSwiped={this.handleSwiped}
           flickThreshold={0}
+          delta={0}
           ref="swipeable"
-          style={{WebkitTransform: "translate(" + this.props.translate + "px)", WebkitTransition: '-webkit-transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275)'}}>
+          style={{
+            WebkitTransform: "translate(" + this.props.translate + "px)",
+            //WebkitTransition: '-webkit-transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+            }}>
           <ul>
             {covers}
           </ul>
