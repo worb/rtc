@@ -2,42 +2,42 @@ var books = [
   {
     "name" : "",
     "covers" : [
-      {"filename": "", "artist": ""}
+      {"filename": "filler.png", "artist": ""}
     ],
     "author" : ""
   },
   {
     "name" : "",
     "covers" : [
-      {"filename": "", "artist": ""}
+      {"filename": "filler.png", "artist": ""}
     ],
     "author" : ""
   },
   {
     "name" : "",
     "covers" : [
-      {"filename": "", "artist": ""}
+      {"filename": "filler.png", "artist": ""}
     ],
     "author" : ""
   },
   {
     "name" : "",
     "covers" : [
-      {"filename": "", "artist": ""}
+      {"filename": "filler.png", "artist": ""}
     ],
     "author" : ""
   },
   {
     "name" : "",
     "covers" : [
-      {"filename": "", "artist": ""}
+      {"filename": "filler.png", "artist": ""}
     ],
     "author" : ""
   },
   {
     "name" : "",
     "covers" : [
-      {"filename": "", "artist": ""}
+      {"filename": "filler.png", "artist": ""}
     ],
     "author" : ""
   },

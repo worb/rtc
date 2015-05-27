@@ -2,6 +2,7 @@ var COVER_PATH = 'rtc_books_resized/';
 
 var Cover = React.createClass({
   handleClick: function(e) {
+    e.preventDefault();
     this.props.handleClick(this.props.rKey);
   },
   render: function(){

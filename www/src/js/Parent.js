@@ -1,4 +1,5 @@
 var Coverflow = require('./Coverflow');
+var Internal = require('./Internal');
 
 var Parent = React.createClass({
   getInitialState: function() {
@@ -49,48 +50,52 @@ var Parent = React.createClass({
   },
   handleClick: function(index) {
     this.setState({selected: index});
-    console.log(this.props.books[index]);
   },
   handleExit: function() {
     this.setState({selected: null});
   },
   render: function(){
-    return (
-      <div>
-        <div className="large">
-          <Coverflow
-          rKey={"large"}
-          books={this.props.books}
-          WIDTH={this.WIDTH}
-          COVER_WIDTH={this.LARGE_WIDTH}
-          NUM_COVERS={this.LARGE_COVERS}
-          BUFFER={6}
-          handleMove={this.handleMove}
-          handleIndex={this.handleIndex}
-          handleClick={this.handleClick}
-          translate={this.state.largeTranslate}
-          lastPos={this.state.largePos}
-          coverIndex={this.state.largeIndex}
-          left={this.state.left} />
+    if(!this.state.selected) {
+      return (
+        <div>
+          <div className="large">
+            <Coverflow
+            rKey={"large"}
+            books={this.props.books}
+            WIDTH={this.WIDTH}
+            COVER_WIDTH={this.LARGE_WIDTH}
+            NUM_COVERS={this.LARGE_COVERS}
+            BUFFER={6}
+            handleMove={this.handleMove}
+            handleIndex={this.handleIndex}
+            handleClick={this.handleClick}
+            translate={this.state.largeTranslate}
+            lastPos={this.state.largePos}
+            coverIndex={this.state.largeIndex}
+            left={this.state.left} />
+          </div>
+          <div className="small">
+            <Coverflow
+            rKey={"small"}
+            books={this.props.books}
+            WIDTH={this.WIDTH}
+            COVER_WIDTH={this.SMALL_WIDTH}
+            NUM_COVERS={this.SMALL_COVERS}
+            BUFFER={6}
+            handleMove={this.handleMove}
+            handleIndex={this.handleIndex}
+            handleClick={this.handleClick}
+            translate={this.state.smallTranslate}
+            lastPos={this.state.smallPos}
+            coverIndex={this.state.smallIndex}
+            left={this.state.left} />
+          </div>
         </div>
-        <div className="small">
-          <Coverflow
-          rKey={"small"}
-          books={this.props.books}
-          WIDTH={this.WIDTH}
-          COVER_WIDTH={this.SMALL_WIDTH}
-          NUM_COVERS={this.SMALL_COVERS}
-          BUFFER={6}
-          handleMove={this.handleMove}
-          handleIndex={this.handleIndex}
-          handleClick={this.handleClick}
-          translate={this.state.smallTranslate}
-          lastPos={this.state.smallPos}
-          coverIndex={this.state.smallIndex}
-          left={this.state.left} />
-        </div>
-      </div>
-    );
+      );
+    } else {
+      return (<Internal book={this.props.books[this.state.selected]} handleExit={this.handleExit} />);
+    }
+
   }
 });
 

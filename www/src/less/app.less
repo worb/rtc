@@ -1,6 +1,7 @@
 @import '_reset.less';
 
 @image-width: 300px;
+@small-width: 120px;
 @base-margin: 1.0rem;
 
 .large, .small {
@@ -31,7 +32,36 @@
 .small {
   ul {
     li img {
-      width: 120px;
+      width: @small-width;
+    }
+  }
+}
+
+.internal {
+  margin: 0 1em;
+  .main {
+    width: @image-width;
+    height: auto;
+    float: left;
+  }
+  .meta {
+    float: left;
+    margin-left: 1em;
+    max-width: 65%;
+  }
+  .covers {
+    ul {
+      margin: 0 auto;
+      text-align: center;
+      li {
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 2px;
+      }
+    }
+    img {
+      width: @small-width;
+      height: auto;
     }
   }
 }

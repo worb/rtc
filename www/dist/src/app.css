@@ -163,3 +163,29 @@ a:hover {
 .small ul li img {
   width: 120px;
 }
+.internal {
+  margin: 0 1em;
+}
+.internal .main {
+  width: 300px;
+  height: auto;
+  float: left;
+}
+.internal .meta {
+  float: left;
+  margin-left: 1em;
+  max-width: 65%;
+}
+.internal .covers ul {
+  margin: 0 auto;
+  text-align: center;
+}
+.internal .covers ul li {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 2px;
+}
+.internal .covers img {
+  width: 120px;
+  height: auto;
+}
