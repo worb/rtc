@@ -68,7 +68,7 @@ var Coverflow = React.createClass({
         ref="swipeable"
         style={{
           WebkitTransform: "translate(" + this.props.translate + "px)",
-          //WebkitTransition: '-webkit-transform 100ms linear'
+          WebkitTransition: '-webkit-transform 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275)'
           }}>
         <ul>
           {covers}
