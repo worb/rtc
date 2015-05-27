@@ -5,10 +5,11 @@ var Parent = React.createClass({
     return {
       largeTranslate: -(300 + 32) * 4,
       smallTranslate: -(120 + 32) * 4,
-      smallPos: -(300 + 32) * 4,
-      largePos: -(120 + 32) * 4,
-      largeIndex: 0,
-      smallIndex: 0,
+      largePos: -(300 + 32) * 4,
+      smallPos: -(120 + 32) * 4,
+      left: 0,
+      largeRight: 0,
+      smallRight: 0,
       selected: null
     }
   },
@@ -39,14 +40,14 @@ var Parent = React.createClass({
     }
 
   },
-  handleIndex: function(amount, key) {
-    if(key == 'small') {
-      var cover_moves = Math.round(Math.abs(amount) / (this.SMALL_WIDTH / this.SMALL_COVERS));
-    }
-    if(key == 'large') {
-      var cover_moves = Math.round(Math.abs(amount) / (this.LARGE_WIDTH / this.LARGE_COVERS));
-    }
-    this.setState({largeIndex: this.state.largeIndex + cover_moves, smallIndex: this.state.smallIndex + cover_moves});
+  handleIndex: function(move) {
+    this.setState(function(prev, props){
+      if(prev.left + move <= 0) {
+        return { left: 0 };
+      } else {
+        return { left: prev.left + move }
+      }
+    });
   },
   handleClick: function(index) {
     this.setState({selected: index});
@@ -61,12 +62,13 @@ var Parent = React.createClass({
           WIDTH={this.WIDTH}
           COVER_WIDTH={this.LARGE_WIDTH}
           NUM_COVERS={this.LARGE_COVERS}
-          BUFFER = {4}
+          BUFFER={4}
           handleMove={this.handleMove}
           handleIndex={this.handleIndex}
           translate={this.state.largeTranslate}
           lastPos={this.state.largePos}
-          coverIndex={this.state.largeIndex} />
+          coverIndex={this.state.largeIndex}
+          left={this.state.left} />
         </div>
         <div className="small">
           <Coverflow
@@ -75,12 +77,13 @@ var Parent = React.createClass({
           WIDTH={this.WIDTH}
           COVER_WIDTH={this.SMALL_WIDTH}
           NUM_COVERS={this.SMALL_COVERS}
-          BUFFER = {4}
+          BUFFER={4}
           handleMove={this.handleMove}
           handleIndex={this.handleIndex}
           translate={this.state.smallTranslate}
           lastPos={this.state.smallPos}
-          coverIndex={this.state.smallIndex} />
+          coverIndex={this.state.smallIndex}
+          left={this.state.left} />
         </div>
       </div>
     );

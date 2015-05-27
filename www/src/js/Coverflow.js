@@ -12,6 +12,7 @@ var Coverflow = React.createClass({
   },
   componentWillMount: function() {
     this.OFFSET = ((this.props.WIDTH % this.props.COVER_WIDTH)) / 2;
+    this.DISTANCE = this.props.NUM_COVERS + this.props.BUFFER;
   },
   componentDidMount: function() {
     this.refs.swipeable.getDOMNode().style.webkitTransform = "translate(" + this.props.translate + "px)";
@@ -54,16 +55,10 @@ var Coverflow = React.createClass({
     this.props.handleMove(this.OFFSET - this.props.COVER_WIDTH * this.props.BUFFER, this.props.rKey, true);
     var move = (translation - this.props.lastPos) / this.props.COVER_WIDTH;
     move = Math.round(-move);
-      this.setState(function(prev, props){
-        if(prev.left + move <= 0) {
-          return {left: 0, right: this.props.NUM_COVERS + this.props.BUFFER};
-        } else {
-          return { left: prev.left + move, right: prev.right + move }
-        }
-      });
+    this.props.handleIndex(move);
   },
   render: function(){
-    covers = this.props.books.slice(this.state.left, this.state.right + this.props.BUFFER).map(function(book, i){
+    covers = this.props.books.slice(this.props.left, this.props.left + this.DISTANCE).map(function(book, i){
       return (
         <Cover book={book} key={i} rKey={i} handleClick={this.handleCoverClick} />
         )
