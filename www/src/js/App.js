@@ -1,4 +1,4 @@
-window.React = require('react');
+window.React = require('react/addons');
 var Parent = require('./Parent');
 var books = require('./books');
 var _ = require('lodash');

@@ -247,6 +247,13 @@ strong {
   font-weight: normal;
   color: #339074;
 }
+.internalCover-enter {
+  opacity: 0.01;
+  transition: opacity 0.5s ease-in;
+}
+.internalCover-enter.internalCover-enter-active {
+  opacity: 1;
+}
 body,
 html {
   overflow-x: hidden;

@@ -1,4 +1,5 @@
 var Cover = require('./Cover');
+var Transition = React.addons.CSSTransitionGroup;
 
 var COVER_PATH = 'rtc_books_resized/';
 
@@ -26,10 +27,12 @@ var Internal = React.createClass({
     return (
       <div className="internal">
         <a href="#" onClick={this.handleExit} className="exit"></a>
+        <Transition name="internalCover">
         <div className="cover">
           <img src={COVER_PATH + this.props.book.covers[this.state.selected].filename} />
           <h4><small>Cover art by</small> {this.props.book.covers[this.state.selected].artist}</h4>
         </div>
+        </Transition>
         <div className="meta">
           <h2>{this.props.book.name}</h2>
           <h3><small>by</small> {this.props.book.author}</h3>
