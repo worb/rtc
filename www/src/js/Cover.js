@@ -14,8 +14,13 @@ var Cover = React.createClass({
       file = COVER_PATH + this.props.book.covers[0].filename;
     }
 
+    var classNames = "";
+    if(this.props.isSelected) {
+      classNames = "selected";
+    }
+
     return (
-      <li onClick={this.handleClick}>
+      <li onClick={this.handleClick} className={classNames}>
         <img src={file} />
       </li>
     )

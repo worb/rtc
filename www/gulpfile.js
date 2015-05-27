@@ -11,7 +11,7 @@ var cssmin = require('gulp-minify-css');
 
 var path = {
   HTML: 'src/index.html',
-  LESS: 'src/less/app.less',
+  LESS: 'src/less/*.less',
   MINIFIED_OUT: 'build.min.js',
   MINIFIED_OUT_CSS: 'app.css',
   OUT: 'build.js',
