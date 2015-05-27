@@ -49,7 +49,7 @@ var Parent = React.createClass({
   },
   handleClick: function(index) {
     this.setState({selected: index});
-    console.log(books[index].name);
+    console.log(this.props.books[index]);
   },
   handleExit: function() {
     this.setState({selected: null});

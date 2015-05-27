@@ -23,7 +23,7 @@ var Coverflow = React.createClass({
     }
   },
   handleCoverClick: function(key) {
-    this.props.handleClick({selected: key});
+    this.props.handleClick(key);
   },
   handleCoverExit: function(e) {
     e.preventDefault();
