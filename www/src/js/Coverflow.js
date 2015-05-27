@@ -14,14 +14,6 @@ var Coverflow = React.createClass({
     this.OFFSET = ((this.props.WIDTH % this.props.COVER_WIDTH)) / 2;
     this.DISTANCE = this.props.NUM_COVERS + this.props.BUFFER;
   },
-  componentDidMount: function() {
-    this.refs.swipeable.getDOMNode().style.webkitTransform = "translate(" + this.props.translate + "px)";
-  },
-  componentDidUpdate: function() {
-    if(this.refs.swipeable) {
-      this.refs.swipeable.getDOMNode().style.webkitTransform = "translate(" + this.props.translate + "px)";
-    }
-  },
   handleCoverClick: function(key) {
     this.props.handleClick(key);
   },
