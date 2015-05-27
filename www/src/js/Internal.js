@@ -1,5 +1,4 @@
 var Cover = require('./Cover');
-var Transition = React.addons.CSSTransitionGroup;
 
 var COVER_PATH = 'rtc_books_resized/';
 
