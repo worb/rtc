@@ -249,17 +249,20 @@ strong {
 }
 .internalCover-enter {
   opacity: 0.01;
-  transition: opacity 0.5s ease-in;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 300ms ease-out;
 }
 .internalCover-enter.internalCover-enter-active {
   opacity: 1;
 }
 .internalCover-leave {
-  opacity: 0;
-  transition: opacity 1ms ease-in;
+  opacity: 1;
+  transition: opacity 300ms ease-out;
 }
 .internalCover-leave.internalCover-leave-active {
-  opacity: 0;
+  opacity: 0.01;
 }
 body,
 html {

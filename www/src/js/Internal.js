@@ -1,15 +1,16 @@
 var Cover = require('./Cover');
 
 var COVER_PATH = 'rtc_books_resized/';
+var Transition = React.addons.CSSTransitionGroup;
 
 var Internal = React.createClass({
   getInitialState: function() {
     return {
-      selected: 0
+      selectedCover: 0
     }
   },
   handleCoverClick: function(key) {
-    this.setState({selected: key});
+    this.setState({selectedCover: key});
   },
   handleExit: function(event) {
     this.props.handleExit();
@@ -17,7 +18,7 @@ var Internal = React.createClass({
   render: function(){
     var covers = this.props.book.covers.map(function(cover, i){
       var isSelected = false;
-      if(i == this.state.selected) {
+      if(i == this.state.selectedCover) {
         isSelected = true;
       }
       return (<Cover cover={cover} key={i} rKey={i} handleClick={this.handleCoverClick} isSelected={isSelected} />)
@@ -25,9 +26,11 @@ var Internal = React.createClass({
     return (
       <div className="internal">
         <a href="#" onClick={this.handleExit} className="exit"></a>
-        <div className="cover">
-          <img src={COVER_PATH + this.props.book.covers[this.state.selected].filename} />
-          <h4><small>Cover art by</small> {this.props.book.covers[this.state.selected].artist}</h4>
+        <div className="cover" key={this.props.book.covers[this.state.selectedCover]}>
+        <Transition transitionName="internalCover" component="div">
+          <img key={this.props.book.covers[this.state.selectedCover].filename} src={COVER_PATH + this.props.book.covers[this.state.selectedCover].filename} />
+        </Transition>
+          <h4 key={this.props.book.covers[this.state.selectedCover].author}><small>Cover art by</small> {this.props.book.covers[this.state.selectedCover].artist}</h4>
         </div>
         <div className="meta">
           <h2>{this.props.book.name}</h2>

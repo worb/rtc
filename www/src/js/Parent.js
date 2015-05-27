@@ -57,7 +57,7 @@ var Parent = React.createClass({
   render: function(){
     if(!this.state.selected) {
       return (
-        <div>
+        <div key="app">
           <div className="large">
             <Coverflow
             rKey={"large"}
