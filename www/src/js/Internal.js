@@ -19,7 +19,6 @@ var Internal = React.createClass({
     var covers = this.props.book.covers.map(function(cover, i){
       var isSelected = false;
       if(i == this.state.selected) {
-        console.log(cover);
         isSelected = true;
       }
       return (<Cover cover={cover} key={i} rKey={i} handleClick={this.handleCoverClick} isSelected={isSelected} />)
@@ -27,12 +26,14 @@ var Internal = React.createClass({
     return (
       <div className="internal">
         <a href="#" onClick={this.handleExit} className="exit"></a>
-        <Transition name="internalCover">
         <div className="cover">
-          <img src={COVER_PATH + this.props.book.covers[this.state.selected].filename} />
-          <h4><small>Cover art by</small> {this.props.book.covers[this.state.selected].artist}</h4>
-        </div>
+        <Transition transitionName="internalCover">
+          <img src={COVER_PATH + this.props.book.covers[this.state.selected].filename} key={this.props.book.covers[this.state.selected].filename} />
         </Transition>
+        <Transition transitionName="internalCover">
+          <h4 key={this.props.book.covers[this.state.selected.artist]}><small>Cover art by</small> {this.props.book.covers[this.state.selected].artist}</h4>
+        </Transition>
+        </div>
         <div className="meta">
           <h2>{this.props.book.name}</h2>
           <h3><small>by</small> {this.props.book.author}</h3>
