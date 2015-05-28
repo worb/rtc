@@ -1,6 +1,7 @@
 var Coverflow = require('./Coverflow');
 var Internal = require('./Internal');
 var Modal = require('./Modal');
+var Nav = require('./Nav');
 
 var Parent = React.createClass({
   getInitialState: function() {
@@ -71,7 +72,7 @@ var Parent = React.createClass({
       return (
         <div key="app">
           {modal}
-          <a href="#" onClick={this.handleModalClick}>MODAL</a>
+          <Nav handleModal={this.handleModalClick} />
           <div className="large">
             <Coverflow
             rKey={"large"}
@@ -109,6 +110,7 @@ var Parent = React.createClass({
     } else {
       return (
       <div key="app">
+        <Nav handleModal={this.handleModalClick} />
         {modal}
         <Internal book={this.props.books[this.state.selected]} handleExit={this.handleExit} />
       </div>
