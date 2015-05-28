@@ -317,6 +317,9 @@ nav.main ul li a:active {
   top: -16px;
   left: -16px;
 }
+.modal-container .modal-inner p a {
+  text-decoration: underline;
+}
 .large,
 .small {
   position: relative;
