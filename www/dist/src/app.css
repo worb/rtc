@@ -156,20 +156,8 @@ textarea {
   color: #666666;
 }
 /* Block Baselines */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-ol,
-pre,
-blockquote,
-textarea,
-button {
-  margin-bottom: 0 0 24px 0;
+p {
+  margin-bottom: 24px;
 }
 /* Headers */
 h1,
@@ -302,6 +290,33 @@ nav.main ul li a:active {
   background-color: #fff;
   color: #339074;
 }
+.modal-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+.modal-container .modal-bg {
+  position: absolute;
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+.modal-container .modal-inner {
+  position: relative;
+  background-color: #fff;
+  width: 50%;
+  margin: 10% auto;
+  padding: 2em;
+  -webkit-overflow-scrolling: touch;
+}
+.modal-container .modal-inner a.exit {
+  top: -16px;
+  left: -16px;
+}
 .large,
 .small {
   position: relative;
@@ -331,10 +346,7 @@ nav.main ul li a:active {
 .small ul li img {
   width: 120px;
 }
-.internal {
-  margin: 0 1em;
-}
-.internal a.exit {
+a.exit {
   font-size: 20px;
   color: #fff;
   text-decoration: none;
@@ -346,8 +358,11 @@ nav.main ul li a:active {
   padding: 3px 9px;
   border-radius: 15px;
 }
-.internal a.exit:after {
+a.exit:after {
   content: "\00D7";
+}
+.internal {
+  margin: 0 1em;
 }
 .internal .cover {
   position: relative;

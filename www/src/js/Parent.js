@@ -1,5 +1,6 @@
 var Coverflow = require('./Coverflow');
 var Internal = require('./Internal');
+var Modal = require('./Modal');
 
 var Parent = React.createClass({
   getInitialState: function() {
@@ -9,7 +10,8 @@ var Parent = React.createClass({
       largePos: -(300 + 32) * 6,
       smallPos: -(120 + 32) * 6,
       left: 0,
-      selected: null
+      selected: null,
+      modal: false
     }
   },
   componentWillMount: function() {
@@ -54,10 +56,22 @@ var Parent = React.createClass({
   handleExit: function() {
     this.setState({selected: null});
   },
+  handleModalClick: function() {
+    this.setState({ modal: true });
+  },
+  handleModalExit: function() {
+    this.setState({ modal: false });
+  },
   render: function(){
+    var modal = "";
+    if(this.state.modal) {
+      modal = <Modal handleExit={this.handleModalExit} />
+    }
     if(!this.state.selected) {
       return (
         <div key="app">
+          {modal}
+          <a href="#" onClick={this.handleModalClick}>MODAL</a>
           <div className="large">
             <Coverflow
             rKey={"large"}
@@ -93,7 +107,12 @@ var Parent = React.createClass({
         </div>
       );
     } else {
-      return (<Internal book={this.props.books[this.state.selected]} handleExit={this.handleExit} />);
+      return (
+      <div key="app">
+        {modal}
+        <Internal book={this.props.books[this.state.selected]} handleExit={this.handleExit} />
+      </div>
+      );
     }
 
   }

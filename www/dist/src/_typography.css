@@ -20,20 +20,8 @@ textarea {
   color: #666666;
 }
 /* Block Baselines */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-ol,
-pre,
-blockquote,
-textarea,
-button {
-  margin-bottom: 0 0 24px 0;
+p {
+  margin-bottom: 24px;
 }
 /* Headers */
 h1,
