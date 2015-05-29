@@ -1,0 +1,101 @@
+/*---------------------------------------------------
+    LESS Typography Boilerplate 0.5
+  ---------------------------------------------------
+
+    A starter kit to good web typography with an easy
+    baseline grid.
+    Include this after your reset stylesheet.
+    Copyright (c) 2012 Joel Sutherland
+    MIT Licensed:
+    http://www.opensource.org/licenses/mit-license.php
+-----------------------------------------------------*/
+/* Standard Text */
+body,
+input,
+button,
+textarea {
+  font-size: 14px;
+  line-height: 24px;
+  font-family: 'Montserrat', sans-serif;
+  color: #666666;
+}
+/* Block Baselines */
+p {
+  margin-bottom: 24px;
+}
+/* Headers */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Montserrat', sans-serif;
+  color: #339074;
+  font-weight: normal;
+}
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small {
+  color: #a0bcb4;
+}
+h1 {
+  font-size: 30px;
+  line-height: 48px;
+}
+h2 {
+  font-size: 24px;
+}
+h3 {
+  font-size: 19.2px;
+  margin-bottom: 12px;
+}
+h4 {
+  font-size: 19.2px;
+  margin-bottom: 12px;
+}
+h5 {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+h6 {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+/* Paragraph Elements */
+a:link {
+  color: #339074;
+  text-decoration: none;
+}
+a:visited {
+  color: gray;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:active {
+  text-decoration: none;
+}
+sup,
+sub {
+  font-size: 80%;
+  line-height: 0;
+}
+sup {
+  vertical-align: super;
+}
+sub {
+  vertical-align: sub;
+}
+code {
+  font-family: Consolas, "Courier New", Courier, mono;
+}
+strong {
+  font-weight: normal;
+  color: #339074;
+}

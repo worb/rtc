@@ -1,3 +1,4 @@
+/** TODO: integrate https://www.npmjs.com/package/react-clickdrag-mixin and https://www.npmjs.com/package/react.animate **/
 var Cover = require('./Cover');
 var Internal = require('./Internal');
 var Swipeable = require('react-swipeable');
