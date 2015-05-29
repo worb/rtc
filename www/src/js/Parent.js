@@ -68,11 +68,13 @@ var Parent = React.createClass({
     if(this.state.modal) {
       modal = <Modal handleExit={this.handleModalExit} />
     }
+    nav = <Nav handleModal={this.handleModalClick} handleExit={this.handleExit} />
+
     if(!this.state.selected) {
       return (
         <div key="app">
           {modal}
-          <Nav handleModal={this.handleModalClick} />
+          {nav}
           <div className="large">
             <Coverflow
             rKey={"large"}
@@ -110,7 +112,7 @@ var Parent = React.createClass({
     } else {
       return (
       <div key="app">
-        <Nav handleModal={this.handleModalClick} />
+        {nav}
         {modal}
         <Internal book={this.props.books[this.state.selected]} handleExit={this.handleExit} />
       </div>

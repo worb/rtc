@@ -2,10 +2,13 @@ var Nav = React.createClass({
   handleAboutClick: function() {
     this.props.handleModal();
   },
+  handleExit: function() {
+    this.props.handleExit()
+  },
   render: function(){
       return (
         <nav className="main">
-          <div className="brand">
+          <div className="brand" onClick={this.handleExit}>
             <img src="rtc-logo-stacked.png" />
           </div>
           <ul>

@@ -45,6 +45,10 @@ var books = [
     "name":"Call of the Wild",
     "covers":[
       {
+        "filename":"rtc_Call+of+the+Wild_Michael+van+Kekem.jpeg",
+        "artist":"Michael van Kekem"
+      },
+      {
         "filename":"rtc_Call+of+the+Wild_Brandon+Kish.jpeg",
         "artist":"Brandon Kish"
       },
@@ -73,10 +77,6 @@ var books = [
         "artist":"Joshua Sierra"
       },
       {
-        "filename":"rtc_Call+of+the+Wild_Michael+van+Kekem.jpeg",
-        "artist":"Michael van Kekem"
-      },
-      {
         "filename":"rtc_Call+of+the+Wild_Moirangthem+Jagadish+Singh.jpeg",
         "artist":"Moirangthem Jagadish Singh"
       },
@@ -91,16 +91,16 @@ var books = [
     "name":"The Brothers Karamazov",
     "covers":[
       {
+        "filename":"rtc_The+Brothers+Karamazov_Roberlan+Borges.jpeg",
+        "artist":"Roberlan Borges"
+      },
+      {
         "filename":"rtc_The+Brothers+Karamazov_Grace+Kennedy.jpeg",
         "artist":"Grace Kennedy"
       },
       {
         "filename":"rtc_The+Brothers+Karamazov_Monica+Alisse.jpeg",
         "artist":"Monica Alisse"
-      },
-      {
-        "filename":"rtc_The+Brothers+Karamazov_Roberlan+Borges.jpeg",
-        "artist":"Roberlan Borges"
       }
     ],
     "author":"Fyodor Dostoevsky"
@@ -108,6 +108,10 @@ var books = [
   {
     "name":"The Jungle",
     "covers":[
+      {
+        "filename":"rtc_The+Jungle_Wade+Greenberg.jpeg",
+        "artist":"Wade Greenberg"
+      },
       {
         "filename":"rtc_The+Jungle_Ed+Gaither+-+Modern+Electrographic.jpeg",
         "artist":"Ed Gaither - Modern Electrographic"
@@ -131,10 +135,6 @@ var books = [
       {
         "filename":"rtc_The+Jungle_Ninamasina.jpg",
         "artist":"Ninamasina"
-      },
-      {
-        "filename":"rtc_The+Jungle_Wade+Greenberg.jpeg",
-        "artist":"Wade Greenberg"
       }
     ],
     "author":"Upton Sinclair"
@@ -143,12 +143,12 @@ var books = [
     "name":"Ulysses",
     "covers":[
       {
-        "filename":"rtc_Ulysses_Melissa+Hamel.jpeg",
-        "artist":"Melissa Hamel"
-      },
-      {
         "filename":"rtc_Ulysses_nick+fairbank+-+f9+design.jpeg",
         "artist":"nick fairbank - f9 design"
+      },
+      {
+        "filename":"rtc_Ulysses_Melissa+Hamel.jpeg",
+        "artist":"Melissa Hamel"
       }
     ],
     "author":"James Joyce"
@@ -156,6 +156,10 @@ var books = [
   {
     "name":"Heart of Darkness",
     "covers":[
+      {
+        "filename":"rtc_Heart+of+Darkness_Louise+Norman.jpeg",
+        "artist":"Louise Norman"
+      },
       {
         "filename":"rtc_Heart+of+Darkness_Fernando+Horta.jpeg",
         "artist":"Fernando Horta"
@@ -175,10 +179,6 @@ var books = [
       {
         "filename":"rtc_Heart+of+Darkness_Lee+Anne+Dollison.jpeg",
         "artist":"Lee Anne Dollison"
-      },
-      {
-        "filename":"rtc_Heart+of+Darkness_Louise+Norman.jpeg",
-        "artist":"Louise Norman"
       },
       {
         "filename":"rtc_Heart+of+Darkness_mafMOVE.jpeg",
@@ -207,6 +207,10 @@ var books = [
     "name":"The Metamorphosis",
     "covers":[
       {
+        "filename":"rtc_The+Metamorphosis_Frank+Myles.jpeg",
+        "artist":"Frank Myles"
+      },
+      {
         "filename":"rtc_The+Metamorphosis_Andrew+Baker.png",
         "artist":"Andrew Baker"
       },
@@ -221,10 +225,6 @@ var books = [
       {
         "filename":"rtc_The+Metamorphosis_Elena+Ospina.jpeg",
         "artist":"Elena Ospina"
-      },
-      {
-        "filename":"rtc_The+Metamorphosis_Frank+Myles.jpeg",
-        "artist":"Frank Myles"
       },
       {
         "filename":"rtc_The+Metamorphosis_J++R++J+++Sweeney.png",
@@ -287,16 +287,16 @@ var books = [
     "name":"The Good Soldier",
     "covers":[
       {
+        "filename":"rtc_The+Good+Soldier_vikram+nongmaithem.jpeg",
+        "artist":"vikram nongmaithem"
+      },
+      {
         "filename":"rtc_The+Good+Soldier_Grace+Kennedy.jpeg",
         "artist":"Grace Kennedy"
       },
       {
         "filename":"rtc_The+Good+Soldier_Ryan+Vance.jpeg",
         "artist":"Ryan Vance"
-      },
-      {
-        "filename":"rtc_The+Good+Soldier_vikram+nongmaithem.jpeg",
-        "artist":"vikram nongmaithem"
       }
     ],
     "author":"Ford Madox Ford"
@@ -363,6 +363,10 @@ var books = [
     "name":"War of the Worlds",
     "covers":[
       {
+        "filename":"rtc_War+of+the+Worlds_Kjell+Roger+Ringstad.jpeg",
+        "artist":"Kjell Roger Ringstad"
+      },
+      {
         "filename":"rtc_War+of+the+Worlds_Chris+Lozos.png",
         "artist":"Chris Lozos"
       },
@@ -387,10 +391,6 @@ var books = [
         "artist":"Joshua Sierra"
       },
       {
-        "filename":"rtc_War+of+the+Worlds_Kjell+Roger+Ringstad.jpeg",
-        "artist":"Kjell Roger Ringstad"
-      },
-      {
         "filename":"rtc_War+of+the+Worlds_Luis+Prado.jpeg",
         "artist":"Luis Prado"
       },
@@ -412,6 +412,10 @@ var books = [
   {
     "name":"Twenty Thousand Leagues Under the Sea",
     "covers":[
+      {
+        "filename":"rtc_Twenty+Thousand+Leagues+Under+the+Sea_Wade+Greenberg.jpeg",
+        "artist":"Wade Greenberg"
+      },
       {
         "filename":"rtc_Twenty+Thousand+Leagues+Under+the+Sea_Adam+S+++Doyle.jpeg",
         "artist":"Adam S. Doyle"
@@ -471,10 +475,6 @@ var books = [
       {
         "filename":"rtc_Twenty+Thousand+Leagues+Under+the+Sea_T++M+++Serlin.jpeg",
         "artist":"T.M. Serlin"
-      },
-      {
-        "filename":"rtc_Twenty+Thousand+Leagues+Under+the+Sea_Wade+Greenberg.jpeg",
-        "artist":"Wade Greenberg"
       }
     ],
     "author":"Jules Verne"
@@ -483,16 +483,16 @@ var books = [
     "name":"Crime and Punishment",
     "covers":[
       {
+        "filename":"rtc_Crime+and+Punishment_Mario+Fuentes.jpeg",
+        "artist":"Mario Fuentes"
+      },
+      {
         "filename":"rtc_Crime+and+Punishment_Ed+Gaither+-+Modern+Electrographic.jpeg",
         "artist":"Ed Gaither - Modern Electrographic"
       },
       {
         "filename":"rtc_Crime+and+Punishment_Grace+Kennedy.jpeg",
         "artist":"Grace Kennedy"
-      },
-      {
-        "filename":"rtc_Crime+and+Punishment_Mario+Fuentes.jpeg",
-        "artist":"Mario Fuentes"
       },
       {
         "filename":"rtc_Crime+and+Punishment_nick+fairbank+-+f9+design.jpeg",
@@ -517,6 +517,10 @@ var books = [
     "name":"The Jungle Book",
     "covers":[
       {
+        "filename":"rtc_The+Jungle+Book_Jeff+Walters.jpeg",
+        "artist":"Jeff Walters"
+      },
+      {
         "filename":"rtc_The+Jungle+Book_Aurora+Cacciapuoti.jpeg",
         "artist":"Aurora Cacciapuoti"
       },
@@ -527,10 +531,6 @@ var books = [
       {
         "filename":"rtc_The+Jungle+Book_Grace+Kennedy.jpeg",
         "artist":"Grace Kennedy"
-      },
-      {
-        "filename":"rtc_The+Jungle+Book_Jeff+Walters.jpeg",
-        "artist":"Jeff Walters"
       },
       {
         "filename":"rtc_The+Jungle+Book_Lee+Anne+Dollison.jpeg",
@@ -559,6 +559,10 @@ var books = [
     "name":"Little Women",
     "covers":[
       {
+        "filename":"rtc_Little+Women_Lia+Marcoux.jpeg",
+        "artist":"Lia Marcoux"
+      },
+      {
         "filename":"rtc_Little+Women_Aurora+Cacciapuoti.jpeg",
         "artist":"Aurora Cacciapuoti"
       },
@@ -569,10 +573,6 @@ var books = [
       {
         "filename":"rtc_Little+Women_Grace+Kennedy.jpeg",
         "artist":"Grace Kennedy"
-      },
-      {
-        "filename":"rtc_Little+Women_Lia+Marcoux.jpeg",
-        "artist":"Lia Marcoux"
       },
       {
         "filename":"rtc_Little+Women_Louise+Norman.jpeg",
@@ -593,6 +593,10 @@ var books = [
     "name":"Grimm's Fairy Tales",
     "covers":[
       {
+        "filename":"rtc_Grimm+s+Fairy+Tales_Kathryn+Delaney.jpeg",
+        "artist":"Kathryn Delaney"
+      },
+      {
         "filename":"rtc_Grimm+s+Fairy+Tales_Alyssa+Winans.jpeg",
         "artist":"Alyssa Winans"
       },
@@ -607,10 +611,6 @@ var books = [
       {
         "filename":"rtc_Grimm+s+Fairy+Tales_Jessica+Honikman.jpeg",
         "artist":"Jessica Honikman"
-      },
-      {
-        "filename":"rtc_Grimm+s+Fairy+Tales_Kathryn+Delaney.jpeg",
-        "artist":"Kathryn Delaney"
       },
       {
         "filename":"rtc_Grimm+s+Fairy+Tales_Lana+Limon.jpeg",
@@ -635,12 +635,12 @@ var books = [
     "name":"Swann's Way",
     "covers":[
       {
-        "filename":"rtc_Swann+s+Way_Kathryn+Delaney.jpeg",
-        "artist":"Kathryn Delaney"
-      },
-      {
         "filename":"rtc_Swann+s+Way_Louise+Norman.jpeg",
         "artist":"Louise Norman"
+      },
+      {
+        "filename":"rtc_Swann+s+Way_Kathryn+Delaney.jpeg",
+        "artist":"Kathryn Delaney"
       }
     ],
     "author":"Marcel Proust"
@@ -648,6 +648,10 @@ var books = [
   {
     "name":"Pride and Prejudice",
     "covers":[
+      {
+        "filename":"rtc_Pride+and+Prejudice_Tim+Daniel.jpeg",
+        "artist":"Tim Daniel"
+      },
       {
         "filename":"rtc_Pride+and+Prejudice_Alexis+Lampley.jpeg",
         "artist":"Alexis Lampley"
@@ -681,10 +685,6 @@ var books = [
         "artist":"Samantha Coneys"
       },
       {
-        "filename":"rtc_Pride+and+Prejudice_Tim+Daniel.jpeg",
-        "artist":"Tim Daniel"
-      },
-      {
         "filename":"rtc_Pride+and+Prejudice_vikram+nongmaithem.jpg",
         "artist":"vikram nongmaithem"
       }
@@ -694,6 +694,10 @@ var books = [
   {
     "name":"War and Peace",
     "covers":[
+      {
+        "filename":"rtc_War+and+Peace_T++M+++Serlin.jpeg",
+        "artist":"T.M. Serlin"
+      },
       {
         "filename":"rtc_War+and+Peace_Ed+Gaither+-+Modern+Electrographic.jpeg",
         "artist":"Ed Gaither - Modern Electrographic"
@@ -723,10 +727,6 @@ var books = [
         "artist":"Roberlan Borges"
       },
       {
-        "filename":"rtc_War+and+Peace_T++M+++Serlin.jpeg",
-        "artist":"T.M. Serlin"
-      },
-      {
         "filename":"rtc_War+and+Peace_vikram+nongmaithem.png",
         "artist":"vikram nongmaithem"
       }
@@ -736,6 +736,10 @@ var books = [
   {
     "name":"Moby Dick",
     "covers":[
+      {
+        "filename":"rtc_Moby+Dick_Black+Dwarf+Designs.png",
+        "artist":"Black Dwarf Designs"
+      },
       {
         "filename":"rtc_Moby+Dick_Adam+S+Doyle.jpeg",
         "artist":"Adam S Doyle"
@@ -747,10 +751,6 @@ var books = [
       {
         "filename":"rtc_Moby+Dick_Aurora+Cacciapuoti.jpeg",
         "artist":"Aurora Cacciapuoti"
-      },
-      {
-        "filename":"rtc_Moby+Dick_Black+Dwarf+Designs.png",
-        "artist":"Black Dwarf Designs"
       },
       {
         "filename":"rtc_Moby+Dick_Dave+Ortega.jpeg",
@@ -823,6 +823,10 @@ var books = [
     "name":"The Scarlet Letter",
     "covers":[
       {
+        "filename":"rtc_The+Scarlet+Letter_MrFurious.jpeg",
+        "artist":"MrFurious"
+      },
+      {
         "filename":"rtc_The+Scarlet+Letter_Alexis+Lampley.jpeg",
         "artist":"Alexis Lampley"
       },
@@ -851,10 +855,6 @@ var books = [
         "artist":"Moises Galvan"
       },
       {
-        "filename":"rtc_The+Scarlet+Letter_MrFurious.jpeg",
-        "artist":"MrFurious"
-      },
-      {
         "filename":"rtc_The+Scarlet+Letter_Nicholas+Hagar.png",
         "artist":"Nicholas Hagar"
       },
@@ -881,12 +881,12 @@ var books = [
     "name":"Persuasion",
     "covers":[
       {
-        "filename":"rtc_Persuasion_Emily+Adams.jpg",
-        "artist":"Emily Adams"
-      },
-      {
         "filename":"rtc_Persuasion_Heather+Main.png",
         "artist":"Heather Main"
+      },
+      {
+        "filename":"rtc_Persuasion_Emily+Adams.jpg",
+        "artist":"Emily Adams"
       },
       {
         "filename":"rtc_Persuasion_Kathryn+Delaney.jpeg",
@@ -902,6 +902,10 @@ var books = [
   {
     "name":"Dr. Jekyll and Mr. Hyde",
     "covers":[
+      {
+        "filename":"rtc_Dr+++Jekyll+and+Mr+++Hyde_mafMOVE.jpeg",
+        "artist":"mafMOVE"
+      },
       {
         "filename":"rtc_Dr+++Jekyll+and+Mr+++Hyde_Cat+Chi.jpeg",
         "artist":"Cat Chi"
@@ -925,10 +929,6 @@ var books = [
       {
         "filename":"rtc_Dr+++Jekyll+and+Mr+++Hyde_Maelle+Doliveux.jpeg",
         "artist":"Maelle Doliveux"
-      },
-      {
-        "filename":"rtc_Dr+++Jekyll+and+Mr+++Hyde_mafMOVE.jpeg",
-        "artist":"mafMOVE"
       },
       {
         "filename":"rtc_Dr+++Jekyll+and+Mr+++Hyde_Moirangthem+Jagadish+Singh.jpeg",
@@ -960,6 +960,10 @@ var books = [
   {
     "name":"The Adventures of Sherlock Holmes",
     "covers":[
+      {
+        "filename":"rtc_The+Adventures+of+Sherlock+Holmes_Maria+Papaefstathiou.jpeg",
+        "artist":"Maria Papaefstathiou"
+      },
       {
         "filename":"rtc_The+Adventures+of+Sherlock+Holmes_Alex+Morris.png",
         "artist":"Alex Morris"
@@ -993,10 +997,6 @@ var books = [
         "artist":"Karl Fekete"
       },
       {
-        "filename":"rtc_The+Adventures+of+Sherlock+Holmes_Maria+Papaefstathiou.jpeg",
-        "artist":"Maria Papaefstathiou"
-      },
-      {
         "filename":"rtc_The+Adventures+of+Sherlock+Holmes_nick+fairbank+-+f9+design.jpeg",
         "artist":"nick fairbank - f9 design"
       },
@@ -1014,6 +1014,10 @@ var books = [
   {
     "name":"Anna Karenina",
     "covers":[
+      {
+        "filename":"rtc_Anna+Karenina_Victoria+Fernandez.jpeg",
+        "artist":"Victoria Fernandez"
+      },
       {
         "filename":"rtc_Anna+Karenina_Anna+Tulchinskaya.jpeg",
         "artist":"Anna Tulchinskaya"
@@ -1045,10 +1049,6 @@ var books = [
       {
         "filename":"rtc_Anna+Karenina_Sarah+Gordon.jpeg",
         "artist":"Sarah Gordon"
-      },
-      {
-        "filename":"rtc_Anna+Karenina_Victoria+Fernandez.jpeg",
-        "artist":"Victoria Fernandez"
       }
     ],
     "author":"Leo Tolstoy"
@@ -1056,6 +1056,10 @@ var books = [
   {
     "name":"This Side of Paradise",
     "covers":[
+      {
+        "filename":"rtc_This+Side+of+Paradise_Sawsan.jpeg",
+        "artist":"Sawsan"
+      },
       {
         "filename":"rtc_This+Side+of+Paradise_Grace+Kennedy.jpeg",
         "artist":"Grace Kennedy"
@@ -1067,10 +1071,6 @@ var books = [
       {
         "filename":"rtc_This+Side+of+Paradise_Kathryn+Delaney.jpeg",
         "artist":"Kathryn Delaney"
-      },
-      {
-        "filename":"rtc_This+Side+of+Paradise_Sawsan.jpeg",
-        "artist":"Sawsan"
       },
       {
         "filename":"rtc_This+Side+of+Paradise_Vivien.jpeg",
@@ -1120,6 +1120,10 @@ var books = [
   {
     "name":"Dracula",
     "covers":[
+      {
+        "filename":"rtc_Dracula_Steve+St+++Pierre.jpeg",
+        "artist":"Steve St. Pierre"
+      },
       {
         "filename":"rtc_Dracula_Adam+S++Doyle.jpeg",
         "artist":"Adam S.Doyle"
@@ -1205,10 +1209,6 @@ var books = [
         "artist":"sondra rothwell"
       },
       {
-        "filename":"rtc_Dracula_Steve+St+++Pierre.jpeg",
-        "artist":"Steve St. Pierre"
-      },
-      {
         "filename":"rtc_Dracula_vikram+nongmaithem.jpeg",
         "artist":"vikram nongmaithem"
       }
@@ -1218,6 +1218,10 @@ var books = [
   {
     "name":"The Time Machine",
     "covers":[
+      {
+        "filename":"rtc_The+Time+Machine_Jon+Cain.jpeg",
+        "artist":"Jon Cain"
+      },
       {
         "filename":"rtc_The+Time+Machine_Alex+Sprouse.jpeg",
         "artist":"Alex Sprouse"
@@ -1247,10 +1251,6 @@ var books = [
         "artist":"Jessica Honikman"
       },
       {
-        "filename":"rtc_The+Time+Machine_Jon+Cain.jpeg",
-        "artist":"Jon Cain"
-      },
-      {
         "filename":"rtc_The+Time+Machine_Joshua+Sierra.jpeg",
         "artist":"Joshua Sierra"
       },
@@ -1278,7 +1278,7 @@ var books = [
     "covers":[
       {
         "filename":"rtc_A+Tale+of+Two+Cities_Alexis+Lampley.jpg",
-        "artist":"Alexis Lampley"
+        "artist":"Alexis Lampley",
       },
       {
         "filename":"rtc_A+Tale+of+Two+Cities_Grace+Kennedy.jpeg",
@@ -1314,6 +1314,10 @@ var books = [
   {
     "name":"Don Quixote",
     "covers":[
+      {
+        "filename":"rtc_Don+Quixote_Wedha+Abdul+Rasyid.jpeg",
+        "artist":"Wedha Abdul Rasyid"
+      },
       {
         "filename":"rtc_Don+Quixote_Alexandra+Hurley.jpeg",
         "artist":"Alexandra Hurley"
@@ -1357,10 +1361,6 @@ var books = [
       {
         "filename":"rtc_Don+Quixote_soroshi.jpeg",
         "artist":"soroshi"
-      },
-      {
-        "filename":"rtc_Don+Quixote_Wedha+Abdul+Rasyid.jpeg",
-        "artist":"Wedha Abdul Rasyid"
       }
     ],
     "author":"Miguel de Cervantes"
@@ -1368,6 +1368,10 @@ var books = [
   {
     "name":"Robinson Crusoe",
     "covers":[
+      {
+        "filename":"rtc_Robinson+Crusoe_J++D+++Reeves.jpeg",
+        "artist":"J.D. Reeves"
+      },
       {
         "filename":"rtc_Robinson+Crusoe_Brixton.jpeg",
         "artist":"Brixton"
@@ -1383,10 +1387,6 @@ var books = [
       {
         "filename":"rtc_Robinson+Crusoe_Grace+Kennedy.jpeg",
         "artist":"Grace Kennedy"
-      },
-      {
-        "filename":"rtc_Robinson+Crusoe_J++D+++Reeves.jpeg",
-        "artist":"J.D. Reeves"
       },
       {
         "filename":"rtc_Robinson+Crusoe_Jessica+Honikman.jpeg",
@@ -1411,6 +1411,10 @@ var books = [
     "name":"The Wonderful Wizard of Oz",
     "covers":[
       {
+        "filename":"rtc_The+Wonderful+Wizard+of+Oz_David+Hays.jpeg",
+        "artist":"David Hays"
+      },
+      {
         "filename":"rtc_The+Wonderful+Wizard+of+Oz_Brian+Dahms.jpeg",
         "artist":"Brian Dahms"
       },
@@ -1421,10 +1425,6 @@ var books = [
       {
         "filename":"rtc_The+Wonderful+Wizard+of+Oz_Chris+Lozos.png",
         "artist":"Chris Lozos"
-      },
-      {
-        "filename":"rtc_The+Wonderful+Wizard+of+Oz_David+Hays.jpeg",
-        "artist":"David Hays"
       },
       {
         "filename":"rtc_The+Wonderful+Wizard+of+Oz_Douglas+Thomson.jpeg",
@@ -1487,6 +1487,10 @@ var books = [
     "name":"Frankenstein",
     "covers":[
       {
+        "filename":"rtc_Frankenstein_Luis+Prado.jpeg",
+        "artist":"Luis Prado"
+      },
+      {
         "filename":"rtc_Frankenstein_Alexis+Lampley.jpeg",
         "artist":"Alexis Lampley"
       },
@@ -1521,10 +1525,6 @@ var books = [
       {
         "filename":"rtc_Frankenstein_John+Macrae.jpeg",
         "artist":"John Macrae"
-      },
-      {
-        "filename":"rtc_Frankenstein_Luis+Prado.jpeg",
-        "artist":"Luis Prado"
       },
       {
         "filename":"rtc_Frankenstein_Moirangthem+Jagadish+Singh.jpeg",
@@ -1649,6 +1649,10 @@ var books = [
     "name":"Jude the Obscure",
     "covers":[
       {
+        "filename":"rtc_Jude+the+Obscure_Stefano+Zanardi.jpeg",
+        "artist":"Stefano Zanardi"
+      },
+      {
         "filename":"rtc_Jude+the+Obscure_Ashley+Cale.jpeg",
         "artist":"Ashley Cale"
       },
@@ -1659,10 +1663,6 @@ var books = [
       {
         "filename":"rtc_Jude+the+Obscure_nick+fairbank+-+f9+design.jpeg",
         "artist":"nick fairbank - f9 design"
-      },
-      {
-        "filename":"rtc_Jude+the+Obscure_Stefano+Zanardi.jpeg",
-        "artist":"Stefano Zanardi"
       }
     ],
     "author":"Thomas Hardy"
@@ -1671,12 +1671,12 @@ var books = [
     "name":"Through the Looking Glass",
     "covers":[
       {
-        "filename":"rtc_Through+the+Looking+Glass_Adam+S+++Doyle.jpeg",
-        "artist":"Adam S. Doyle"
-      },
-      {
         "filename":"rtc_Through+the+Looking+Glass_Alex+Kostiw.jpeg",
         "artist":"Alex Kostiw"
+      },
+      {
+        "filename":"rtc_Through+the+Looking+Glass_Adam+S+++Doyle.jpeg",
+        "artist":"Adam S. Doyle"
       },
       {
         "filename":"rtc_Through+the+Looking+Glass_Cat+Chi.jpeg",
@@ -1769,6 +1769,10 @@ var books = [
     "name":"Jane Eyre",
     "covers":[
       {
+        "filename": "rtc_Jane+Eyre_Ed+Gaither+-+Modern+Electrographic.jpg",
+        "artist": "Ed Gaither - Modern Electrographic"
+      },
+      {
         "filename":"rtc_Jane+Eyre_Alexis+Lampley.jpeg",
         "artist":"Alexis Lampley"
       },
@@ -1803,12 +1807,12 @@ var books = [
     "name":"King Solomon's Mines",
     "covers":[
       {
-        "filename":"rtc_King+Solomon+s+Mines_Danilo+Sousa+Rodrigues.jpeg",
-        "artist":"Danilo Sousa Rodrigues"
-      },
-      {
         "filename":"rtc_King+Solomon+s+Mines_Ed+Gaither+-+Modern+Electrographic.jpeg",
         "artist":"Ed Gaither - Modern Electrographic"
+      },
+      {
+        "filename":"rtc_King+Solomon+s+Mines_Danilo+Sousa+Rodrigues.jpeg",
+        "artist":"Danilo Sousa Rodrigues"
       },
       {
         "filename":"rtc_King+Solomon+s+Mines_nick+fairbank+-+f9+design.jpeg",
@@ -1847,6 +1851,10 @@ var books = [
     "name":"The Count of Monte Cristo",
     "covers":[
       {
+        "filename":"rtc_The+Count+of+Monte+Cristo_Sara+Nauman.jpeg",
+        "artist":"Sara Nauman"
+      },
+      {
         "filename":"rtc_The+Count+of+Monte+Cristo_Ashah+Bowyer.jpeg",
         "artist":"Ashah Bowyer"
       },
@@ -1865,10 +1873,6 @@ var books = [
       {
         "filename":"rtc_The+Count+of+Monte+Cristo_Roberlan+Borges.jpeg",
         "artist":"Roberlan Borges"
-      },
-      {
-        "filename":"rtc_The+Count+of+Monte+Cristo_Sara+Nauman.jpeg",
-        "artist":"Sara Nauman"
       },
       {
         "filename":"rtc_The+Count+of+Monte+Cristo_Sarah+Gordon.jpeg",
@@ -1903,6 +1907,10 @@ var books = [
     "name":"The Adventures of Huckleberry Finn",
     "covers":[
       {
+        "filename":"rtc_The+Adventures+of+Huckleberry+Finn_Priscilla+Parizeau.jpeg",
+        "artist":"Priscilla Parizeau"
+      },
+      {
         "filename":"rtc_The+Adventures+of+Huckleberry+Finn_E+++Michelle+Peterson.jpeg",
         "artist":"E. Michelle Peterson"
       },
@@ -1927,10 +1935,6 @@ var books = [
         "artist":"Ninamasina"
       },
       {
-        "filename":"rtc_The+Adventures+of+Huckleberry+Finn_Priscilla+Parizeau.jpeg",
-        "artist":"Priscilla Parizeau"
-      },
-      {
         "filename":"rtc_The+Adventures+of+Huckleberry+Finn_Stefano+Zanardi.jpeg",
         "artist":"Stefano Zanardi"
       }
@@ -1941,12 +1945,12 @@ var books = [
     "name":"Gulliver's Travels",
     "covers":[
       {
-        "filename":"rtc_Gulliver+s+Travels_Grace+Kennedy.jpeg",
-        "artist":"Grace Kennedy"
-      },
-      {
         "filename":"rtc_Gulliver+s+Travels_Naomi+Sloman.jpeg",
         "artist":"Naomi Sloman"
+      },
+      {
+        "filename":"rtc_Gulliver+s+Travels_Grace+Kennedy.jpeg",
+        "artist":"Grace Kennedy"
       },
       {
         "filename":"rtc_Gulliver+s+Travels_Roberto+LANZNASTER.jpeg",
@@ -1963,16 +1967,16 @@ var books = [
     "name":"Journey to the Center of the Earth",
     "covers":[
       {
+        "filename":"rtc_Journey+to+the+Center+of+the+Earth_Ed+Gaither+-+Modern+Electrographic.jpeg",
+        "artist":"Ed Gaither - Modern Electrographic"
+      },
+      {
         "filename":"rtc_Journey+to+the+Center+of+the+Earth_Annalotta.jpeg",
         "artist":"Annalotta"
       },
       {
         "filename":"rtc_Journey+to+the+Center+of+the+Earth_Brandon+Johnson.png",
         "artist":"Brandon Johnson"
-      },
-      {
-        "filename":"rtc_Journey+to+the+Center+of+the+Earth_Ed+Gaither+-+Modern+Electrographic.jpeg",
-        "artist":"Ed Gaither - Modern Electrographic"
       },
       {
         "filename":"rtc_Journey+to+the+Center+of+the+Earth_Grace+Kennedy.jpeg",
@@ -1997,6 +2001,10 @@ var books = [
     "name":"Picture of Dorian Gray",
     "covers":[
       {
+        "filename":"rtc_Picture+of+Dorian+Gray_Maelle+Doliveux.jpeg",
+        "artist":"Maelle Doliveux"
+      },
+      {
         "filename":"rtc_Picture+of+Dorian+Gray_Etson+Delega.jpeg",
         "artist":"Etson Delega"
       },
@@ -2011,10 +2019,6 @@ var books = [
       {
         "filename":"rtc_Picture+of+Dorian+Gray_Jessica+Honikman.jpeg",
         "artist":"Jessica Honikman"
-      },
-      {
-        "filename":"rtc_Picture+of+Dorian+Gray_Maelle+Doliveux.jpeg",
-        "artist":"Maelle Doliveux"
       },
       {
         "filename":"rtc_Picture+of+Dorian+Gray_Roberlan+Borges.jpeg",
@@ -2035,6 +2039,10 @@ var books = [
     "name":"Les Miserables",
     "covers":[
       {
+        "filename":"rtc_Les+Miserables_Jon+Cain.jpeg",
+        "artist":"Jon Cain"
+      },
+      {
         "filename":"rtc_Les+Miserables_Brandon+Johnson.png",
         "artist":"Brandon Johnson"
       },
@@ -2047,10 +2055,6 @@ var books = [
         "artist":"John Macrae"
       },
       {
-        "filename":"rtc_Les+Miserables_Jon+Cain.jpeg",
-        "artist":"Jon Cain"
-      },
-      {
         "filename":"rtc_Les+Miserables_Shilpa+Saravanan.jpeg",
         "artist":"Shilpa Saravanan"
       },
@@ -2060,6 +2064,16 @@ var books = [
       }
     ],
     "author":"Victor Hugo"
+  },
+  {
+    "name":"The Red Badge of Courage",
+    "covers":[
+      {
+        "filename":"rtc_Red+Badge+Of+Courage_Ed+Gaither+-+Modern+Electrographic.jpg",
+        "artist":"Ed Gaither - Modern Electrographic"
+      }
+    ],
+    "author":"Stephen Crane"
   }
 ]
 module.exports = books;

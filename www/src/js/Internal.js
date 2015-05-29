@@ -10,7 +10,7 @@ var Internal = React.createClass({
     }
   },
   componentWillMount: function() {
-    document.body.style.backgroundColor="#ccc"
+    document.body.style.backgroundColor="#f1f1f1"
   },
   componentWillUnmount: function() {
     document.body.style.backgroundColor="#fff"
