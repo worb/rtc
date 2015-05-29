@@ -32,11 +32,11 @@ var Internal = React.createClass({
     return (
       <div className="internal">
         <a href="#" onClick={this.handleExit} className="exit"></a>
-        <div className="cover" key={this.props.book.covers[this.state.selectedCover]}>
+        <div className="cover">
         <Transition transitionName="internalCover" component="div">
-          <img key={this.props.book.covers[this.state.selectedCover].filename} src={COVER_PATH + this.props.book.covers[this.state.selectedCover].filename} />
+          <img key={this.state.selectedCover} src={COVER_PATH + this.props.book.covers[this.state.selectedCover].filename} />
         </Transition>
-          <h4 key={this.props.book.covers[this.state.selectedCover].author}><small>Cover art by</small> {this.props.book.covers[this.state.selectedCover].artist}</h4>
+          <h4><small>Cover art by</small> {this.props.book.covers[this.state.selectedCover].artist}</h4>
         </div>
         <div className="meta">
           <h2>{this.props.book.name}</h2>
