@@ -1,0 +1,1 @@
+.internalCover-enter{opacity:.01;position:absolute;top:0;left:0;transition:opacity 300ms ease-out}.internalCover-enter.internalCover-enter-active{opacity:1}.internalCover-leave{opacity:1;transition:opacity 300ms ease-out}.internalCover-leave.internalCover-leave-active{opacity:.01}body{transition:background-color 300ms linear}
