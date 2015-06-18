@@ -1,7 +1,7 @@
-var Coverflow = require('./Coverflow');
 var Internal = require('./Internal');
 var Modal = require('./Modal');
 var Nav = require('./Nav');
+var Cover = require('./Cover');
 
 var Parent = React.createClass({
   getInitialState: function() {
@@ -70,42 +70,22 @@ var Parent = React.createClass({
     }
     nav = <Nav handleModal={this.handleModalClick} handleExit={this.handleExit} />
 
+    covers = this.props.books.map(function(book, i){
+      return (
+        <li><Cover book={book} key={i} handleClick={this.handleClick} /></li>
+        )
+    }, this);
+
     if(!this.state.selected) {
       return (
         <div key="app">
           {modal}
           {nav}
           <div className="large">
-            <Coverflow
-            rKey={"large"}
-            books={this.props.books}
-            WIDTH={this.WIDTH}
-            COVER_WIDTH={this.LARGE_WIDTH}
-            NUM_COVERS={this.LARGE_COVERS}
-            BUFFER={6}
-            handleMove={this.handleMove}
-            handleIndex={this.handleIndex}
-            handleClick={this.handleClick}
-            translate={this.state.largeTranslate}
-            lastPos={this.state.largePos}
-            coverIndex={this.state.largeIndex}
-            left={this.state.left} />
+            <ul>{covers}</ul>
           </div>
           <div className="small">
-            <Coverflow
-            rKey={"small"}
-            books={this.props.books}
-            WIDTH={this.WIDTH}
-            COVER_WIDTH={this.SMALL_WIDTH}
-            NUM_COVERS={this.SMALL_COVERS}
-            BUFFER={6}
-            handleMove={this.handleMove}
-            handleIndex={this.handleIndex}
-            handleClick={this.handleClick}
-            translate={this.state.smallTranslate}
-            lastPos={this.state.smallPos}
-            coverIndex={this.state.smallIndex}
-            left={this.state.left} />
+            <ul>{covers}</ul>
           </div>
         </div>
       );

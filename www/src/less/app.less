@@ -83,14 +83,14 @@ nav.main {
     margin: 0;
     list-style: none;
     white-space: nowrap;
-    overflow-x: visible;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
     li {
-      display: inline;
+      display: inline-block;
     }
     li img {
       width: @image-width;
       height: auto;
-      -webkit-user-drag: none;
       margin: 0 @base-margin;
       box-shadow: @shadow;
     }

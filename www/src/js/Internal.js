@@ -27,7 +27,7 @@ var Internal = React.createClass({
       if(i == this.state.selectedCover) {
         isSelected = true;
       }
-      return (<Cover cover={cover} key={i} rKey={i} handleClick={this.handleCoverClick} isSelected={isSelected} />)
+      return (<Cover cover={cover} key={i} handleClick={this.handleCoverClick} isSelected={isSelected} />)
     }, this);
     return (
       <div className="internal">
