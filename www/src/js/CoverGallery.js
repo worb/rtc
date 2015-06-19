@@ -3,14 +3,9 @@ var Modal = require('./Modal');
 var Nav = require('./Nav');
 var Cover = require('./Cover');
 
-var Parent = React.createClass({
+var CoverGallery = React.createClass({
   getInitialState: function() {
     return {
-      largeTranslate: -(300 + 32) * 6,
-      smallTranslate: -(120 + 32) * 6,
-      largePos: -(300 + 32) * 6,
-      smallPos: -(120 + 32) * 6,
-      left: 0,
       selected: null,
       modal: false
     }
@@ -41,15 +36,6 @@ var Parent = React.createClass({
       this.setState({smallPos: small, largePos: large})
     }
 
-  },
-  handleIndex: function(move) {
-    this.setState(function(prev, props){
-      if(prev.left + move <= 0) {
-        return { left: 0 };
-      } else {
-        return { left: prev.left + move }
-      }
-    });
   },
   handleClick: function(index) {
     this.setState({selected: index});
@@ -102,4 +88,4 @@ var Parent = React.createClass({
   }
 });
 
-module.exports = Parent;
+module.exports = CoverGallery;

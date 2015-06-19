@@ -1,5 +1,5 @@
 window.React = require('react/addons');
-var Parent = require('./Parent');
+var CoverGallery = require('./CoverGallery');
 var books = require('./books');
 var _ = require('lodash');
 
@@ -30,4 +30,4 @@ function compareTitles(a, b) {
   }
 }
 
-React.render(<Parent books={books} />, document.getElementById('app'));
+React.render(<CoverGallery books={books} />, document.getElementById('app'));
