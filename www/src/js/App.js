@@ -4,20 +4,7 @@ var CoverGallery = require('./CoverGallery');
 var books = require('./books');
 var _ = require('lodash');
 
-var letters = [];
-
-books.sort(compareTitles);
-
-for (i = 0; i < books.length; i++) {
-  new_name = books[i].name.replace('The ', '');
-  letters.push(new_name.slice(0,1));
-}
-
-letters = _.uniq(letters, true);
-
-console.log(letters);
-
-function compareTitles(a, b) {
+books.sort(function(a, b) {
   aname = a.name.replace('The ', '');
   bname = b.name.replace('The ', '');
   if (aname < bname) {
@@ -29,19 +16,33 @@ function compareTitles(a, b) {
   if (aname == bname) {
     return 0;
   }
+});
+
+function buildAlphabet(books) {
+  // Builds the alphabet of present book titles
+  // For example, a book collection like ["Alpha", "Beta", "Gamma"]
+  // would return an alphabet of ["A", "B", "C"]
+  var alphabet = [];
+  _.each(books, function(book){
+      cleaned_title = book.name.replace('The ', '');
+      alphabet.push(cleaned_title.slice(0,1));
+  });
+  alphabet = _.uniq(alphabet, true);
+  console.log(alphabet);
+  return alphabet;
 }
 
 var App = React.createClass({
-    render: function(){
-        nav = <Nav handleModal={this.handleModalClick} handleExit={this.handleExit} />
-        gallery = <CoverGallery books={books} />
-        return (
-            <div key="app">
-                {nav}
-                {gallery}
-            </div>
-        );
-    }
+  render: function(){
+    nav = <Nav handleModal={this.handleModalClick} handleExit={this.handleExit} />
+    gallery = <CoverGallery books={books} />
+    return (
+      <div key="app">
+        {nav}
+        {gallery}
+      </div>
+    );
+  }
 });
 
 React.render(<App />, document.getElementById('app'));

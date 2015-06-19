@@ -4,8 +4,7 @@ var Cover = require('./Cover');
 var CoverGallery = React.createClass({
   getInitialState: function() {
     return {
-      selected: null,
-      modal: false
+      selected: null
     }
   },
   componentWillMount: function() {
@@ -41,18 +40,7 @@ var CoverGallery = React.createClass({
   handleExit: function() {
     this.setState({selected: null});
   },
-  handleModalClick: function() {
-    this.setState({ modal: true });
-  },
-  handleModalExit: function() {
-    this.setState({ modal: false });
-  },
   render: function(){
-    var modal = "";
-    if(this.state.modal) {
-      modal = <Modal handleExit={this.handleModalExit} />
-    }
-
     covers = this.props.books.map(function(book, i){
       return (
         <li><Cover book={book} key={i} handleClick={this.handleClick} /></li>
