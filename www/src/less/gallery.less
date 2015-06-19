@@ -1,0 +1,35 @@
+/*
+Styling for the gallery.
+Gallery should be a horizontally-scrolling arrangement of covers.
+*/
+
+@image-width: 300px;
+@small-width: 120px;
+@base-margin: 1.0rem;
+@shadow: 5px 3px 8px #ccc; // refactor this into an importable variables file
+
+.gallery {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  ul {
+    width: 100%;
+    margin: 0;
+    list-style: none;
+    white-space: nowrap;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    li {
+      display: inline-block;
+        img {
+          width: @image-width;
+          height: auto;
+          margin: 0 @base-margin;
+          box-shadow: @shadow;
+        }
+    }
+  }
+  ul.small li img {
+    width: @small-width;
+  }
+}

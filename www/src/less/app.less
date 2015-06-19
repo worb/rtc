@@ -2,10 +2,9 @@
 @import '_typography.less';
 @import '_transitions.less';
 
-@image-width: 300px;
-@small-width: 120px;
-@base-margin: 1.0rem;
 @shadow: 5px 3px 8px #ccc;
+
+@import 'gallery.less';
 
 body, html {
   overflow-x: hidden;
@@ -69,32 +68,6 @@ nav.main {
     p a {
       text-decoration: underline;
     }
-  }
-}
-
-.gallery {
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-  ul {
-    width: 100%;
-    margin: 0;
-    list-style: none;
-    white-space: nowrap;
-    overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
-    li {
-      display: inline-block;
-        img {
-          width: @image-width;
-          height: auto;
-          margin: 0 @base-margin;
-          box-shadow: @shadow;
-        }
-    }
-  }
-  ul.small li img {
-    width: @small-width;
   }
 }
 
