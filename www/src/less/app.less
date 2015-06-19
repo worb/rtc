@@ -2,90 +2,13 @@
 @import '_typography.less';
 @import '_transitions.less';
 
-@shadow: 5px 3px 8px #ccc;
-
+@import 'nav.less';
 @import 'gallery.less';
+
+@shadow: 5px 3px 8px #ccc;
 
 body, html {
   overflow-x: hidden;
-}
-nav.main {
-  width: 100%;
-  background: @accent_color;
-  color: #fff;
-  height: 45px;
-  overflow: hidden;
-  padding: 8px 10px;
-  margin-bottom: 15px;
-  .brand {
-    float: left;
-    margin-right: 40px;
-  }
-  ul {
-    float: left;
-    li {
-      display: inline;
-    }
-    li a {
-      color: #fff;
-      &:hover, &:active {
-        background-color: #fff;
-        color: @accent_color;
-      }
-      font-size: 1.2em;
-      line-height: 45px;
-      padding: 20px 10px;
-      margin-right: 30px;
-    }
-  }
-}
-
-.modal-container {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 100;
-  .modal-bg {
-    position: absolute;
-    background-color: #000;
-    width: 100%;
-    height: 100%;
-    opacity: 0.8;
-  }
-  .modal-inner {
-    position: relative;
-    background-color: #fff;
-    width: 50%;
-    margin: 10% auto;
-    padding: 2em;
-    -webkit-overflow-scrolling: touch;
-    a.exit {
-      top: -16px;
-      left: -16px;
-    }
-    p a {
-      text-decoration: underline;
-    }
-  }
-}
-
-
-a.exit {
-  font-size: 20px;
-  color: #fff;
-  text-decoration: none;
-  &:after {
-    content: "\00D7";
-  }
-  position: absolute;
-  top: 65px;
-  left: 3px;
-  z-index: 1;
-  background-color: @accent_color;
-  padding: 3px 9px;
-  border-radius: 15px;
 }
 
 .internal {
