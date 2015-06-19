@@ -1,6 +1,4 @@
 var Internal = require('./Internal');
-var Modal = require('./Modal');
-var Nav = require('./Nav');
 var Cover = require('./Cover');
 
 var CoverGallery = React.createClass({
@@ -54,7 +52,6 @@ var CoverGallery = React.createClass({
     if(this.state.modal) {
       modal = <Modal handleExit={this.handleModalExit} />
     }
-    nav = <Nav handleModal={this.handleModalClick} handleExit={this.handleExit} />
 
     covers = this.props.books.map(function(book, i){
       return (
@@ -64,22 +61,14 @@ var CoverGallery = React.createClass({
 
     if(!this.state.selected) {
       return (
-        <div key="app">
-          {modal}
-          {nav}
-          <div className="large">
-            <ul>{covers}</ul>
-          </div>
-          <div className="small">
-            <ul>{covers}</ul>
-          </div>
+        <div className="gallery">
+          <ul className="large">{covers}</ul>
+          <ul className="small">{covers}</ul>
         </div>
       );
     } else {
       return (
-      <div key="app">
-        {nav}
-        {modal}
+      <div className="gallery">
         <Internal book={this.props.books[this.state.selected]} handleExit={this.handleExit} />
       </div>
       );

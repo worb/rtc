@@ -1,4 +1,5 @@
 window.React = require('react/addons');
+var Nav = require('./Nav');
 var CoverGallery = require('./CoverGallery');
 var books = require('./books');
 var _ = require('lodash');
@@ -30,4 +31,17 @@ function compareTitles(a, b) {
   }
 }
 
-React.render(<CoverGallery books={books} />, document.getElementById('app'));
+var App = React.createClass({
+    render: function(){
+        nav = <Nav handleModal={this.handleModalClick} handleExit={this.handleExit} />
+        gallery = <CoverGallery books={books} />
+        return (
+            <div key="app">
+                {nav}
+                {gallery}
+            </div>
+        );
+    }
+});
+
+React.render(<App />, document.getElementById('app'));

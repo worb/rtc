@@ -72,12 +72,10 @@ nav.main {
   }
 }
 
-.large, .small {
+.gallery {
   position: relative;
   overflow: hidden;
   text-align: center;
-  .large {
-  }
   ul {
     width: 100%;
     margin: 0;
@@ -87,23 +85,19 @@ nav.main {
     -webkit-overflow-scrolling: touch;
     li {
       display: inline-block;
+        img {
+          width: @image-width;
+          height: auto;
+          margin: 0 @base-margin;
+          box-shadow: @shadow;
+        }
     }
-    li img {
-      width: @image-width;
-      height: auto;
-      margin: 0 @base-margin;
-      box-shadow: @shadow;
-    }
+  }
+  ul.small li img {
+    width: @small-width;
   }
 }
 
-.small {
-  ul {
-    li img {
-      width: @small-width;
-    }
-  }
-}
 
 a.exit {
   font-size: 20px;
