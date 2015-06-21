@@ -16,6 +16,7 @@ var books = require('./books');
 var _ = require('lodash');
 
 books.sort(function(a, b) {
+  // Alphabetically sorts the collection of titles
   aname = a.name.replace('The ', '');
   bname = b.name.replace('The ', '');
   if (aname < bname) {
@@ -44,6 +45,8 @@ function buildAlphabet(books) {
 }
 
 var App = React.createClass({
+  // The entry point of the application, composed
+  // of a header navigation bar and cover gallery.
   render: function(){
     nav = <Nav handleModal={this.handleModalClick} handleExit={this.handleExit} />
     gallery = <CoverGallery books={books} />
