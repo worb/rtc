@@ -27,11 +27,15 @@ var Internal = React.createClass({
       if(i == this.state.selectedCover) {
         isSelected = true;
       }
-      return (<Cover cover={cover} key={i} handleClick={this.handleCoverClick} isSelected={isSelected} />)
+      return (
+        <li key={i}>
+          <Cover cover={cover} index={i} handleClick={this.handleCoverClick} isSelected={isSelected} />
+        </li>
+      )
     }, this);
     return (
       <div className="internal">
-        <a href="#" onClick={this.handleExit} className="exit"></a>
+        <button onClick={this.handleExit} className="exit" />
         <div className="cover">
         <Transition transitionName="internalCover" component="div">
           <img key={this.state.selectedCover} src={COVER_PATH + this.props.book.covers[this.state.selectedCover].filename} />

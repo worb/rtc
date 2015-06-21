@@ -7,43 +7,18 @@ var CoverGallery = React.createClass({
       selected: null
     }
   },
-  componentWillMount: function() {
-    this.WIDTH = window.innerWidth;
-
-    this.SMALL_WIDTH = 120 + 32; // second is padding + margin
-    this.LARGE_WIDTH = 300 + 32; //second padding + margin
-
-    this.SMALL_COVERS = Math.round(this.WIDTH / this.SMALL_WIDTH) + 1;
-    this.LARGE_COVERS = Math.round(this.WIDTH / this.LARGE_WIDTH) + 1;
-  },
-  handleMove: function(amount, key, pos) {
-
-    if(key == 'small') {
-      var small = amount;
-      var large = (this.LARGE_WIDTH / this.SMALL_WIDTH) * amount;
-    }
-    if(key == 'large') {
-      var small = (this.SMALL_WIDTH / this.LARGE_WIDTH) * amount;
-      var large = amount;
-    }
-
-    this.setState({smallTranslate: small, largeTranslate: large});
-
-    if(pos) {
-      this.setState({smallPos: small, largePos: large})
-    }
-
-  },
   handleClick: function(index) {
     this.setState({selected: index});
   },
-  handleExit: function() {
+  viewCollection: function() {
     this.setState({selected: null});
   },
   render: function(){
     covers = this.props.books.map(function(book, i){
       return (
-        <li><Cover book={book} key={i} handleClick={this.handleClick} /></li>
+        <li key={i}>
+          <Cover book={book} index={i} handleClick={this.handleClick} />
+        </li>
         )
     }, this);
 
@@ -56,9 +31,9 @@ var CoverGallery = React.createClass({
       );
     } else {
       return (
-      <div className="gallery">
-        <Internal book={this.props.books[this.state.selected]} handleExit={this.handleExit} />
-      </div>
+        <div className="gallery">
+          <Internal book={this.props.books[this.state.selected]} handleExit={this.viewCollection} />
+        </div>
       );
     }
 
