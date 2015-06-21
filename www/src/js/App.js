@@ -1,3 +1,14 @@
+/**********************************************************\
+** Recovering the Classics                                **
+**                                                        **
+** A gallery for displaying a collection of books         **
+** and their respective collections of crowdsourced       **
+** covers. The gallery provides an easy way to browse     **
+** these works in collection and detail views.            **
+**                                                        **
+** Designed and engineered by Worb Corp.                  **
+\**********************************************************/
+
 window.React = require('react/addons');
 var Nav = require('./Nav');
 var CoverGallery = require('./CoverGallery');
