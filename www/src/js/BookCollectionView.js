@@ -22,7 +22,7 @@ var BookCollectionView = React.createClass({
         )
     }, this);
 
-    if(!this.state.selected) {
+    if(this.state.selected == null) {
       return (
         <div className="gallery">
           <ul className="large">{covers}</ul>
