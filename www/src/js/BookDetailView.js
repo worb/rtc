@@ -13,7 +13,7 @@ var Cover = require('./Cover');
 var COVER_PATH = 'rtc_books_resized/';
 var Transition = React.addons.CSSTransitionGroup;
 
-var Viewer = React.createClass({
+var BookDetailViewer = React.createClass({
   // The viewer takes a cover and displays it along with
   // the name of its artist.
   render: function() {
@@ -30,7 +30,7 @@ var Viewer = React.createClass({
   }
 })
 
-var Picker = React.createClass({
+var BookDetailPicker = React.createClass({
   // The picker lists all the covers for the book,
   // highlights the cover currently in the Viewer,
   // and allows a new cover to be picked (hence, "Picker")
@@ -94,8 +94,8 @@ var BookDetailView = React.createClass({
     return (
       <div className="internal">
         <BookDetailMeta title={title} author={author} action={this.exitView} />
-        <Viewer cover={activeCover} />
-        <Picker covers={covers} activeCover={activeCover} pickCover={this.viewCover}/>
+        <BookDetailViewer cover={activeCover} />
+        <BookDetailPicker covers={covers} activeCover={activeCover} pickCover={this.viewCover}/>
       </div>
     )
   }
