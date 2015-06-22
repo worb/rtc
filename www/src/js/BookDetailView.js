@@ -1,7 +1,34 @@
+/* BookDetailView.js
+**
+** This class displays all the covers we have for that book.
+** One cover is displayed large in a viewer, along with the name
+** of its artist. The remaining covers are displayed in a picker.
+** When a cover in the picker is clicked or tapped, that cover
+** replaces the one currently in the viewer. The book's title and
+** author are also displayed as additional metadata.
+*/
+
 var Cover = require('./Cover');
 
 var COVER_PATH = 'rtc_books_resized/';
 var Transition = React.addons.CSSTransitionGroup;
+
+var Viewer = React.createClass({
+  // The viewer takes a cover and displays it along with
+  // the name of its artist.
+  render: function() {
+    var filename = COVER_PATH + this.props.cover.filename;
+    var artist = this.props.cover.artist;
+    return(
+      <div className="cover-viewer">
+        <Transition transitionName="internalCover" component="figure">
+          <img src={filename} />
+          <figcaption>Cover art by {artist}</figcaption>
+        </Transition>
+      </div>
+    )
+  }
+})
 
 var BookDetailView = React.createClass({
   getInitialState: function() {
@@ -22,6 +49,8 @@ var BookDetailView = React.createClass({
     this.props.handleExit();
   },
   render: function(){
+    var covers = this.props.book.covers;
+    var activeCover = covers[this.state.selectedCover];
     var covers = this.props.book.covers.map(function(cover, i){
       var isSelected = false;
       if(i == this.state.selectedCover) {
@@ -36,12 +65,7 @@ var BookDetailView = React.createClass({
     return (
       <div className="internal">
         <button onClick={this.handleExit} className="exit" />
-        <div className="cover">
-        <Transition transitionName="internalCover" component="div">
-          <img key={this.state.selectedCover} src={COVER_PATH + this.props.book.covers[this.state.selectedCover].filename} />
-        </Transition>
-          <h4><small>Cover art by</small> {this.props.book.covers[this.state.selectedCover].artist}</h4>
-        </div>
+        <Viewer cover={activeCover} />
         <div className="meta">
           <h2>{this.props.book.name}</h2>
           <h3><small>by</small> {this.props.book.author}</h3>
