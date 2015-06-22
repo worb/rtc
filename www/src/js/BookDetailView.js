@@ -75,6 +75,8 @@ var BookDetailMeta = React.createClass({
 })
 
 var BookDetailView = React.createClass({
+  // The book detail view manages which book is currently displayed
+  // by the viewer. It also handles the exit back to the collection view.
   getInitialState: function() {
     return {
       selectedCover: 0
