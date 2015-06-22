@@ -30,19 +30,41 @@ var Viewer = React.createClass({
   }
 })
 
+var Picker = React.createClass({
+  // The picker lists all the covers for the book,
+  // highlights the cover currently in the Viewer,
+  // and allows a new cover to be picked (hence, "Picker")
+  // for display in the Viewer.
+  pickCover: function(index) {
+    this.props.pickCover(index);
+  },
+  listCover: function(cover, index) {
+      var isSelected = cover == this.props.activeCover? true: false;
+      return (
+        <li key={index}>
+          <Cover cover={cover} index={index} handleClick={this.pickCover} isSelected={isSelected} />
+        </li>
+      )
+  },
+  render: function() {
+    var covers = this.props.covers.map(this.listCover, this);
+    return (
+      <div className="cover-picker">
+        <ul>
+          {covers}
+        </ul>
+      </div>
+    )
+  }
+})
+
 var BookDetailView = React.createClass({
   getInitialState: function() {
     return {
       selectedCover: 0
     }
   },
-  componentWillMount: function() {
-    document.body.style.backgroundColor="#f1f1f1"
-  },
-  componentWillUnmount: function() {
-    document.body.style.backgroundColor="#fff"
-  },
-  handleCoverClick: function(key) {
+  viewCover: function(key) {
     this.setState({selectedCover: key});
   },
   handleExit: function(event) {
@@ -51,29 +73,15 @@ var BookDetailView = React.createClass({
   render: function(){
     var covers = this.props.book.covers;
     var activeCover = covers[this.state.selectedCover];
-    var covers = this.props.book.covers.map(function(cover, i){
-      var isSelected = false;
-      if(i == this.state.selectedCover) {
-        isSelected = true;
-      }
-      return (
-        <li key={i}>
-          <Cover cover={cover} index={i} handleClick={this.handleCoverClick} isSelected={isSelected} />
-        </li>
-      )
-    }, this);
     return (
       <div className="internal">
         <button onClick={this.handleExit} className="exit" />
         <Viewer cover={activeCover} />
+        <Picker covers={covers} activeCover={activeCover} pickCover={this.viewCover}/>
         <div className="meta">
           <h2>{this.props.book.name}</h2>
           <h3><small>by</small> {this.props.book.author}</h3>
-          <div className="covers">
-            <ul>
-              {covers}
-            </ul>
-          </div>
+
         </div>
       </div>
     )
