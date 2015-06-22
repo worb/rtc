@@ -3,7 +3,7 @@ var Cover = require('./Cover');
 var COVER_PATH = 'rtc_books_resized/';
 var Transition = React.addons.CSSTransitionGroup;
 
-var Internal = React.createClass({
+var BookDetailView = React.createClass({
   getInitialState: function() {
     return {
       selectedCover: 0
@@ -56,4 +56,4 @@ var Internal = React.createClass({
   }
 });
 
-module.exports = Internal;
+module.exports = BookDetailView;

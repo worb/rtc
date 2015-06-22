@@ -11,7 +11,7 @@
 
 window.React = require('react/addons');
 var Nav = require('./Nav');
-var CoverGallery = require('./CoverGallery');
+var BookCollectionView = require('./BookCollectionView');
 var books = require('./books');
 var _ = require('lodash');
 
@@ -48,12 +48,12 @@ var App = React.createClass({
   // The entry point of the application, composed
   // of a header navigation bar and cover gallery.
   render: function(){
-    nav = <Nav handleModal={this.handleModalClick} handleExit={this.handleExit} />
-    gallery = <CoverGallery books={books} />
+    var nav = <Nav handleModal={this.handleModalClick} handleExit={this.handleExit} />;
+    var bcv = <BookCollectionView books={books} />;
     return (
       <div key="app">
         {nav}
-        {gallery}
+        {bcv}
       </div>
     );
   }

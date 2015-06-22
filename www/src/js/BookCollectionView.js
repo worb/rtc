@@ -1,13 +1,13 @@
-var Internal = require('./Internal');
+var BookDetailView = require('./BookDetailView');
 var Cover = require('./Cover');
 
-var CoverGallery = React.createClass({
+var BookCollectionView = React.createClass({
   getInitialState: function() {
     return {
       selected: null
     }
   },
-  handleClick: function(index) {
+  viewDetail: function(index) {
     this.setState({selected: index});
   },
   viewCollection: function() {
@@ -17,7 +17,7 @@ var CoverGallery = React.createClass({
     covers = this.props.books.map(function(book, i){
       return (
         <li key={i}>
-          <Cover book={book} index={i} handleClick={this.handleClick} />
+          <Cover book={book} index={i} handleClick={this.viewDetail} />
         </li>
         )
     }, this);
@@ -32,7 +32,7 @@ var CoverGallery = React.createClass({
     } else {
       return (
         <div className="gallery">
-          <Internal book={this.props.books[this.state.selected]} handleExit={this.viewCollection} />
+          <BookDetailView book={this.props.books[this.state.selected]} handleExit={this.viewCollection} />
         </div>
       );
     }
@@ -40,4 +40,4 @@ var CoverGallery = React.createClass({
   }
 });
 
-module.exports = CoverGallery;
+module.exports = BookCollectionView;
