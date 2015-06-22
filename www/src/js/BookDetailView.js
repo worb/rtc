@@ -58,6 +58,22 @@ var Picker = React.createClass({
   }
 })
 
+var BookDetailMeta = React.createClass({
+  // A simple component for rendering navigation
+  // and metadata components in the detail view.
+  render: function() {
+    return (
+      <nav className="meta">
+        <button onClick={this.props.action} className="exit">Back</button>
+        <div>
+          <h2>{this.props.title}</h2>
+          <h3>by {this.props.author}</h3>
+        </div>
+      </nav>
+    )
+  }
+})
+
 var BookDetailView = React.createClass({
   getInitialState: function() {
     return {
@@ -67,22 +83,19 @@ var BookDetailView = React.createClass({
   viewCover: function(key) {
     this.setState({selectedCover: key});
   },
-  handleExit: function(event) {
+  exitView: function(event) {
     this.props.handleExit();
   },
   render: function(){
+    var title = this.props.book.name;
+    var author = this.props.book.author;
     var covers = this.props.book.covers;
     var activeCover = covers[this.state.selectedCover];
     return (
       <div className="internal">
-        <button onClick={this.handleExit} className="exit" />
+        <BookDetailMeta title={title} author={author} action={this.exitView} />
         <Viewer cover={activeCover} />
         <Picker covers={covers} activeCover={activeCover} pickCover={this.viewCover}/>
-        <div className="meta">
-          <h2>{this.props.book.name}</h2>
-          <h3><small>by</small> {this.props.book.author}</h3>
-
-        </div>
       </div>
     )
   }
