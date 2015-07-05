@@ -4,18 +4,27 @@
   <link rel="stylesheet" type="text/css" href="index.css" />
 </head>
 <body>
-  <section class="section" id="branding">
+  <section id="branding">
     <div class="textarea">
         <p>Recovering the Classics presents</p>
         <h1>50<span class="logo-x">x</span>50</h1>
         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
     </div>
   </section>
+  <section id="nypl">
+    <h2>50x50 @ NYPL</h2>
+    Whoa, pretty photos.
+  </section>
+  <section id="github">
+    <h2>50x50 @ GitHub</h2>
+    Whoa, pretty photos.
+  </section>
   <section id="get-in-touch">
+    <h2>Host Your Own</h2>
     <!-- Hidden iFrame for form submission. Must be above form. -->
     <iframe name="form_target" id="form_target" height=0 width=0 border=0 style="display: none;">
     </iframe>
-    <section id="form">
+    <div id="form">
       <!-- Form submits to: https://docs.google.com/spreadsheets/d/19qqYi7bYR7aZufcIW7hEFrEDftgREfb0Whspef6l_bg/edit#gid=248473424 -->
       <form action="https://docs.google.com/forms/d/1NoFUpVSXgPOrgArjwfDDDkjrk6uA5efXhyQUU9tPf5A/formResponse" method="POST" id="ss-form" target="form_target" onsubmit=""><ol role="list" class="ss-question-list" style="padding-left: 0">
       <div class="ss-form-question errorbox-good" role="listitem">
@@ -71,10 +80,14 @@
       <!-- /Form -->
       <!-- Success: Appears when form is submitted -->
       <div id="success">
-        <h1>Thanks for expressing your interest!</h1>
+        <h3>Thanks for expressing your interest!</h1>
         <p>We'll be in touch.</p>
       </div>
       <!-- /Success -->
-    </section>
+    </div>
+  </section>
+  <section id="sponsors">
+    <h2>Sponsors and Partners</h2>
+    Thanks!
   </section>
 </body>
