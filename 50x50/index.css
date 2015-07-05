@@ -1,0 +1,42 @@
+/*
+
+primary color: #459174;
+dark primary color: #0c2f48;
+white: #FEFEFE;
+black: #202020;
+
+*/
+
+body {
+    margin: 0;
+    font-family: serif;
+    color: #202020;
+    background-color: #FEFEFE;
+}
+
+.section {
+    width: 100%;
+}
+
+#branding {
+    color: #0c2f48;
+    background-color: #459174;
+}
+
+#branding .textarea {
+    max-width: 40em;
+    margin: 0 auto 1.5rem;
+    padding: 3rem;
+    text-align: center;
+}
+
+#branding .textarea h1 {
+    margin: 0 0 1.5rem 0;
+    font-family: "Abril Fatface", serif;
+    font-size: 8em;
+    color: #FEFEFE;
+}
+
+#branding .textarea h1 .logo-x {
+    color: #0c2f48;
+}
