@@ -1,0 +1,51 @@
+.modal-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+.modal-container.hidden {
+  display: none;
+}
+.modal-container .modal-bg {
+  position: absolute;
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+.modal-container .modal-inner {
+  position: relative;
+  background-color: #fff;
+  width: 50%;
+  margin: 10% auto;
+  padding: 2em;
+  -webkit-overflow-scrolling: touch;
+}
+.modal-container .modal-inner a.exit {
+  top: -16px;
+  left: -16px;
+}
+.modal-container .modal-inner p a {
+  text-decoration: underline;
+}
+button.exit {
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+  position: absolute;
+  top: -0.75em;
+  left: -0.75em;
+  z-index: 1;
+  background-color: #339074;
+  padding: 3px 9px;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+}
+button.exit:after {
+  content: "\00D7";
+}
