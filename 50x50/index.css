@@ -24,6 +24,7 @@ section {
 h1, h2 {
     margin: 0 0 1.5rem 0;
     font-family: "Montserrat", serif;
+    word-wrap: break-word;
 }
 
 h1 {
@@ -32,6 +33,18 @@ h1 {
 
 h2 {
     font-size: 4em;
+}
+
+p {
+  font-size: 1.2em;
+}
+@media (max-width: 600px) {
+  h1 {
+    font-size: 5em;
+  }
+  h2 {
+    font-size: 2.5em;
+  }
 }
 
 /* About */
@@ -57,9 +70,13 @@ h2 {
 
 /* NYPL */
 
-#nypl {
+#nypl, #ala-2015 {
     color: #FEFEFE;
     background-color: #0c2f48;
+}
+
+#nypl a, #ala-2015 a, #github a {
+  color: #70aefc;
 }
 
 /* Social */
@@ -74,4 +91,43 @@ h2 {
 #github {
     color: #FEFEFE;
     background-color: #202020;
+}
+
+/* Responsive from */
+
+input[type=text], input[type=email]{
+  margin-bottom: 20px;
+  margin-top: 10px;
+  width:70%;
+  padding: 15px;
+  border-radius:5px;
+  border:1px solid #7ac9b7;
+}
+input[type=submit]
+{
+  margin-bottom: 20px;
+  width:70%;
+  padding: 15px;
+  border-radius:5px;
+  border:1px solid #7ac9b7;
+  background-color: #4180C5;
+  color: aliceblue;
+  font-size:15px;
+  cursor:pointer;
+}
+textarea{
+  width:70%;
+  padding: 15px;
+  margin-top: 10px;
+  border:1px solid #7ac9b7;
+  border-radius:5px;
+  margin-bottom: 20px;
+  resize:none;
+}
+input[type=text]:focus,textarea:focus {
+  border-color: #4697e4;
+}
+
+#success {
+  display: none;
 }
