@@ -35,6 +35,10 @@ h2 {
     font-size: 4em;
 }
 
+h3 {
+  font-size: 2em;
+}
+
 p {
   font-size: 1.2em;
 }
@@ -45,6 +49,36 @@ p {
   h2 {
     font-size: 2.5em;
   }
+}
+
+/* Photos */
+
+#header-photo {
+  background: url('books.jpg') bottom left no-repeat;
+  padding: 8em 0;
+}
+
+#inter-photo {
+  background: url('party.jpg') top left no-repeat;
+  padding: 14em 0;
+}
+
+ul.gallery {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+ul.gallery li {
+  display: inline-block;
+  max-width: 400px;
+  margin: .5em;
+}
+
+ul.gallery li img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* About */
@@ -106,7 +140,7 @@ input[type=text], input[type=email]{
 input[type=submit]
 {
   margin-bottom: 20px;
-  width:70%;
+  width:100%;
   padding: 15px;
   border-radius:5px;
   border:1px solid #7ac9b7;
