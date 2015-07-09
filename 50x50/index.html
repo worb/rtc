@@ -166,5 +166,18 @@
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     <p>Did you go to a party? Share your photos on Twitter and Instagram using the hashtags <strong>#recoveringtheclassics</strong> and <strong>#50x50</strong>.</p>
   </section>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script>
+  $(document).ready(function(){
+    $('#ss-form').on('submit', function(e){
+      e.preventDefault();
+      $(this).fadeOut('fast');
+      $('#success').fadeIn('slow');
+      $('html, body').animate({
+        scrollTop: $("#get-in-touch").offset().top
+      }, 200);
+    });
+  });
+  </script>
 </body>
 </html>
