@@ -81,6 +81,11 @@ ul.gallery li img {
   height: auto;
 }
 
+#partners ul.gallery li {
+  max-width: 150px;
+  margin: 0 1em;
+}
+
 /* About */
 
 #about {
@@ -104,27 +109,18 @@ ul.gallery li img {
 
 /* NYPL */
 
-#nypl, #ala-2015 {
+#parties {
     color: #FEFEFE;
     background-color: #0c2f48;
 }
 
-#nypl a, #ala-2015 a, #github a {
+#parties a {
   color: #70aefc;
 }
-
-/* Social */
 
 #social {
     color: #0c2f48;
     background-color: #70aefc;
-}
-
-/* GitHub */
-
-#github {
-    color: #FEFEFE;
-    background-color: #202020;
 }
 
 /* Responsive from */
