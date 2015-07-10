@@ -38,7 +38,7 @@
       </iframe>
       <div id="form">
         <!-- Form submits to: https://docs.google.com/spreadsheets/d/19qqYi7bYR7aZufcIW7hEFrEDftgREfb0Whspef6l_bg/edit#gid=248473424 -->
-        <form action="https://docs.google.com/forms/d/1NoFUpVSXgPOrgArjwfDDDkjrk6uA5efXhyQUU9tPf5A/formResponse" method="POST" id="ss-form" target="_self" onsubmit=""><ol role="list" class="ss-question-list" style="padding-left: 0">
+        <form action="https://docs.google.com/forms/d/1NoFUpVSXgPOrgArjwfDDDkjrk6uA5efXhyQUU9tPf5A/formResponse" method="POST" id="ss-form" target="form_target" onsubmit=""><ol role="list" class="ss-question-list" style="padding-left: 0">
           <div class="ss-form-question errorbox-good" role="listitem">
           <div dir="ltr" class="ss-item ss-item-required ss-text"><div class="ss-form-entry">
           <label class="ss-q-item-label" for="entry_555291914"><div class="ss-q-title">First Name
@@ -194,7 +194,6 @@
   <script>
   $(document).ready(function(){
     $('#ss-form').on('submit', function(e){
-      e.preventDefault();
       $(this).fadeOut('fast');
       $('#success').fadeIn('slow');
       $('html, body').animate({
