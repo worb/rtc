@@ -1,12 +1,19 @@
 # Reactor
 ## Worb Corp.'s starter kit for React front-end projects.
 
-### Build
+### Dev
 Assumes nodenv with the version in .node-version installed.
 
-1. `npm install --global gulp`
-2. `npm install`
-3. `gulp`
+1. `npm install --global webpack`
+2. `npm install --global webpack-dev-server`
+3. `npm install`
+4. `npm run dev`
+5. Navigate to: http://localhost:8080
+
+### Build
+Assumes 1-3 above.
+
+1. `npm run prod`
 
 ### Credit Where Due
-http://tylermcginnis.com/reactjs-tutorial-pt-2-building-react-applications-with-gulp-and-browserify/
+https://github.com/jxnblk/react-static-site-boilerplate
