@@ -4,7 +4,9 @@
   "description": "Worb Corp.'s front-end toolkit.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --progress --colors --content-base public/",
+    "prod": "webpack -p --progress --colors"
   },
   "repository": {
     "type": "git",
