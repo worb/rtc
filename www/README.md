@@ -4,9 +4,10 @@
 ### Build
 Assumes nodenv with the version in .node-version installed.
 
-1. `npm install --global gulp`
-2. `npm install`
-3. `gulp`
+1. `npm install --global webpack`
+2. `npm install --global webpack-dev-server`
+3. `npm install`
+4. `webpack --watch`
 
 ### Credit Where Due
-http://tylermcginnis.com/reactjs-tutorial-pt-2-building-react-applications-with-gulp-and-browserify/
+https://github.com/jxnblk/react-static-site-boilerplate
