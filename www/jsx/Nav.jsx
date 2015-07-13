@@ -1,5 +1,7 @@
 // Nav.js
 
+var React = require('react');
+
 var Modal = React.createClass({
   // A modal dialog box containing information about the gallery
   // and about the Recovering the Classics project.
@@ -54,7 +56,7 @@ var Nav = React.createClass({
     var modal = <Modal modalIsVisible={this.state.modalIsVisible} hideModal={this.hideModal} />;
     var shopURL = "http://shop.thecreativeactionnetwork.com/collections/recovering-the-classics";
     var submitURL = "http://thecreativeactionnetwork.com/contribute/recovering-the-classics";
-    var rtcLogoImageURL = "rtc-logo-stacked.png";
+    var rtcLogoImageURL = "/assets/images/rtc-logo-stacked.png";
     return (
       <nav className="main">
         <div className="brand" onClick={this.handleExit}>

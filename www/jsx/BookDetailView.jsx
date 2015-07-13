@@ -8,9 +8,11 @@
 ** author are also displayed as additional metadata.
 */
 
+var React = require('react/addons');
+
 var Cover = require('./Cover.jsx');
 
-var COVER_PATH = 'rtc_books_resized/';
+var COVER_PATH = '/assets/images/rtc_books_resized/';
 var Transition = React.addons.CSSTransitionGroup;
 
 var BookDetailViewer = React.createClass({
@@ -64,7 +66,7 @@ var BookDetailMeta = React.createClass({
   render: function() {
     return (
       <nav className="meta">
-        <button onClick={this.props.action} className="exit">Back</button>
+        <button onClick={this.props.action} className="exit">&laquo; Back</button>
         <div>
           <h2>{this.props.title}</h2>
           <h3>by {this.props.author}</h3>

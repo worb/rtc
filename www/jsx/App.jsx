@@ -9,7 +9,8 @@
 ** Designed and engineered by Worb Corp.                  **
 \**********************************************************/
 
-window.React = require('react/addons');
+var React = require('react');
+
 var Nav = require('./Nav.jsx');
 var BookCollectionView = require('./BookCollectionView.jsx');
 var books = require('./books.jsx');
