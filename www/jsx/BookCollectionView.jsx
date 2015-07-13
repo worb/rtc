@@ -7,8 +7,8 @@
 ** NOTE: THE DETAIL VIEW SHOULD BE DECOUPLED FROM THE COLLECTION VIEW!
 */
 
-var BookDetailView = require('./BookDetailView');
-var Cover = require('./Cover');
+var BookDetailView = require('./BookDetailView.jsx');
+var Cover = require('./Cover.jsx');
 
 var BookCollectionView = React.createClass({
   getInitialState: function() {

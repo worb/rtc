@@ -8,7 +8,7 @@
 ** author are also displayed as additional metadata.
 */
 
-var Cover = require('./Cover');
+var Cover = require('./Cover.jsx');
 
 var COVER_PATH = 'rtc_books_resized/';
 var Transition = React.addons.CSSTransitionGroup;

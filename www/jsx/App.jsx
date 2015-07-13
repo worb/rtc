@@ -10,9 +10,9 @@
 \**********************************************************/
 
 window.React = require('react/addons');
-var Nav = require('./Nav');
-var BookCollectionView = require('./BookCollectionView');
-var books = require('./books');
+var Nav = require('./Nav.jsx');
+var BookCollectionView = require('./BookCollectionView.jsx');
+var books = require('./books.jsx');
 var _ = require('lodash');
 
 books.sort(function(a, b) {
