@@ -15,7 +15,8 @@ var Cover = require('./Cover.jsx');
 var BookCollectionView = React.createClass({
   getInitialState: function() {
     return {
-      selected: null
+      selected: null,
+      grid: true
     }
   },
   viewDetail: function(index) {
@@ -25,6 +26,7 @@ var BookCollectionView = React.createClass({
     this.setState({selected: null});
   },
   render: function(){
+    display_mode = this.state.grid ? 'grid' : '';
     covers = this.props.books.map(function(book, i){
       return (
         <li className="cover" key={i}>
@@ -37,7 +39,7 @@ var BookCollectionView = React.createClass({
       return (
         <div className="gallery">
           <ul className="large covers">{covers}</ul>
-          <ul className="small covers">{covers}</ul>
+          <ul className={"small covers " + display_mode}>{covers}</ul>
         </div>
       );
     } else {

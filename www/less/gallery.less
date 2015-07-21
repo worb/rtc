@@ -33,7 +33,10 @@ Gallery should be a horizontally-scrolling arrangement of covers.
             }
         }
         &.small {
-            display: inline-flex;
+            &.grid {
+                display: inline-flex;
+            }
+            display: inline-block;
             padding: 1em;
             flex-flow: row wrap;
             justify-content: flex-start;
