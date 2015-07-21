@@ -55,8 +55,9 @@ var Nav = React.createClass({
   render: function(){
     var modal = <Modal modalIsVisible={this.state.modalIsVisible} hideModal={this.hideModal} />;
     var shopURL = "http://shop.thecreativeactionnetwork.com/collections/recovering-the-classics";
-    var submitURL = "http://thecreativeactionnetwork.com/contribute/recovering-the-classics";
+    var contributeURL = "http://thecreativeactionnetwork.com/contribute/recovering-the-classics";
     var rtcLogoImageURL = "/assets/images/rtc-logo-stacked.png";
+    var exhibitURL = "http://50x50.us"
     return (
       <nav className="main">
         <div className="brand" onClick={this.handleExit}>
@@ -66,7 +67,8 @@ var Nav = React.createClass({
         <ul>
           <li><a href="#about" onClick={this.showModal}>About</a></li>
           <li><a href={shopURL} target="_blank">Shop</a></li>
-          <li><a href={submitURL} target="_blank">Submit</a></li>
+          <li><a href={contributeURL} target="_blank">Contribute</a></li>
+          <li><a href={exhibitURL} target="_blank">Exhibit</a></li>
         </ul>
       </nav>
     );
