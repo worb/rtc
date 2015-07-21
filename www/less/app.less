@@ -120,7 +120,34 @@ a.exit {
   padding: 3px 9px;
   border-radius: 15px;
 }
+#nextCover, #prevCover {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 
+    position: fixed;
+    padding: 10em 1em;
+    top: 100px;
+    background-color: @accent_color;
+    opacity: 0.2;
+    color: #fff;
+    font-size: 1.5em;
+    z-index: 100;
+    &:hover {
+        opacity: 1;
+        text-decoration: none;
+        background-color: darken(@accent_color, 10%);
+    }
+}
+#nextCover {
+    right: 0;
+}
+#prevCover {
+    left: 0;
+}
 .internal {
   margin: 0 1em;
   .cover {
@@ -160,4 +187,10 @@ a.exit {
       }
     }
   }
+}
+
+@media(min-width: 1000px) {
+    .internal .cover {
+        width: 27%;
+    }
 }

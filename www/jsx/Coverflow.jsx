@@ -74,6 +74,9 @@ var Coverflow = React.createClass({
         )
     }, this);
       return (
+        <div>
+            <a id="nextCover" onClick={this.handleNext}>&raquo;</a>
+            <a id="prevCover" onClick={this.handlePrev}>&laquo;</a>
         <Swipeable
         className="swipeable"
         onSwipingLeft={this.handleLeft}
@@ -90,6 +93,7 @@ var Coverflow = React.createClass({
           {covers}
         </ul>
         </Swipeable>
+    </div>
       );
   }
 });
