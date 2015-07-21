@@ -16,7 +16,7 @@ var BookCollectionView = React.createClass({
   getInitialState: function() {
     return {
       selected: null,
-      grid: true
+      grid: false
     }
   },
   viewDetail: function(index) {
@@ -26,7 +26,7 @@ var BookCollectionView = React.createClass({
     this.setState({selected: null});
   },
   render: function(){
-    display_mode = this.state.grid ? 'grid' : '';
+    display_mode = this.state.grid ? 'grid' : 'scroll';
     covers = this.props.books.map(function(book, i){
       return (
         <li className="cover" key={i}>
