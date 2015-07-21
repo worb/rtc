@@ -67,10 +67,8 @@ var BookDetailMeta = React.createClass({
     return (
       <nav className="meta">
         <button onClick={this.props.action} className="exit">&laquo; Back</button>
-        <div>
-          <h2>{this.props.title}</h2>
-          <h3>by {this.props.author}</h3>
-        </div>
+        <h2 className="title">{this.props.title}</h2>
+        <h3 className="author">by {this.props.author}</h3>
       </nav>
     )
   }
@@ -96,7 +94,7 @@ var BookDetailView = React.createClass({
     var covers = this.props.book.covers;
     var activeCover = covers[this.state.selectedCover];
     return (
-      <div className="internal">
+      <div className="book">
         <BookDetailMeta title={title} author={author} action={this.exitView} />
         <BookDetailViewer cover={activeCover} />
         <BookDetailPicker covers={covers} activeCover={activeCover} pickCover={this.viewCover}/>
