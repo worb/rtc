@@ -3,43 +3,53 @@ Styling for the gallery.
 Gallery should be a horizontally-scrolling arrangement of covers.
 */
 
-@image-width: 16em;
-@small-width: 2.5rem;
 @base-margin: 1.0rem;
 @shadow: 2px 2px 8px #000;
 
 .gallery {
-  position: relative;
-  text-align: center;
-  .covers {
-    width: 100%;
-    margin: 0;
-    padding: 1rem 0;
-    background-color: #0c2f48;
-    list-style: none;
-    white-space: nowrap;
-    overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
-    .cover {
-      display: inline-block;
-        img {
-          width: @image-width;
-          height: auto;
-          margin: 0 @base-margin;
-          // box-shadow: @shadow;
-        }
-    }
-    &.small {
-        display: inline-flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-        background-color: white;
+    position: relative;
+    text-align: center;
+    .covers {
+        width: 100%;
+        margin: 0;
+        padding: 1em 0;
+        background-color: #0c2f48;
+        list-style: none;
+        white-space: nowrap;
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
         .cover {
-            margin: .3em;
+          display: inline-block;
             img {
-                width: @small-width;
+              width: 16em;
+              height: auto;
+              margin: 0 @base-margin;
+              @media screen and (min-width:500px) {
+                    width: 20em;
+                }
+                @media screen and (min-width:800px) {
+                    width: 24em;
+                }
+            }
+        }
+        &.small {
+            display: inline-flex;
+            padding: 1em;
+            flex-flow: row wrap;
+            justify-content: flex-start;
+            background-color: white;
+            .cover {
+                margin: .3em;
+                img {
+                    width: 2.5em;
+                    @media screen and (min-width:500px) {
+                        width: 5em;
+                    }
+                    @media screen and (min-width:800px) {
+                        width: 7.5em;
+                    }
+                }
             }
         }
     }
-  }
 }

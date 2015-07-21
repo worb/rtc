@@ -13,13 +13,29 @@
 
 .book-main {
     display: flex;
-    align-items: top;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    & > * {
+        flex: 1;
+    }
 }
 
 .cover-picker .covers {
     display: inline-flex;
     flex-flow: row wrap;
+    max-width: 75%;
+    .cover-item {
+        margin: 0 0 1rem 1rem;
+    }
     img {
-        max-width: 4rem;
+        max-width: 5rem;
+    }
+}
+
+.cover-viewer {
+    padding: 0 1rem;
+    text-align: right;
+    img {
+        max-width: 75%;
     }
 }
