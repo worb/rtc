@@ -19,8 +19,14 @@ var Coverflow = React.createClass({
     this.OFFSET = ((this.props.WIDTH % this.props.COVER_WIDTH)) / 2;
     this.DISTANCE = this.props.NUM_COVERS + this.props.BUFFER;
     var self = this;
-    Mousetrap.bind('left', function() { self.handleSwiped(null, -self.props.COVER_WIDTH, 0, false) });
-    Mousetrap.bind('right', function() { self.handleSwiped(null, self.props.COVER_WIDTH, 0, false) });
+    Mousetrap.bind('left', function() { self.handlePrev(); });
+    Mousetrap.bind('right', function() { self.handleNext(); });
+  },
+  handleNext: function() {
+      this.handleSwiped(null, this.props.COVER_WIDTH, 0, false)
+  },
+  handlePrev: function() {
+      this.handleSwiped(null, -this.props.COVER_WIDTH, 0, false)
   },
   componentWillUnMount: function() {
     Moustrap.unbind('left');
