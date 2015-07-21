@@ -4,7 +4,7 @@ Gallery should be a horizontally-scrolling arrangement of covers.
 */
 
 @image-width: 300px;
-@small-width: 120px;
+@small-width: 4rem;
 @base-margin: 1.0rem;
 @shadow: 2px 2px 8px #000;
 
@@ -30,6 +30,8 @@ Gallery should be a horizontally-scrolling arrangement of covers.
         }
     }
     &.small {
+        display: inline-flex;
+        flex-flow: row wrap;
         background-color: white;
     }
   }

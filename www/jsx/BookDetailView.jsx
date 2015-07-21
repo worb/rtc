@@ -43,7 +43,7 @@ var BookDetailPicker = React.createClass({
   listCover: function(cover, index) {
       var isSelected = cover == this.props.activeCover? true: false;
       return (
-        <li key={index}>
+        <li className="cover-item" key={index}>
           <Cover cover={cover} index={index} handleClick={this.pickCover} isSelected={isSelected} />
         </li>
       )
@@ -52,9 +52,9 @@ var BookDetailPicker = React.createClass({
     var covers = this.props.covers.map(this.listCover, this);
     return (
       <div className="cover-picker">
-        <ul>
-          {covers}
-        </ul>
+          <ul className="covers">
+              {covers}
+          </ul>
       </div>
     )
   }
@@ -65,7 +65,7 @@ var BookDetailMeta = React.createClass({
   // and metadata components in the detail view.
   render: function() {
     return (
-      <nav className="meta">
+      <nav className="book-meta">
         <button onClick={this.props.action} className="exit">&laquo; Back</button>
         <h2 className="title">{this.props.title}</h2>
         <h3 className="author">by {this.props.author}</h3>
@@ -96,8 +96,10 @@ var BookDetailView = React.createClass({
     return (
       <div className="book">
         <BookDetailMeta title={title} author={author} action={this.exitView} />
-        <BookDetailViewer cover={activeCover} />
-        <BookDetailPicker covers={covers} activeCover={activeCover} pickCover={this.viewCover}/>
+        <main className="book-main">
+            <BookDetailViewer cover={activeCover} />
+            <BookDetailPicker covers={covers} activeCover={activeCover} pickCover={this.viewCover}/>
+        </main>
       </div>
     )
   }
