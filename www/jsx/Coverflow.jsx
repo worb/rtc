@@ -5,6 +5,8 @@ var Cover = require('./Cover.jsx');
 var Internal = require('./Internal.jsx');
 var Swipeable = require('react-swipeable');
 
+var Mousetrap = require('mousetrap');
+
 var Coverflow = React.createClass({
   getInitialState: function() {
     return {
@@ -16,6 +18,13 @@ var Coverflow = React.createClass({
   componentWillMount: function() {
     this.OFFSET = ((this.props.WIDTH % this.props.COVER_WIDTH)) / 2;
     this.DISTANCE = this.props.NUM_COVERS + this.props.BUFFER;
+    var self = this;
+    Mousetrap.bind('left', function() { self.handleSwiped(null, -self.props.COVER_WIDTH, 0, false) });
+    Mousetrap.bind('right', function() { self.handleSwiped(null, self.props.COVER_WIDTH, 0, false) });
+  },
+  componentWillUnMount: function() {
+    Moustrap.unbind('left');
+    Moustrap.unbind('right');
   },
   handleCoverClick: function(key) {
     this.props.handleClick(key);

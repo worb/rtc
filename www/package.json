@@ -20,6 +20,7 @@
   "homepage": "https://github.com/worb/reactor",
   "dependencies": {
     "lodash": "^3.9.3",
+    "mousetrap": "^1.5.3",
     "react": "^0.13.3",
     "react-swipe": "^2.1.0",
     "react-swipeable": "^3.0.2",

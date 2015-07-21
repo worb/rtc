@@ -27,6 +27,7 @@ var Parent = React.createClass({
 
     this.SMALL_COVERS = Math.round(this.WIDTH / this.SMALL_WIDTH) + 1;
     this.LARGE_COVERS = Math.round(this.WIDTH / this.LARGE_WIDTH) + 1;
+
   },
   handleMove: function(amount, key, pos) {
 
