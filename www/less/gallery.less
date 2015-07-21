@@ -6,30 +6,34 @@ Gallery should be a horizontally-scrolling arrangement of covers.
 @image-width: 300px;
 @small-width: 120px;
 @base-margin: 1.0rem;
-@shadow: 5px 3px 8px #ccc; // TODO: Refactor this into an importable variables file
+@shadow: 2px 2px 8px #000;
 
 .gallery {
   position: relative;
-  overflow: hidden;
   text-align: center;
-  ul {
+  .covers {
     width: 100%;
     margin: 0;
+    padding: 1rem 0;
+    background-color: green;
     list-style: none;
     white-space: nowrap;
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
-    li {
+    .cover {
       display: inline-block;
         img {
           width: @image-width;
           height: auto;
           margin: 0 @base-margin;
-          box-shadow: @shadow;
+          // box-shadow: @shadow;
         }
     }
+    &.small {
+        background-color: white;
+    }
   }
-  ul.small li img {
+  .covers.small .cover img {
     width: @small-width;
   }
 }

@@ -17,15 +17,11 @@ var Cover = React.createClass({
     return path;
   },
   render: function(){
-    var classNames = "";
+    var classNames = "cover ";
     if(this.props.isSelected) {
-      classNames = "selected";
+      classNames += "selected";
     }
-    return (
-      <div onClick={this.handleClick} className={classNames}>
-        <img src={this.getImageSrc()} />
-      </div>
-    )
+    return <img onClick={this.handleClick} src={this.getImageSrc()} className={classNames}/>;
   }
 });
 

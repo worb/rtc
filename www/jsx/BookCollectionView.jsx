@@ -27,7 +27,7 @@ var BookCollectionView = React.createClass({
   render: function(){
     covers = this.props.books.map(function(book, i){
       return (
-        <li className="book" key={i}>
+        <li className="cover" key={i}>
           <Cover book={book} index={i} handleClick={this.viewDetail} />
         </li>
         )
@@ -36,16 +36,12 @@ var BookCollectionView = React.createClass({
     if(this.state.selected == null) {
       return (
         <div className="gallery">
-          <ul className="large books">{covers}</ul>
-          <ul className="small books">{covers}</ul>
+          <ul className="large covers">{covers}</ul>
+          <ul className="small covers">{covers}</ul>
         </div>
       );
     } else {
-      return (
-        <div className="gallery">
-          <BookDetailView book={this.props.books[this.state.selected]} handleExit={this.viewCollection} />
-        </div>
-      );
+      return <BookDetailView book={this.props.books[this.state.selected]} handleExit={this.viewCollection} />;
     }
 
   }
