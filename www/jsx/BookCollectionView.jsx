@@ -15,15 +15,25 @@ var Cover = require('./Cover.jsx');
 var BookCollectionView = React.createClass({
   getInitialState: function() {
     return {
+      largeScrollX: 0,
+      pageWidth: window.innerWidth,
       selected: null,
       grid: false
     }
+  },
+  componentDidMount: function() {
+    document.querySelector('.large.covers').style.width = this.props.books.length * 396 + 'px';
   },
   viewDetail: function(index) {
     this.setState({selected: index});
   },
   viewCollection: function() {
     this.setState({selected: null});
+  },
+  handleLargeScroll: function() {
+     this.setState({
+         largeScrollX: this.refs.large.getDOMNode().scrollLeft
+     });
   },
   render: function(){
     display_mode = this.state.grid ? 'grid' : 'scroll';
@@ -38,8 +48,12 @@ var BookCollectionView = React.createClass({
     if(this.state.selected == null) {
       return (
         <div className="gallery">
-          <ul className="large covers">{covers}</ul>
-          <ul className={"small covers " + display_mode}>{covers}</ul>
+            <div className="large container" ref="large" onScroll={this.handleLargeScroll}>
+                <ul className="large covers">{covers}</ul>
+            </div>
+            <div className="small container">
+                <ul className={"small covers " + display_mode}>{covers}</ul>
+            </div>
         </div>
       );
     } else {
