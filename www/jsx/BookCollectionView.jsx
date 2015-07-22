@@ -16,13 +16,12 @@ var BookCollectionView = React.createClass({
   getInitialState: function() {
     return {
       largeScrollX: 0,
+      largeCoverWidth: 400,
       pageWidth: window.innerWidth,
       selected: null,
-      grid: false
+      grid: false,
+      scrolled: false
     }
-  },
-  componentDidMount: function() {
-    document.querySelector('.large.covers').style.width = this.props.books.length * 396 + 'px';
   },
   viewDetail: function(index) {
     this.setState({selected: index});
@@ -31,6 +30,15 @@ var BookCollectionView = React.createClass({
     this.setState({selected: null});
   },
   handleLargeScroll: function() {
+     if(!this.state.scrolled) {
+         this.setState({
+             scrolled: true
+         });
+         this.setState({
+             largeCoverWidth: document.querySelector('.large li.cover').offsetWidth
+         });
+         document.querySelector('.large.covers').style.width = this.state.largeCoverWidth * this.props.books.length + 'px';
+     }
      this.setState({
          largeScrollX: this.refs.large.getDOMNode().scrollLeft
      });
@@ -46,10 +54,14 @@ var BookCollectionView = React.createClass({
     }, this);
 
     if(this.state.selected == null) {
+
+      var largeStart = 0;
+      var largeEnd = 1 + Math.round((this.state.pageWidth + this.state.largeScrollX) / this.state.largeCoverWidth);
+
       return (
         <div className="gallery">
             <div className="large container" ref="large" onScroll={this.handleLargeScroll}>
-                <ul className="large covers">{covers}</ul>
+                <ul className="large covers">{covers.slice(start, end)}</ul>
             </div>
             <div className="small container">
                 <ul className={"small covers " + display_mode}>{covers}</ul>
