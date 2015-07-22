@@ -1,47 +1,5 @@
 var books = [
   {
-    "name" : "",
-    "covers" : [
-      {"filename": "filler.png", "artist": ""}
-    ],
-    "author" : ""
-  },
-  {
-    "name" : "",
-    "covers" : [
-      {"filename": "filler.png", "artist": ""}
-    ],
-    "author" : ""
-  },
-  {
-    "name" : "",
-    "covers" : [
-      {"filename": "filler.png", "artist": ""}
-    ],
-    "author" : ""
-  },
-  {
-    "name" : "",
-    "covers" : [
-      {"filename": "filler.png", "artist": ""}
-    ],
-    "author" : ""
-  },
-  {
-    "name" : "",
-    "covers" : [
-      {"filename": "filler.png", "artist": ""}
-    ],
-    "author" : ""
-  },
-  {
-    "name" : "",
-    "covers" : [
-      {"filename": "filler.png", "artist": ""}
-    ],
-    "author" : ""
-  },
-  {
     "name":"Call of the Wild",
     "covers":[
       {

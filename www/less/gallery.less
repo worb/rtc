@@ -1,0 +1,66 @@
+/*
+Styling for the gallery.
+Gallery should be a horizontally-scrolling arrangement of covers.
+*/
+
+@base-margin: 1.0rem;
+@shadow: 2px 2px 8px #000;
+
+.gallery {
+    position: relative;
+    text-align: center;
+    .covers {
+        width: 100%;
+        margin: 0;
+        padding: 1em 0;
+        background-color: #0c2f48;
+        list-style: none;
+        white-space: nowrap;
+        overflow-x: scroll;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        -webkit-overflow-scrolling: touch;
+        .cover {
+        display: inline-block;
+            img {
+                width: 14.5em;
+                height: auto;
+                margin: 0 @base-margin;
+                @media screen and (min-width:375px) {
+                    width: 17em;
+                }
+                @media screen and (min-width:550px) {
+                    width: 20em;
+                }
+                @media screen and (min-width:725px) {
+                    width: 26em;
+                }
+            }
+        }
+        &.small {
+            padding: 1em;
+            background-color: white;
+            .cover {
+                margin: .3em;
+                img {
+                    width: 2.5em;
+                    @media screen and (min-width:375px) {
+                        width: 5em;
+                    }
+                    @media screen and (min-width:550px) {
+                        width: 7.5em;
+                    }
+                    @media screen and (min-width:725px) {
+                        width: 10em;
+                    }
+                }
+            }
+        }
+        &.grid {
+            display: inline-flex;
+        }
+        &.scroll {
+            display: inline-block;
+        }
+    }
+}
