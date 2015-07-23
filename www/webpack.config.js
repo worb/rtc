@@ -5,6 +5,9 @@ module.exports = {
         publicPath: '/dist/',
         filename: "bundle.js"
     },
+    externals: {
+        "react/addons": "React"
+    },
     devtool: "eval-source-map",
     module: {
         loaders: [

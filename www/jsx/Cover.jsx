@@ -1,4 +1,4 @@
-var React = require('react');
+var React = require('react/addons');
 
 var COVER_PATH = 'https://cdn.rawgit.com/plympton/rtc/master/rtc_books_resized/';
 

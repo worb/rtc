@@ -1,4 +1,4 @@
-var React = require('react');
+var React = require('react/addons');
 
 var Coverflow = require('./Coverflow.jsx');
 var Internal = require('./Internal.jsx');

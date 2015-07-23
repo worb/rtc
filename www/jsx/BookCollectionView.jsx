@@ -7,7 +7,7 @@
 ** NOTE: THE DETAIL VIEW SHOULD BE DECOUPLED FROM THE COLLECTION VIEW!
 */
 
-var React = require('react');
+var React = require('react/addons');
 
 var BookDetailView = require('./BookDetailView.jsx');
 var Cover = require('./Cover.jsx');

@@ -1,6 +1,6 @@
 // Nav.js
 
-var React = require('react');
+var React = require('react/addons');
 
 var Modal = React.createClass({
   // A modal dialog box containing information about the gallery
