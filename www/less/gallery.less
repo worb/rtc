@@ -3,9 +3,6 @@ Styling for the gallery.
 Gallery should be a horizontally-scrolling arrangement of covers.
 */
 
-@base-margin: 1.0rem;
-@shadow: 2px 2px 8px #000;
-
 .gallery {
     position: relative;
     text-align: center;
@@ -14,18 +11,24 @@ Gallery should be a horizontally-scrolling arrangement of covers.
         text-align: left;
     }
     .covers {
-        //width: 100%;
+        &.grid {
+            .flex-inline();
+            .flex-wrap(wrap);
+            .justify-content(flex-start);
+        }
+        &.scroll {
+            display: inline-block;
+            overflow-x: scroll;
+            -webkit-overflow-scrolling: touch;
+        }
+        // width: 100%;
         margin: 0;
         padding: 1em 0;
         background-color: #0c2f48;
         list-style: none;
         white-space: nowrap;
-        //overflow-x: scroll;
-        flex-flow: row wrap;
-        justify-content: flex-start;
-        -webkit-overflow-scrolling: touch;
         .cover {
-        display: inline-block;
+            display: inline-block;
             img {
                 width: 14.5em;
                 height: auto;
@@ -59,12 +62,6 @@ Gallery should be a horizontally-scrolling arrangement of covers.
                     }
                 }
             }
-        }
-        &.grid {
-            display: inline-flex;
-        }
-        &.scroll {
-            display: inline-block;
         }
     }
 }

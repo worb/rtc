@@ -84,7 +84,7 @@ var BookCollectionView = React.createClass({
       return (
         <div className="gallery">
             <div className="large container" ref="large" onScroll={this.handleScroll}>
-                <ul className="large covers">{covers.slice(largeStart, largeEnd)}</ul>
+                <ul className="large covers scroll">{covers.slice(largeStart, largeEnd)}</ul>
             </div>
             <div className="small container" ref="small" onScroll={this.handleScroll}>
                 <ul className={"small covers " + display_mode}>{covers.slice(smallStart, smallEnd)}</ul>

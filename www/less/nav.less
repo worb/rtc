@@ -1,13 +1,11 @@
 @import 'modal.less';
 
-@accent_color: #339074; // TODO: Refactor this into a separate variables file
-
 nav.main {
   width: 100%;
   background: @accent_color;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  .flex-block();
+  .justify-content(space-between);
+  .align-items(center);
   height: auto;
   padding: 1rem;
   overflow: hidden;
@@ -18,9 +16,11 @@ nav.main {
   }
   ul {
     float: left;
-    @media screen and (min-width: 500px) {
+    .columns(2);
+    @media screen and (min-width: 600px) {
+        .columns(1);
         li {
-          display: inline;
+          display: inline-block;
           margin: 0 1.5em;
         }
     }
