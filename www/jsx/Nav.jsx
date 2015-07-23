@@ -59,6 +59,8 @@ var Nav = React.createClass({
     var contributeURL = "http://thecreativeactionnetwork.com/contribute/recovering-the-classics";
     var rtcLogoImageURL = "assets/images/rtc-logo-stacked.png";
     var exhibitURL = "http://50x50.us"
+    var contactURL = "mailto:hello@recoveringtheclassics.com";
+
     return (
       <nav className="main">
         <div className="brand" onClick={this.handleExit}>
@@ -70,6 +72,7 @@ var Nav = React.createClass({
           <li><a href={shopURL} target="_blank">Shop</a></li>
           <li><a href={contributeURL} target="_blank">Contribute</a></li>
           <li><a href={exhibitURL} target="_blank">Exhibit</a></li>
+          <li><a href={contactURL} target="_blank">Contact</a></li>
         </ul>
       </nav>
     );
