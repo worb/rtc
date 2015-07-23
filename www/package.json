@@ -1,0 +1,37 @@
+{
+  "name": "reactor",
+  "version": "0.0.0",
+  "description": "Worb Corp.'s front-end toolkit.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --progress --colors --content-base public/",
+    "prod": "webpack -p --progress --colors"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/worb/reactor"
+  },
+  "author": "Worb Corp.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/worb/reactor/issues"
+  },
+  "homepage": "https://github.com/worb/reactor",
+  "dependencies": {
+    "lodash": "^3.9.3",
+    "mousetrap": "^1.5.3",
+    "react": "^0.13.3",
+    "react-swipe": "^2.1.0",
+    "react-swipeable": "^3.0.2",
+    "swipe-js-iso": "^2.0.1"
+  },
+  "devDependencies": {
+    "css-loader": "^0.15.2",
+    "jsx-loader": "^0.13.2",
+    "less": "^2.5.1",
+    "less-loader": "^2.2.0",
+    "node-libs-browser": "^0.5.2",
+    "style-loader": "^0.12.3"
+  }
+}

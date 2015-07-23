@@ -1,0 +1,94 @@
+.book-meta {
+    flex: 100%;
+    display: flex;
+    margin-bottom: 1.5em;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    color: #0c2f48;
+    .exit {
+        display: block;
+        width: 100%;
+        margin-bottom: 1.5rem;
+        background-color: #0c2f48;
+        appearance: none;
+        border: none;
+        border-radius: 10px;
+        padding: .25em .5em;
+        color: #FFF;
+    }
+    .title {
+        margin-bottom: .5rem;
+        text-align: center;
+        color: #0c2f48;
+    }
+    .author {
+        margin-bottom: .5rem;
+        color: #0c2f48;
+    }
+    @media screen and (min-width: 700px) {
+        flex-direction: row;
+        .exit {
+            display: initial;
+            width: initial;
+            margin-bottom: 0;
+        }
+        .title, .author {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.book-main {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+
+.cover-picker {
+    flex: 100%;
+}
+
+.cover-viewer {
+    flex: 100%;
+}
+
+@media screen and (min-width:700px) {
+    .cover-picker {
+        flex: 1;
+    }
+    .cover-viewer {
+        flex: 2;
+    }
+}
+
+.cover-picker .covers {
+    display: inline-flex;
+    flex-flow: row wrap;
+    .cover-item {
+        margin: 0 0 1rem 1rem;
+    }
+    img {
+        max-width: 5rem;
+    }
+}
+
+.cover-viewer {
+    margin-bottom: 1.5em;
+    padding: 0 1rem;
+    text-align: center;
+    img {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-height:1000px) {
+    .cover-viewer img {
+        max-height: 70vh;
+    }
+}

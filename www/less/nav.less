@@ -1,0 +1,36 @@
+@import 'modal.less';
+
+@accent_color: #339074; // TODO: Refactor this into a separate variables file
+
+nav.main {
+  width: 100%;
+  background: @accent_color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+  padding: 1rem;
+  overflow: hidden;
+  margin-bottom: 0;
+  .brand {
+    float: left;
+    margin-right: 40px;
+  }
+  ul {
+    float: left;
+    @media screen and (min-width: 500px) {
+        li {
+          display: inline;
+          margin: 0 1.5em;
+        }
+    }
+    li a {
+      color: #fff;
+      &:hover, &:active {
+        background-color: #fff;
+        color: @accent_color;
+      }
+      font-size: 1.2em;
+    }
+  }
+}
