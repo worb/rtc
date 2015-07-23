@@ -1,7 +1,5 @@
 var React = require('react');
 
-require('../less/app.less');
-
 var Coverflow = require('./Coverflow.jsx');
 var Internal = require('./Internal.jsx');
 var Modal = require('./Modal.jsx');
