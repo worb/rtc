@@ -12,7 +12,7 @@ var React = require('react/addons');
 
 var Cover = require('./Cover.jsx');
 
-var COVER_PATH = 'assets/images/rtc_books_resized/';
+var COVER_PATH = 'https://cdn.rawgit.com/plympton/rtc/master/rtc_books_resized/';
 var Transition = React.addons.CSSTransitionGroup;
 
 var BookDetailViewer = React.createClass({

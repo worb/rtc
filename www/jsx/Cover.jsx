@@ -1,6 +1,6 @@
 var React = require('react');
 
-var COVER_PATH = 'assets/images/rtc_books_resized/';
+var COVER_PATH = 'https://cdn.rawgit.com/plympton/rtc/master/rtc_books_resized/';
 
 var Cover = React.createClass({
   handleClick: function(e) {
