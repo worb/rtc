@@ -9,14 +9,18 @@ Gallery should be a horizontally-scrolling arrangement of covers.
 .gallery {
     position: relative;
     text-align: center;
+    .container {
+        overflow-x: scroll;
+        text-align: left;
+    }
     .covers {
-        width: 100%;
+        //width: 100%;
         margin: 0;
         padding: 1em 0;
         background-color: #0c2f48;
         list-style: none;
         white-space: nowrap;
-        overflow-x: scroll;
+        //overflow-x: scroll;
         flex-flow: row wrap;
         justify-content: flex-start;
         -webkit-overflow-scrolling: touch;
