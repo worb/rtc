@@ -19,8 +19,7 @@ var devtool = "eval-source-map";
 // if in production, add to plugins and set devtool to null
 if(process.env.NODE_ENV === 'production') {
     plugins.push(new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"'}));
-    plugins.push(new webpack.optimize.UglifyJsPlugin())
-    plugins.push
+    plugins.push(new webpack.optimize.UglifyJsPlugin());
     devtool = null;
 }
 
