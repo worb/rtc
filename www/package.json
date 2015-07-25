@@ -24,11 +24,13 @@
   },
   "devDependencies": {
     "css-loader": "^0.15.2",
+    "extract-text-webpack-plugin": "^0.8.2",
     "jsx-loader": "^0.13.2",
     "less": "^2.5.1",
     "less-loader": "^2.2.0",
     "node-libs-browser": "^0.5.2",
     "static-render-webpack-plugin": "^0.1.2",
-    "style-loader": "^0.12.3"
+    "style-loader": "^0.12.3",
+    "webpack": "^1.10.5"
   }
 }

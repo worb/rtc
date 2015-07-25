@@ -1,6 +1,12 @@
 var StaticSiteGeneratorPlugin = require('static-render-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-var routes = ['/'];
+var routes = [
+    {
+        path: '/',
+        output: '../index.html'
+    }
+];
 
 module.exports = {
     entry: "./entry.js",
@@ -22,11 +28,12 @@ module.exports = {
             },
             {
                 test: /\.less$/,
-                loader: 'style-loader!css-loader!less-loader'
+                loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader')
             }
         ]
     },
     plugins: [
-        new StaticSiteGeneratorPlugin('bundle.js', routes)
+        new StaticSiteGeneratorPlugin('bundle.js', routes),
+        new ExtractTextPlugin('style.css')
     ]
 };
