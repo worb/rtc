@@ -40,7 +40,6 @@ var BookCollectionView = React.createClass({
              scrolled: true
          });
          // Gets the width of the covers from the dom.
-         console.log(document.querySelector('.small li.cover').offsetWidth)
          this.setState({
              largeCoverWidth: document.querySelector('.large li.cover').offsetWidth,
              smallCoverWidth: document.querySelector('.small li.cover').offsetWidth

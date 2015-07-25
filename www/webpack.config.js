@@ -5,19 +5,34 @@ var webpack = require('webpack');
 var routes = [
     {
         path: '/',
-        output: '../index.html'
+        output: '/index.html'
     }
 ];
+
+// plugins and devtool for dev
+var plugins = [
+    new StaticSiteGeneratorPlugin('/dist/bundle.js', routes),
+    new ExtractTextPlugin('/dist/style.css')
+];
+var devtool = "eval-source-map";
+
+// if in production, add to plugins and set devtool to null
+if(process.env.NODE_ENV === 'production') {
+    plugins.push(new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"'}));
+    plugins.push(new webpack.optimize.UglifyJsPlugin())
+    plugins.push
+    devtool = null;
+}
 
 module.exports = {
     entry: "./entry.js",
     output: {
-        path: './public/dist',
+        path: './public',
         publicPath: '/',
-        filename: 'bundle.js',
+        filename: '/dist/bundle.js',
         libraryTarget: 'umd'
     },
-    devtool: "eval-source-map",
+    devtool: devtool,
     module: {
         loaders: [
             {
@@ -30,8 +45,5 @@ module.exports = {
             }
         ]
     },
-    plugins: [
-        new StaticSiteGeneratorPlugin('bundle.js', routes),
-        new ExtractTextPlugin('style.css')
-    ]
+    plugins: plugins
 };
