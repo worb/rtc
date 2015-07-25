@@ -16,9 +16,6 @@ module.exports = {
         filename: 'bundle.js',
         libraryTarget: 'umd'
     },
-    externals: {
-//        "react/addons": "React"
-    },
     devtool: "eval-source-map",
     module: {
         loaders: [
