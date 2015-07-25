@@ -1,5 +1,6 @@
 var StaticSiteGeneratorPlugin = require('static-render-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var webpack = require('webpack');
 
 var routes = [
     {
@@ -31,6 +32,11 @@ module.exports = {
     },
     plugins: [
         new StaticSiteGeneratorPlugin('bundle.js', routes),
-        new ExtractTextPlugin('style.css')
+        new ExtractTextPlugin('style.css'),
+        new webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': JSON.stringify('production')
+            }
+        })
     ]
 };

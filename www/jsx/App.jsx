@@ -14,7 +14,10 @@ var React = require('react/addons');
 var Nav = require('./Nav.jsx');
 var BookCollectionView = require('./BookCollectionView.jsx');
 var books = require('./books.jsx');
-var _ = require('lodash');
+
+//load only lodash functions we need
+var _each = require('lodash/collection/forEach');
+var _uniq = require('lodash/collection/forEach');
 
 books.sort(function(a, b) {
   // Alphabetically sorts the collection of titles
