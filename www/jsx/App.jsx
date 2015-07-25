@@ -64,7 +64,6 @@ var App = React.createClass({
               <link rel="apple-touch-icon" sizes="152x152" href="assets/images/touch-icon-ipad-retina.png" />
               <link href='/dist/style.css' rel='stylesheet' type='text/css' />
               <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css' />
-
           </head>
           <body>
             <div key="app">

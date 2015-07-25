@@ -12,7 +12,7 @@ module.exports = {
     entry: "./entry.js",
     output: {
         path: './public/dist',
-        publicPath: '/dist/',
+        publicPath: '/',
         filename: 'bundle.js',
         libraryTarget: 'umd'
     },
