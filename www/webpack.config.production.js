@@ -24,12 +24,6 @@ module.exports = {
         filename: 'bundle.js',
         libraryTarget: 'umd'
     },
-    resolve: {
-        alias: {
-            'react/addons': path.join(__dirname, "node_modules/react/dist/react-with-addons.min.js")
-        }
-    },
-    devtool: "eval-source-map",
     module: {
         loaders: [
             {
@@ -43,8 +37,9 @@ module.exports = {
         ]
     },
     plugins: [
+        new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"'}),
+        new webpack.optimize.UglifyJsPlugin(),
         new StaticSiteGeneratorPlugin('bundle.js', routes),
         new ExtractTextPlugin('style.css'),
-        new webpack.DefinePlugin({ 'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV) || false})
     ]
 };
