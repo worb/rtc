@@ -1,12 +1,17 @@
+var StaticSiteGeneratorPlugin = require('static-render-webpack-plugin');
+
+var routes = ['/'];
+
 module.exports = {
     entry: "./entry.js",
     output: {
         path: './public/dist',
         publicPath: '/dist/',
-        filename: "bundle.js"
+        filename: 'bundle.js',
+        libraryTarget: 'umd'
     },
     externals: {
-        "react/addons": "React"
+//        "react/addons": "React"
     },
     devtool: "eval-source-map",
     module: {
@@ -20,5 +25,8 @@ module.exports = {
                 loader: 'style-loader!css-loader!less-loader'
             }
         ]
-    }
+    },
+    plugins: [
+        new StaticSiteGeneratorPlugin('bundle.js', routes)
+    ]
 };

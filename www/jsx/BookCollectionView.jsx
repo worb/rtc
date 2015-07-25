@@ -19,7 +19,6 @@ var BookCollectionView = React.createClass({
       smallScrollX: 0,
       largeCoverWidth: 400,
       smallCoverWidth: 230,
-      pageWidth: window.innerWidth,
       selected: null,
       grid: false,
       scrolled: false
@@ -30,6 +29,9 @@ var BookCollectionView = React.createClass({
   },
   viewCollection: function() {
     this.setState({selected: null});
+  },
+  componentDidMount: function() {
+     this.setState({pageWidth: window.innerWidth});
   },
   handleScroll: function() {
      // ComponentDidMount isn't getting proper values, so we do this setup when someone scrolls.
