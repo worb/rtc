@@ -19,7 +19,6 @@ var BookCollectionView = React.createClass({
       smallScrollX: 0,
       largeCoverWidth: 400,
       smallCoverWidth: 230,
-      pageWidth: window.innerWidth,
       selected: null,
       grid: false,
       scrolled: false
@@ -31,6 +30,9 @@ var BookCollectionView = React.createClass({
   viewCollection: function() {
     this.setState({selected: null});
   },
+  componentDidMount: function() {
+     this.setState({pageWidth: window.innerWidth});
+  },
   handleScroll: function() {
      // ComponentDidMount isn't getting proper values, so we do this setup when someone scrolls.
      if(!this.state.scrolled) {
@@ -38,7 +40,6 @@ var BookCollectionView = React.createClass({
              scrolled: true
          });
          // Gets the width of the covers from the dom.
-         console.log(document.querySelector('.small li.cover').offsetWidth)
          this.setState({
              largeCoverWidth: document.querySelector('.large li.cover').offsetWidth,
              smallCoverWidth: document.querySelector('.small li.cover').offsetWidth
@@ -77,9 +78,9 @@ var BookCollectionView = React.createClass({
 
       // Sets the slice position for the covers, with offsets to account for starting edge case.
       var largeStart = 0;
-      var largeEnd = 1 + Math.round((this.state.pageWidth + this.state.largeScrollX) / this.state.largeCoverWidth);
+      var largeEnd = 1 + Math.round((this.state.pageWidth + this.state.largeScrollX) / this.state.largeCoverWidth) || 5;
       var smallStart = 0;
-      var smallEnd = 4 + Math.round((this.state.pageWidth + this.state.smallScrollX) / this.state.smallCoverWidth);
+      var smallEnd = 4 + Math.round((this.state.pageWidth + this.state.smallScrollX) / this.state.smallCoverWidth) || 7;
 
       return (
         <div className="gallery">

@@ -14,7 +14,10 @@ var React = require('react/addons');
 var Nav = require('./Nav.jsx');
 var BookCollectionView = require('./BookCollectionView.jsx');
 var books = require('./books.jsx');
-var _ = require('lodash');
+
+//load only lodash functions we need
+var _each = require('lodash/collection/forEach');
+var _uniq = require('lodash/collection/forEach');
 
 books.sort(function(a, b) {
   // Alphabetically sorts the collection of titles
@@ -52,12 +55,29 @@ var App = React.createClass({
     var nav = <Nav handleModal={this.handleModalClick} handleExit={this.handleExit} />;
     var bcv = <BookCollectionView books={books} />;
     return (
-      <div key="app">
-        {nav}
-        {bcv}
-      </div>
+      <html>
+          <head>
+              <title>Recovering the Classics</title>
+              <meta name="apple-mobile-web-app-capable" content="yes" />
+              <meta name="viewport" content="width=device-width" />
+              <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+              <link rel="apple-touch-icon" href="assets/images/touch-icon-iphone.png" />
+              <link rel="apple-touch-icon" sizes="76x76" href="assets/imagestouch-icon-ipad.png" />
+              <link rel="apple-touch-icon" sizes="120x120" href="assets/images/touch-icon-iphone-retina.png" />
+              <link rel="apple-touch-icon" sizes="152x152" href="assets/images/touch-icon-ipad-retina.png" />
+              <link href='/dist/style.css' rel='stylesheet' type='text/css' />
+              <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css' />
+          </head>
+          <body>
+            <div key="app">
+                {nav}
+                {bcv}
+            </div>
+            <script src="/dist/bundle.js"/>
+          </body>
+      </html>
     );
   }
 });
 
-React.render(<App />, document.getElementById('app'));
+module.exports = App;
