@@ -79,9 +79,9 @@ var BookCollectionView = React.createClass({
 
       // Sets the slice position for the covers, with offsets to account for starting edge case.
       var largeStart = 0;
-      var largeEnd = 1 + Math.round((this.state.pageWidth + this.state.largeScrollX) / this.state.largeCoverWidth);
+      var largeEnd = 1 + Math.round((this.state.pageWidth + this.state.largeScrollX) / this.state.largeCoverWidth) || 5;
       var smallStart = 0;
-      var smallEnd = 4 + Math.round((this.state.pageWidth + this.state.smallScrollX) / this.state.smallCoverWidth);
+      var smallEnd = 4 + Math.round((this.state.pageWidth + this.state.smallScrollX) / this.state.smallCoverWidth) || 7;
 
       return (
         <div className="gallery">
