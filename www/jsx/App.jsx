@@ -48,6 +48,14 @@ function buildAlphabet(books) {
   return alphabet;
 }
 
+function returnGa() {
+    return "(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){\
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');\
+    ga('create', 'UA-32150387-3', 'auto');\
+    ga('send', 'pageview');"
+}
 var App = React.createClass({
   // The entry point of the application, composed
   // of a header navigation bar and cover gallery.
@@ -74,6 +82,7 @@ var App = React.createClass({
                 {bcv}
             </div>
             <script src="/dist/bundle.js"/>
+            <script dangerouslySetInnerHTML={{__html: returnGa() }} />
           </body>
       </html>
     );
