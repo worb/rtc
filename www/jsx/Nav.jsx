@@ -97,7 +97,7 @@ var Nav = React.createClass({
 
     return (
       <nav className="main">
-        <div className="brand" onClick={this.handleExit}>
+        <div className="brand">
           <Link to={'/'}><img src={rtcLogoImageURL} /></Link>
         </div>
         {modal}
