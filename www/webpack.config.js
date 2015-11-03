@@ -3,15 +3,15 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var webpack = require('webpack');
 
 var routes = [
-    {
-        path: '/',
-        output: '/index.html'
-    }
+    '/',
+    '/about',
+    '/home',
+    '/static-test'
 ];
 
 // plugins and devtool for dev
 var plugins = [
-    new StaticSiteGeneratorPlugin('/dist/bundle.js', routes),
+    new StaticSiteGeneratorPlugin('/dist/bundle.js', routes, {}),
     new ExtractTextPlugin('/dist/style.css')
 ];
 var devtool = "eval-source-map";
@@ -41,6 +41,10 @@ module.exports = {
             {
                 test: /\.less$/,
                 loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader')
+            },
+            {
+                test: /\.md$/,
+                loader: 'html!markdown'
             }
         ]
     },
