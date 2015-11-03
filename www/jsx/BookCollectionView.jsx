@@ -8,9 +8,11 @@
 */
 
 var React = require('react/addons');
+var Link = require('react-router').Link;
 
-var BookDetailView = require('./BookDetailView.jsx');
 var Cover = require('./Cover.jsx');
+
+var slugify = require('slug');
 
 var BookCollectionView = React.createClass({
   getInitialState: function() {
@@ -69,12 +71,10 @@ var BookCollectionView = React.createClass({
     covers = this.props.books.map(function(book, i){
       return (
         <li className="cover" key={i}>
-          <Cover book={book} index={i} handleClick={this.viewDetail} />
+          <Link to={'/book/' + slugify(book.name, {lower: true})}><Cover book={book} index={i} /></Link>
         </li>
         )
     }, this);
-
-    if(this.state.selected == null) {
 
       // Sets the slice position for the covers, with offsets to account for starting edge case.
       var largeStart = 0;
@@ -92,9 +92,6 @@ var BookCollectionView = React.createClass({
             </div>
         </div>
       );
-    } else {
-      return <BookDetailView book={this.props.books[this.state.selected]} handleExit={this.viewCollection} />;
-    }
 
   }
 });

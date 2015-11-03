@@ -11,7 +11,7 @@
 7 verbose unsafe-perm in lifecycle true
 8 info reactor@0.0.0 Failed to exec dev script
 9 error reactor@0.0.0 dev: `webpack-dev-server --progress --colors --content-base public/`
-9 error Exit status 127
+9 error Exit status 8
 10 error Failed at the reactor@0.0.0 dev script.
 10 error This is most likely a problem with the reactor package,
 10 error not with npm itself.

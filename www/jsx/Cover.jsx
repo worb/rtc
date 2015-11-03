@@ -4,8 +4,10 @@ var COVER_PATH = 'https://cdn.rawgit.com/plympton/rtc/master/rtc_books_resized/'
 
 var Cover = React.createClass({
   handleClick: function(e) {
-    e.preventDefault();
-    this.props.handleClick(this.props.index);
+    if(this.props.handleClick) {
+        e.preventDefault();
+        this.props.handleClick(this.props.index);
+    }
   },
   getImageSrc: function() {
     var path = COVER_PATH;

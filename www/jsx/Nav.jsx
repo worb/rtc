@@ -57,7 +57,7 @@ var Nav = React.createClass({
     var modal = <Modal modalIsVisible={this.state.modalIsVisible} hideModal={this.hideModal} />;
     var shopURL = "http://shop.thecreativeactionnetwork.com/collections/recovering-the-classics";
     var contributeURL = "http://thecreativeactionnetwork.com/contribute/recovering-the-classics";
-    var rtcLogoImageURL = "assets/images/rtc-logo-stacked.png";
+    var rtcLogoImageURL = "/assets/images/rtc-logo-stacked.png";
     var exhibitURL = "http://50x50.us"
     var contactURL = "mailto:hello@recoveringtheclassics.com";
 

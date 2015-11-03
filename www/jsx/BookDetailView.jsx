@@ -9,11 +9,15 @@
 */
 
 var React = require('react/addons');
-
+var Link = require('react-router').Link;
 var Cover = require('./Cover.jsx');
+var books = require('./books.jsx');
 
 var COVER_PATH = 'https://cdn.rawgit.com/plympton/rtc/master/rtc_books_resized/';
 var Transition = React.addons.CSSTransitionGroup;
+
+var _filter = require('lodash/collection/filter');
+var slugify = require('slug');
 
 var BookDetailViewer = React.createClass({
   // The viewer takes a cover and displays it along with
@@ -66,7 +70,7 @@ var BookDetailMeta = React.createClass({
   render: function() {
     return (
       <nav className="book-meta">
-        <button onClick={this.props.action} className="exit">&laquo; Back</button>
+        <Link to={'/'}><button className="exit">&laquo; Back</button></Link>
         <h2 className="title">{this.props.title}</h2>
         <h3 className="author">by {this.props.author}</h3>
       </nav>
@@ -78,24 +82,29 @@ var BookDetailView = React.createClass({
   // The book detail view manages which book is currently displayed
   // by the viewer. It also handles the exit back to the collection view.
   getInitialState: function() {
+      var book_slug = this.props.params.name;
+      var book = _filter(books, function(book){
+          var slug = slugify(book.name, {lower: true});
+          if(slug === book_slug) {
+              return book;
+          }
+      })[0];
     return {
-      selectedCover: 0
+      selectedCover: 0,
+      book: book
     }
   },
   viewCover: function(key) {
     this.setState({selectedCover: key});
   },
-  exitView: function(event) {
-    this.props.handleExit();
-  },
   render: function(){
-    var title = this.props.book.name;
-    var author = this.props.book.author;
-    var covers = this.props.book.covers;
+    var title = this.state.book.name;
+    var author = this.state.book.author;
+    var covers = this.state.book.covers;
     var activeCover = covers[this.state.selectedCover];
     return (
       <div className="book">
-        <BookDetailMeta title={title} author={author} action={this.exitView} />
+        <BookDetailMeta title={title} author={author} />
         <main className="book-main">
             <BookDetailViewer cover={activeCover} />
             <BookDetailPicker covers={covers} activeCover={activeCover} pickCover={this.viewCover}/>

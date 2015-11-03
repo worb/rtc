@@ -19,6 +19,7 @@ var Home = require('./Home.jsx');
 var About = require('./About.jsx')
 var NotFound = require('./NotFound.jsx');
 var Static = require('./Static.jsx');
+var BookDetailView = require('./BookDetailView.jsx');
 
 /* Routes
 Any routes defined before the slug route will
@@ -31,6 +32,7 @@ var Routes = (
     <Route path='/about' name="About" handler={About} />
     <Route path='/home' name="Home" handler={Home} />
     <Route path='/:slug' name="Static" handler={Static} />
+    <Route path='/book/:name' name="Book" handler={BookDetailView} />
     // Special routes
     <NotFoundRoute name="NotFound" handler={NotFound} />
     <DefaultRoute name="Default" handler={Home} />

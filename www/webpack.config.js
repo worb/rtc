@@ -9,6 +9,34 @@ var routes = [
     '/static-test'
 ];
 
+var books = require('./jsx/books.jsx');
+var slugify = require('slug');
+
+//load only lodash functions we need
+var _each = require('lodash/collection/forEach');
+var _uniq = require('lodash/collection/forEach');
+
+books.sort(function(a, b) {
+  // Alphabetically sorts the collection of titles
+  aname = a.name.replace('The ', '');
+  bname = b.name.replace('The ', '');
+  if (aname < bname) {
+    return -1;
+  }
+  if (aname > bname) {
+    return 1;
+  }
+  if (aname == bname) {
+    return 0;
+  }
+});
+
+_each(books, function(book){
+    var prefix = '/book/';
+    var slug = slugify(book.name, {lower: true});
+    routes.push(prefix + slug);
+});
+
 // plugins and devtool for dev
 var plugins = [
     new StaticSiteGeneratorPlugin('/dist/bundle.js', routes, {}),
