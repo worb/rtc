@@ -18,8 +18,7 @@ var Static = React.createClass({
     },
     render: function(){
         return (
-            <div>
-                <h1>{this.props.params.slug}</h1>
+            <div className="static">
                 <div dangerouslySetInnerHTML={{__html: this.state.staticContent}} />
             </div>
         );

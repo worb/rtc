@@ -4,9 +4,7 @@ var webpack = require('webpack');
 
 var routes = [
     '/',
-    '/about',
-    '/home',
-    '/static-test'
+    '/press'
 ];
 
 var books = require('./jsx/books.jsx');

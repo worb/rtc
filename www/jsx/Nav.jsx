@@ -1,6 +1,8 @@
 // Nav.js
 
 var React = require('react/addons');
+var Link = require('react-router').Link;
+
 var Modal = React.createClass({
   // A modal dialog box containing information about the gallery
   // and about the Recovering the Classics project.
@@ -96,13 +98,14 @@ var Nav = React.createClass({
     return (
       <nav className="main">
         <div className="brand" onClick={this.handleExit}>
-          <img src={rtcLogoImageURL} />
+          <Link to={'/'}><img src={rtcLogoImageURL} /></Link>
         </div>
         {modal}
         {booksModal}
         <ul>
           <li><a href="#about" onClick={this.showModal}>About</a></li>
           <li><a href="#books" onClick={this.showBooksModal}>Get Books</a></li>
+          <li><Link to={'/press'}>Press</Link></li>
           <li><a href={shopURL} target="_blank">Shop</a></li>
           <li><a href={contributeURL} target="_blank">Contribute</a></li>
           <li><a href={exhibitURL} target="_blank">Exhibit</a></li>

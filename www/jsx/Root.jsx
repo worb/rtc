@@ -20,7 +20,7 @@ var Root = React.createClass({
     return (
         <html>
             <head>
-                <title>{this.props.title}</title>
+                <title>Recovering the Classics</title>
                 <meta name="viewport" content="width=device-width" />
                 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
                 <link href='/dist/style.css' rel='stylesheet' type='text/css' />
