@@ -29,8 +29,8 @@ TODO: Implement 404 handling in slug component.
 */
 var Routes = (
   <Route handler={Root} path='/' name="App">
-    <Route path='/:slug' name="Static" handler={Static} />
-    <Route path='/book/:name' name="Book" handler={BookDetailView} />
+    <Route path='/:slug/?' name="Static" handler={Static} />
+    <Route path='/book/:name/?' name="Book" handler={BookDetailView} />
     // Special routes
     <NotFoundRoute name="NotFound" handler={NotFound} />
     <DefaultRoute name="Default" handler={Home} />
