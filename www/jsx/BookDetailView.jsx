@@ -11,7 +11,6 @@
 var React = require('react/addons');
 var Link = require('react-router').Link;
 var Cover = require('./Cover.jsx');
-var books = require('./books.jsx');
 
 var COVER_PATH = 'https://cdn.rawgit.com/plympton/rtc/master/rtc_books_resized/';
 var Transition = React.addons.CSSTransitionGroup;
@@ -82,25 +81,26 @@ var BookDetailView = React.createClass({
   // The book detail view manages which book is currently displayed
   // by the viewer. It also handles the exit back to the collection view.
   getInitialState: function() {
-      var book_slug = this.props.params.name;
-      var book = _filter(books, function(book){
-          var slug = slugify(book.name, {lower: true});
-          if(slug === book_slug) {
-              return book;
-          }
-      })[0];
     return {
-      selectedCover: 0,
-      book: book
+      selectedCover: 0
     }
   },
   viewCover: function(key) {
     this.setState({selectedCover: key});
   },
   render: function(){
-    var title = this.state.book.name;
-    var author = this.state.book.author;
-    var covers = this.state.book.covers;
+      // get the book from props
+      var book_slug = this.props.params.name;
+      var book = _filter(this.props.books, function(book){
+          var slug = slugify(book.name, {lower: true});
+          if(slug === book_slug) {
+              return book;
+          }
+      })[0];
+
+    var title = book.name;
+    var author = book.author;
+    var covers = book.covers;
     var activeCover = covers[this.state.selectedCover];
     return (
       <div className="book">
