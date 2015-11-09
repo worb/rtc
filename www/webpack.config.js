@@ -7,7 +7,12 @@ var routes = [
     '/press'
 ];
 
+var props = {};
+
 var books = require('./jsx/books.jsx');
+
+props.books = books;
+
 var slugify = require('slug');
 
 //load only lodash functions we need
@@ -37,7 +42,7 @@ _each(books, function(book){
 
 // plugins and devtool for dev
 var plugins = [
-    new StaticSiteGeneratorPlugin('/dist/bundle.js', routes, {}),
+    new StaticSiteGeneratorPlugin('/dist/bundle.js', routes, props),
     new ExtractTextPlugin('/dist/style.css')
 ];
 var devtool = "eval-source-map";

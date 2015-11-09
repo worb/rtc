@@ -6,16 +6,17 @@ var Routes = require('./jsx/Routes.jsx');
 require('./less/app.less');
 
 // export required by static gen webpack plugin. Runs on server, returns html via callback
-module.exports = function(path, props, callback) {
-    Router.run(Routes, path, function(Root, state){
-        var html = React.renderToString(React.createElement(Root));
+module.exports = function(path, initialProps, callback) {
+    Router.run(Routes, path, function(Root){
+        var html = React.renderToString(React.createElement(Root, initialProps));
         callback('<!DOCTYPE html>' + html)
     });
 }
 
 // checks to see if we're in browser context, and renders
 if(typeof document !== 'undefined') {
-    Router.run(Routes, Router.HistoryLocation, function(Root, state){
-        React.render(React.createElement(Root), document);
+    var initialProps = JSON.parse(document.getElementById('initial-props').innerHTML);
+    Router.run(Routes, Router.HistoryLocation, function(Root){
+        React.render(React.createElement(Root, initialProps), document);
     });
 }

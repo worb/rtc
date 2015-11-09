@@ -11,12 +11,20 @@ var React = require('react');
 var RouteHandler = require('react-router').RouteHandler;
 var Link = require('react-router').Link;
 
+function safeStringify(obj) {
+  return JSON.stringify(obj).replace(/<\/script/g, '<\\/script').replace(/<!--/g, '<\\!--')
+}
+
 //Components
 var Nav = require('./Nav.jsx');
 
 var Root = React.createClass({
   // The entry point of the application
   render: function(){
+      var initialProps = {
+          __html: safeStringify(this.props)
+      };
+
     return (
         <html>
             <head>
@@ -28,8 +36,12 @@ var Root = React.createClass({
             <body>
                 <Nav />
                 <div id="app">
-                    <RouteHandler />
+                    <RouteHandler props={this.props} />
                 </div>
+                <script
+                    id='initial-props'
+                    type='application/json'
+                    dangerouslySetInnerHTML={initialProps} />
                 <script src="/dist/bundle.js"/>
             </body>
         </html>
