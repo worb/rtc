@@ -1,6 +1,5 @@
 # Press
-
-Media inquiries: <hello@recoveringtheclassics.com>
+Media inquiries: <hello@recoveringtheclassics.com>  
 
 ## Highlights
 
