@@ -1,5 +1,5 @@
 # Press
-Media inquiries: <hello@recoveringtheclassics.com>  
+Here is a sampling of things written about us. Want to write about us, too? Contact us at <hello@recoveringtheclassics.com>.
 
 ## Highlights
 
