@@ -36,7 +36,7 @@ var Root = React.createClass({
             <body>
                 <Nav />
                 <div id="app">
-                    <RouteHandler props={this.props} />
+                    <RouteHandler {...this.props} />
                 </div>
                 <script
                     id='initial-props'

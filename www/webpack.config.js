@@ -17,7 +17,6 @@ var slugify = require('slug');
 
 //load only lodash functions we need
 var _each = require('lodash/collection/forEach');
-var _uniq = require('lodash/collection/forEach');
 
 books.sort(function(a, b) {
   // Alphabetically sorts the collection of titles
