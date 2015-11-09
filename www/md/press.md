@@ -1,12 +1,14 @@
 # Press
 
-## Featured Press
+Media inquiries: <hello@recoveringtheclassics.com>
+
+## Highlights
 
 **[Crowdsourcing Spiffy New Book Covers For 50 Literary Masterpieces](http://www.fastcodesign.com/1672671/crowdsourcing-spiffy-new-book-covers-for-50-literary-masterpieces)**  
 Fast Company Design  
 *May 28, 2013*
 
-**["Customizable classics at Politics & Prose](http://www.washingtonpost.com/blogs/style-blog/wp/2013/11/15/customizable-classics-at-politics-prose/)**  
+**[Customizable classics at Politics & Prose](http://www.washingtonpost.com/blogs/style-blog/wp/2013/11/15/customizable-classics-at-politics-prose/)**  
 The Washington Post  
 *November 15, 2013*
 
