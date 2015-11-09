@@ -69,7 +69,7 @@ var BookDetailMeta = React.createClass({
   render: function() {
     return (
       <nav className="book-meta">
-        <Link to={'/'}><button className="exit">&laquo; Back</button></Link>
+        <Link to={'/'}><button className="exit">Back</button></Link>
         <h2 className="title">{this.props.title}</h2>
         <h3 className="author">by {this.props.author}</h3>
       </nav>
