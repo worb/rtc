@@ -42,7 +42,8 @@ _each(books, function(book){
 // plugins and devtool for dev
 var plugins = [
     new StaticSiteGeneratorPlugin('/dist/bundle.js', routes, props),
-    new ExtractTextPlugin('/dist/style.css')
+    new ExtractTextPlugin('/dist/style.css'),
+    new webpack.DefinePlugin({GA_TRACKING_CODE: JSON.stringify('UA-32150387-3')})
 ];
 var devtool = "eval-source-map";
 

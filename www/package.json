@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/worb/reactor",
   "dependencies": {
+    "ga-react-router": "^1.3.0",
     "react": "^0.13.3",
     "react-router": "^0.13.3",
     "slugs": "^0.1.3"
