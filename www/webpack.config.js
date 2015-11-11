@@ -4,7 +4,8 @@ var webpack = require('webpack');
 
 var routes = [
     '/',
-    '/press'
+    '/press',
+    '/nypl'
 ];
 
 var props = {};
