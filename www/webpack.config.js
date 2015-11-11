@@ -13,7 +13,7 @@ var books = require('./jsx/books.jsx');
 
 props.books = books;
 
-var slugify = require('slug');
+var slugify = require('slugs');
 
 //load only lodash functions we need
 var _each = require('lodash/collection/forEach');
@@ -35,7 +35,7 @@ books.sort(function(a, b) {
 
 _each(books, function(book){
     var prefix = '/book/';
-    var slug = slugify(book.name, {lower: true});
+    var slug = slugify(book.name);
     routes.push(prefix + slug);
 });
 

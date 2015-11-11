@@ -16,7 +16,7 @@ var COVER_PATH = 'https://cdn.rawgit.com/plympton/rtc/master/rtc_books_resized/'
 var Transition = React.addons.CSSTransitionGroup;
 
 var _filter = require('lodash/collection/filter');
-var slugify = require('slug');
+var slugify = require('slugs');
 
 var BookDetailViewer = React.createClass({
   // The viewer takes a cover and displays it along with
@@ -92,7 +92,7 @@ var BookDetailView = React.createClass({
       // get the book from props
       var book_slug = this.props.params.name;
       var book = _filter(this.props.books, function(book){
-          var slug = slugify(book.name, {lower: true});
+          var slug = slugify(book.name);
           if(slug === book_slug) {
               return book;
           }

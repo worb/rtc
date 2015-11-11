@@ -12,7 +12,7 @@ var Link = require('react-router').Link;
 
 var Cover = require('./Cover.jsx');
 
-var slugify = require('slug');
+var slugify = require('slugs');
 
 var BookCollectionView = React.createClass({
   getInitialState: function() {
@@ -71,7 +71,7 @@ var BookCollectionView = React.createClass({
     covers = this.props.books.map(function(book, i){
       return (
         <li className="cover" key={i}>
-          <Link to={'/book/' + slugify(book.name, {lower: true})}><Cover book={book} index={i} /></Link>
+          <Link to={'/book/' + slugify(book.name)}><Cover book={book} index={i} /></Link>
         </li>
         )
     }, this);
