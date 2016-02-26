@@ -91,10 +91,11 @@ var Nav = React.createClass({
     var aboutModal = <AboutModal modalIsVisible={this.state.aboutModalIsVisible} hideModal={this.hideModal} />;
     var getModal = <GetModal modalIsVisible={this.state.getModalIsVisible} hideModal={this.hideModal} />;
     var shopURL = "http://shop.thecreativeactionnetwork.com/collections/recovering-the-classics";
-    var contributeURL = "http://thecreativeactionnetwork.com/contribute/recovering-the-classics";
+    var contributeURL = "https://creativeaction.submittable.com/submit/48662";
     var rtcLogoImageURL = "assets/images/rtc-logo-stacked.png";
     var exhibitURL = "http://50x50.us"
     var contactURL = "mailto:hello@recoveringtheclassics.com";
+    var kickstarterURL = "http://kickstarter.com/projects/recovringtheclassics/50x50-bringing-beautiful-book-covers-to-all-50-sta";
 
     return (
       <nav className="main">
@@ -104,6 +105,7 @@ var Nav = React.createClass({
         {aboutModal}
         {getModal}
         <ul>
+          <li><a href={kickstarterURL} target="_blank">Support</a></li>
           <li><a href="#about" onClick={this.showAboutModal}>About</a></li>
           <li><a href="#get" onClick={this.showGetModal}>Get Books</a></li>
           <li><a href={shopURL} target="_blank">Shop</a></li>
